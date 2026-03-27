@@ -24,8 +24,7 @@
         .logo-watermark { position: absolute; opacity: 0.06; pointer-events: none; z-index: -1; }
         .book-container { padding: 1rem; }
         .book-img { width: 100%; height: auto; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1); object-fit: contain; }
-        html { scroll-behavior: smooth; } /* Para que el menú deslice suavemente */
-        /* Estilos del formulario */
+        html { scroll-behavior: smooth; }
         .input-form { background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 0.75rem; padding: 1rem; width: 100%; outline: none; transition: border-color 0.3s ease; }
         .input-form:focus { border-color: #10b981; }
     </style>
@@ -109,9 +108,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
                 
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-accentEsmeralda transition group">
-                    <div class="book-container">
-                        <img src="EL ESPEJO DE ORION.jpg" alt="Orion" class="book-img">
-                    </div>
+                    <div class="book-container"><img src="EL ESPEJO DE ORION.jpg" alt="Orion" class="book-img"></div>
                     <div class="p-5 pt-0 flex-grow">
                         <h4 class="text-white font-bold text-lg leading-tight">EL ESPEJO DE ORIÓN</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Anomalía en la selva que revela nuestro origen estelar.</p>
@@ -119,9 +116,7 @@
                 </div>
 
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-accentEsmeralda transition group">
-                    <div class="book-container">
-                        <img src="EL CODIGO DE LAS PLEYADES.png" alt="Pleyades" class="book-img">
-                    </div>
+                    <div class="book-container"><img src="EL CODIGO DE LAS PLEYADES.png" alt="Pleyades" class="book-img"></div>
                     <div class="p-5 pt-0 flex-grow">
                         <h4 class="text-white font-bold text-lg leading-tight">EL CÓDIGO DE LAS PLÉYADES</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Conspiración en el triángulo sobre Manhattan.</p>
@@ -129,9 +124,7 @@
                 </div>
 
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-accentEsmeralda transition group">
-                    <div class="book-container">
-                        <img src="EL ECO DE LOS SEMBRADORES.png" alt="Sembradores" class="book-img">
-                    </div>
+                    <div class="book-container"><img src="EL ECO DE LOS SEMBRADORES.png" alt="Sembradores" class="book-img"></div>
                     <div class="p-5 pt-0 flex-grow">
                         <h4 class="text-white font-bold text-lg leading-tight">EL ECO DE LOS SEMBRADORES</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Crónicas de Alfa Centauri y el legado de los creadores.</p>
@@ -139,18 +132,16 @@
                 </div>
 
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-accentEsmeralda transition group">
-                    <div class="book-container">
-                        <img src="OPERACION ATLANTIS.png" alt="Atlantis" class="book-img">
-                    </div>
+                    <div class="book-container"><img src="OPERACION ATLANTIS.png" alt="Atlantis" class="book-img"></div>
                     <div class="p-5 pt-0 flex-grow">
-                        <h4 class="text-white font-bold text-lg leading-tight uppercase group-hover:text-accentEsmeralda transition">OPERACIÓN ATLANTIS</h4>
+                        <h4 class="text-white font-bold text-lg leading-tight uppercase">OPERACIÓN ATLANTIS</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Testimonios de operaciones militares tácticas en Chile (Años 80).</p>
                     </div>
                 </div>
 
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-emerald-400 transition group ring-2 ring-emerald-950">
                     <div class="book-container">
-                        <img src="LuzYOscuridad.png" alt="Portada Entre la Luz y la Oscuridad" class="book-img border-emerald-900 border-2">
+                        <img src="LuzYOscuridad.jpg" alt="Portada Entre la Luz y la Oscuridad" class="book-img border-emerald-900 border-2">
                     </div>
                     <div class="p-5 pt-0 flex-grow bg-slate-900/50">
                         <h4 class="text-white font-bold text-lg leading-tight group-hover:text-emerald-300 transition">ENTRE LA LUZ Y LA OSCURIDAD</h4>
@@ -197,22 +188,20 @@
     <footer class="py-12 text-center border-t border-white/10 text-slate-400 text-sm">
         <p>&copy; 2026 AJVALENZ. Tecnología y Letras.</p>
     </footer>
-<script>
+
+    <script>
         const form = document.getElementById('form-contacto');
         form.addEventListener('submit', async function(event) {
-            event.preventDefault(); // Evita que te mande a la página fea de Formspree
-            
+            event.preventDefault(); 
             const data = new FormData(form);
-            
             try {
                 const response = await fetch(form.action, {
                     method: form.method,
                     body: data,
                     headers: { 'Accept': 'application/json' }
                 });
-                
                 if (response.ok) {
-                    form.reset(); // ¡Esta es la línea que limpia los cuadros de texto!
+                    form.reset(); 
                     alert("¡Mensaje enviado con éxito! Te contactaré a la brevedad.");
                 } else {
                     alert("Hubo un problema al enviar el mensaje. Intenta nuevamente.");
