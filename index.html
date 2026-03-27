@@ -24,7 +24,10 @@
         .logo-watermark { position: absolute; opacity: 0.06; pointer-events: none; z-index: -1; }
         .book-container { padding: 1rem; }
         .book-img { width: 100%; height: auto; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1); object-fit: contain; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; } /* Para que el menú deslice suavemente */
+        /* Estilos del formulario */
+        .input-form { background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 0.75rem; padding: 1rem; width: 100%; outline: none; transition: border-color 0.3s ease; }
+        .input-form:focus { border-color: #10b981; }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -42,7 +45,7 @@
             <div class="space-x-6 hidden md:block text-xs uppercase tracking-widest font-bold text-slate-200">
                 <a href="#proyectos" class="hover:text-accentEsmeralda transition">Software</a>
                 <a href="#libros" class="hover:text-accentEsmeralda transition">Escritor</a>
-                <a href="mailto:tu-correo@ejemplo.com?subject=Consulta%20desde%20Sitio%20Web" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full hover:bg-emerald-400 transition font-bold">Contacto</a>
+                <a href="#contacto" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full hover:bg-emerald-400 transition font-bold">Contacto</a>
             </div>
         </div>
     </nav>
@@ -105,9 +108,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col">
-                    <div class="book-container">
-                        <img src="EL ESPEJO DE ORION.jpg" alt="Orion" class="book-img">
-                    </div>
+                    <div class="book-container"><img src="EL ESPEJO DE ORION.jpg" alt="Orion" class="book-img"></div>
                     <div class="p-5 pt-0">
                         <h4 class="text-white font-bold text-lg leading-tight">EL ESPEJO DE ORIÓN</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Anomalía en la selva que revela nuestro origen estelar.</p>
@@ -115,9 +116,7 @@
                 </div>
 
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col">
-                    <div class="book-container">
-                        <img src="EL CODIGO DE LAS PLEYADES.png" alt="Pleyades" class="book-img">
-                    </div>
+                    <div class="book-container"><img src="EL CODIGO DE LAS PLEYADES.png" alt="Pleyades" class="book-img"></div>
                     <div class="p-5 pt-0">
                         <h4 class="text-white font-bold text-lg leading-tight">EL CÓDIGO DE LAS PLÉYADES</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Conspiración en el triángulo sobre Manhattan.</p>
@@ -125,9 +124,7 @@
                 </div>
 
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col">
-                    <div class="book-container">
-                        <img src="EL ECO DE LOS SEMBRADORES.png" alt="Sembradores" class="book-img">
-                    </div>
+                    <div class="book-container"><img src="EL ECO DE LOS SEMBRADORES.png" alt="Sembradores" class="book-img"></div>
                     <div class="p-5 pt-0">
                         <h4 class="text-white font-bold text-lg leading-tight">EL ECO DE LOS SEMBRADORES</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Crónicas de Alfa Centauri y el legado de los creadores.</p>
@@ -135,9 +132,7 @@
                 </div>
 
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col">
-                    <div class="book-container">
-                        <img src="OPERACION ATLANTIS.png" alt="Atlantis" class="book-img">
-                    </div>
+                    <div class="book-container"><img src="OPERACION ATLANTIS.png" alt="Atlantis" class="book-img"></div>
                     <div class="p-5 pt-0">
                         <h4 class="text-white font-bold text-lg leading-tight uppercase text-accentEsmeralda">OPERACIÓN ATLANTIS</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Testimonios militares sobre operaciones tácticas en Chile (Años 80).</p>
@@ -147,7 +142,38 @@
         </div>
     </section>
 
-    <footer class="py-12 text-center border-t border-white/10 text-slate-300 text-sm">
+    <section id="contacto" class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="glass-card p-10 md:p-16 rounded-3xl shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-accentEsmeralda/20 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="mb-10 text-center relative z-10">
+                <h2 class="text-4xl font-bold text-white mb-4">¿Iniciamos un Proyecto?</h2>
+                <p class="text-slate-300">Déjame un mensaje y te responderé a la brevedad.</p>
+            </div>
+
+            <form action="https://formspree.io/f/TU_ID_AQUI" method="POST" class="space-y-6 relative z-10">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-accentEsmeralda mb-2">Nombre</label>
+                        <input type="text" name="name" required placeholder="Tu nombre" class="input-form">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-accentEsmeralda mb-2">Email</label>
+                        <input type="email" name="email" required placeholder="tu@correo.com" class="input-form">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-accentEsmeralda mb-2">Mensaje</label>
+                    <textarea name="message" rows="4" required placeholder="¿En qué te puedo ayudar?" class="input-form resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-accentEsmeralda text-slate-900 font-bold text-lg py-4 rounded-xl hover:bg-emerald-400 transition shadow-lg shadow-emerald-900/20">
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center border-t border-white/10 text-slate-400 text-sm">
         <p>&copy; 2026 AJVALENZ. Tecnología y Letras.</p>
     </footer>
 
