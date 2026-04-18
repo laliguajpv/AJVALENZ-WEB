@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJVALENZ | Informática & Escritor</title>
+    <title>AJVALENZ | Informática, Escritor & Academia</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -20,7 +20,7 @@
     <style type="text/css">
         body { background-color: #334155; color: #f1f5f9; position: relative; min-height: 100vh; overflow-x: hidden; }
         .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
-        .glass-card:hover { border-color: #10b981; transform: translateY(-3px); }
+        .glass-card:hover { border-color: #10b981; transform: translateY(-3px); box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2); }
         .logo-watermark { position: absolute; opacity: 0.06; pointer-events: none; z-index: -1; }
         .book-container { padding: 1rem; }
         .book-img { width: 100%; height: auto; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1); object-fit: contain; }
@@ -32,8 +32,8 @@
 <body class="font-sans antialiased">
 
     <img src="logo.png" class="logo-watermark top-20 -left-20 w-80 rotate-12" alt="">
-    <img src="logo.png" class="logo-watermark top-1/2 -right-40 w-[500px] -rotate-12" alt="">
-    <img src="logo.png" class="logo-watermark bottom-20 left-1/3 w-64 rotate-45" alt="">
+    <img src="logo.png" class="logo-watermark top-1/3 -right-40 w-[500px] -rotate-12" alt="">
+    <img src="logo.png" class="logo-watermark bottom-40 left-1/4 w-64 rotate-45" alt="">
 
     <nav class="p-6 fixed top-0 w-full z-50 glass-card border-b border-white/10">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -44,172 +44,142 @@
             <div class="space-x-6 hidden md:block text-xs uppercase tracking-widest font-bold text-slate-200">
                 <a href="#proyectos" class="hover:text-accentEsmeralda transition">Software</a>
                 <a href="#libros" class="hover:text-accentEsmeralda transition">Escritor</a>
+                <a href="#cursos" class="hover:text-accentEsmeralda transition">Cursos</a>
                 <a href="#contacto" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full hover:bg-emerald-400 transition font-bold">Contacto</a>
             </div>
         </div>
     </nav>
 
     <header class="pt-48 pb-24 px-6 text-center max-w-6xl mx-auto">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-8 text-white drop-shadow-md">
-            Software <span class="text-accentEsmeralda">&</span> Seguridad
+        <h2 class="text-5xl md:text-7xl font-extrabold mb-8 text-white drop-shadow-md tracking-tight">
+            Tecnología, <span class="text-accentEsmeralda">Letras</span> & Conocimiento
         </h2>
-        <p class="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed font-medium">
-            Profesional informático con trayectoria en seguridad privada. Soluciones de código robusto y narrativa de investigación.
+        <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
+            Arquitecto de sistemas, escritor versátil y educador. Un portafolio donde el código robusto convive con la narrativa profunda.
         </p>
     </header>
 
-    <section id="proyectos" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="mb-12">
-            <h3 class="text-3xl font-bold text-white mb-2">Desarrollo de Software</h3>
-            <div class="h-1 w-20 bg-accentEsmeralda rounded-full"></div>
+    <section id="proyectos" class="py-20 px-6 max-w-7xl mx-auto relative z-10">
+        <div class="mb-12 flex flex-col items-center md:items-start text-center md:text-left">
+            <span class="text-accentEsmeralda font-mono mb-2 uppercase tracking-widest text-xs font-bold">Distrito Tecnológico</span>
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-2">Desarrollo de Software</h3>
+            <div class="h-1 w-20 bg-accentEsmeralda rounded-full mt-2 mx-auto md:mx-0"></div>
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-3xl shadow-xl">
-                <h4 class="text-xl font-bold mb-3 text-white">SaaS Seguridad</h4>
+            <div class="glass-card p-8 rounded-3xl shadow-xl group">
+                <h4 class="text-xl font-bold mb-3 text-white group-hover:text-accentEsmeralda transition">SaaS Seguridad</h4>
                 <p class="text-slate-200 text-sm mb-6">Control cloud de instalaciones y licencias dinámicas para seguridad privada.</p>
-                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/30 px-2 py-1 rounded tracking-tighter">SUPABASE • VERCEL</span>
+                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/40 px-3 py-1.5 rounded-full tracking-tighter">SUPABASE • VERCEL</span>
             </div>
-
-            <div class="glass-card p-8 rounded-3xl shadow-xl">
-                <h4 class="text-xl font-bold mb-3 text-white">MediSalud</h4>
+            <div class="glass-card p-8 rounded-3xl shadow-xl group">
+                <h4 class="text-xl font-bold mb-3 text-white group-hover:text-accentEsmeralda transition">MediSalud</h4>
                 <p class="text-slate-200 text-sm mb-6">Gestión operativa avanzada para centros de salud y atención clínica personalizada.</p>
-                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/30 px-2 py-1 rounded tracking-tighter">WEB APP • CLOUD</span>
+                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/40 px-3 py-1.5 rounded-full tracking-tighter">WEB APP • CLOUD</span>
             </div>
-
-            <div class="glass-card p-8 rounded-3xl shadow-xl">
-                <h4 class="text-xl font-bold mb-3 text-white">MiniAlmacén Pro</h4>
+            <div class="glass-card p-8 rounded-3xl shadow-xl group">
+                <h4 class="text-xl font-bold mb-3 text-white group-hover:text-accentEsmeralda transition">MiniAlmacén Pro</h4>
                 <p class="text-slate-200 text-sm mb-6">Inventario robusto en Python. Soporte Monocaja (Versión Multicaja en desarrollo).</p>
-                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/30 px-2 py-1 rounded tracking-tighter">PYTHON • SQLITE</span>
+                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/40 px-3 py-1.5 rounded-full tracking-tighter">PYTHON • SQLITE</span>
             </div>
-
-            <div class="glass-card p-8 rounded-3xl shadow-xl">
-                <h4 class="text-xl font-bold mb-3 text-white">Control Hrs Extras</h4>
+            <div class="glass-card p-8 rounded-3xl shadow-xl group">
+                <h4 class="text-xl font-bold mb-3 text-white group-hover:text-accentEsmeralda transition">Control Hrs Extras</h4>
                 <p class="text-slate-200 text-sm mb-6">Automatización y control de guardias mediante Google AppScript y Workspace.</p>
-                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/30 px-2 py-1 rounded tracking-tighter">APPSCRIPT • SHEETS</span>
+                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/40 px-3 py-1.5 rounded-full tracking-tighter">APPSCRIPT • SHEETS</span>
             </div>
-
-            <div class="glass-card p-8 rounded-3xl shadow-xl">
-                <h4 class="text-xl font-bold mb-3 text-white">POS & Inventario</h4>
+            <div class="glass-card p-8 rounded-3xl shadow-xl group">
+                <h4 class="text-xl font-bold mb-3 text-white group-hover:text-accentEsmeralda transition">POS & Inventario</h4>
                 <p class="text-slate-200 text-sm mb-6">Sistema punto de venta local con validación de seguridad por hardware (MAC Address).</p>
-                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/30 px-2 py-1 rounded tracking-tighter">LARAGON • PHP</span>
+                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/40 px-3 py-1.5 rounded-full tracking-tighter">LARAGON • PHP</span>
             </div>
         </div>
     </section>
 
-    <section id="libros" class="py-24 px-6 bg-slate-800/30 relative z-10">
+    <section id="libros" class="py-24 px-6 bg-slate-800/40 border-y border-white/5 relative z-10">
         <div class="max-w-7xl mx-auto relative z-10">
+            
             <div class="mb-16 text-center">
-                <h3 class="text-accentEsmeralda font-mono mb-2 uppercase tracking-widest font-bold">Autor & Escritor</h3>
-                <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Narrativa de Investigación y <span class="text-accentEsmeralda">Mundos Futuros</span></h2>
+                <span class="text-accentEsmeralda font-mono mb-2 uppercase tracking-widest text-xs font-bold">Distrito Literario</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">El Arte de las <span class="text-accentEsmeralda">Palabras</span></h2>
                 <div class="h-1 w-32 bg-accentEsmeralda mx-auto mt-6 rounded-full"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-                
+            <div class="mb-10 flex items-center gap-4">
+                <h3 class="text-2xl font-bold text-slate-200">Narrativa, Ciencia Ficción & Misterio</h3>
+                <div class="h-px flex-grow bg-slate-700/50"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-24">
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-accentEsmeralda transition group">
                     <div class="book-container"><img src="EL ESPEJO DE ORION.jpg" alt="Orion" class="book-img"></div>
                     <div class="p-5 pt-0 flex-grow">
-                        <h4 class="text-white font-bold text-lg leading-tight">EL ESPEJO DE ORIÓN</h4>
+                        <h4 class="text-white font-bold text-base leading-tight group-hover:text-accentEsmeralda transition">EL ESPEJO DE ORIÓN</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Anomalía en la selva que revela nuestro origen estelar.</p>
                     </div>
                 </div>
-
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-accentEsmeralda transition group">
                     <div class="book-container"><img src="EL CODIGO DE LAS PLEYADES.png" alt="Pleyades" class="book-img"></div>
                     <div class="p-5 pt-0 flex-grow">
-                        <h4 class="text-white font-bold text-lg leading-tight">EL CÓDIGO DE LAS PLÉYADES</h4>
+                        <h4 class="text-white font-bold text-base leading-tight group-hover:text-accentEsmeralda transition">EL CÓDIGO DE LAS PLÉYADES</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Conspiración en el triángulo sobre Manhattan.</p>
                     </div>
                 </div>
-
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-accentEsmeralda transition group">
                     <div class="book-container"><img src="EL ECO DE LOS SEMBRADORES.png" alt="Sembradores" class="book-img"></div>
                     <div class="p-5 pt-0 flex-grow">
-                        <h4 class="text-white font-bold text-lg leading-tight">EL ECO DE LOS SEMBRADORES</h4>
+                        <h4 class="text-white font-bold text-base leading-tight group-hover:text-accentEsmeralda transition">EL ECO DE LOS SEMBRADORES</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Crónicas de Alfa Centauri y el legado de los creadores.</p>
                     </div>
                 </div>
-
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-accentEsmeralda transition group">
                     <div class="book-container"><img src="OPERACION ATLANTIS.png" alt="Atlantis" class="book-img"></div>
                     <div class="p-5 pt-0 flex-grow">
-                        <h4 class="text-white font-bold text-lg leading-tight uppercase">OPERACIÓN ATLANTIS</h4>
+                        <h4 class="text-white font-bold text-base leading-tight uppercase group-hover:text-accentEsmeralda transition">OPERACIÓN ATLANTIS</h4>
                         <p class="text-slate-300 text-xs mt-2 italic">Testimonios de operaciones militares tácticas en Chile (Años 80).</p>
                     </div>
                 </div>
-
-                <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-emerald-400 transition group ring-2 ring-emerald-950">
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col hover:border-emerald-400 transition group ring-1 ring-emerald-900/50">
                     <div class="book-container">
                         <img src="LuzYOscuridad.png" alt="Portada Entre la Luz y la Oscuridad" class="book-img border-emerald-900 border-2">
                     </div>
-                    <div class="p-5 pt-0 flex-grow bg-slate-900/50">
-                        <h4 class="text-white font-bold text-lg leading-tight group-hover:text-emerald-300 transition">ENTRE LA LUZ Y LA OSCURIDAD</h4>
-                        <p class="text-slate-200 text-xs mt-2 italic font-medium leading-relaxed">Cuento basado en experiencias sobrenaturales reales. Un viaje autobiográfico sobre la dualidad humana y los seres guardianes que nos acompañan.</p>
-                        <span class="text-[10px] text-emerald-500 uppercase font-mono mt-4 block tracking-widest">Terror / Autobiográfico</span>
+                    <div class="p-5 pt-0 flex-grow bg-slate-900/30">
+                        <h4 class="text-white font-bold text-base leading-tight group-hover:text-emerald-300 transition">ENTRE LA LUZ Y LA OSCURIDAD</h4>
+                        <p class="text-slate-200 text-xs mt-2 italic font-medium">Viaje autobiográfico sobre la dualidad y los seres guardianes que nos acompañan.</p>
+                        <span class="text-[9px] text-emerald-500 uppercase font-mono mt-3 block tracking-widest">Terror / Autobiográfico</span>
                     </div>
                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="py-24 px-6 max-w-4xl mx-auto">
-        <div class="glass-card p-10 md:p-16 rounded-3xl shadow-2xl relative overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-64 h-64 bg-accentEsmeralda/20 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="mb-10 text-center relative z-10">
-                <h2 class="text-4xl font-bold text-white mb-4">¿Iniciamos un Proyecto?</h2>
-                <p class="text-slate-300">Déjame un mensaje y te responderé a la brevedad.</p>
             </div>
 
-            <form id="form-contacto" action="https://formspree.io/f/mbdplakn" method="POST" class="space-y-6 relative z-10">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-bold text-accentEsmeralda mb-2">Nombre</label>
-                        <input type="text" name="name" required placeholder="Tu nombre" class="input-form">
+            <div class="mb-10 flex items-center gap-4">
+                <h3 class="text-2xl font-bold text-slate-200">Colección Poética</h3>
+                <div class="h-px flex-grow bg-slate-700/50"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 max-w-4xl mx-auto gap-12">
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group border-slate-600/50 hover:border-amber-500/50 transition-all duration-300">
+                    <div class="book-container">
+                        <img src="Copilot_20260402_010925.jpg" alt="Historias de Amor Vol I" class="book-img shadow-2xl border-amber-900/30">
                     </div>
-                    <div>
-                        <label class="block text-sm font-bold text-accentEsmeralda mb-2">Email</label>
-                        <input type="email" name="email" required placeholder="tu@correo.com" class="input-form">
+                    <div class="p-6 pt-2 flex-grow text-center">
+                        <h4 class="text-white font-bold text-xl leading-tight group-hover:text-amber-400 transition">HISTORIAS DE AMOR</h4>
+                        <h5 class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-3">Volumen I</h5>
+                        <p class="text-slate-300 text-sm italic">Versos que exploran el inicio del romance, la melancolía bajo la lluvia y la fuerza indomable del corazón.</p>
+                        <span class="text-[10px] text-amber-600/80 uppercase font-mono mt-4 block tracking-widest border border-amber-600/30 rounded-full py-1 w-3/4 mx-auto">POESÍA / ROMANCE</span>
                     </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-bold text-accentEsmeralda mb-2">Mensaje</label>
-                    <textarea name="message" rows="4" required placeholder="¿En qué te puedo ayudar?" class="input-form resize-none"></textarea>
+
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group border-slate-600/50 hover:border-amber-500/50 transition-all duration-300">
+                    <div class="book-container">
+                        <img src="Copilot_20260402_002635.jpg" alt="Historias de Amor Vol II" class="book-img shadow-2xl border-amber-900/30">
+                    </div>
+                    <div class="p-6 pt-2 flex-grow text-center">
+                        <h4 class="text-white font-bold text-xl leading-tight group-hover:text-amber-400 transition">HISTORIAS DE AMOR</h4>
+                        <h5 class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-3">Volumen II</h5>
+                        <p class="text-slate-300 text-sm italic">La continuación del viaje emocional. Poemas que profundizan en el amor maduro, el tiempo y la esperanza.</p>
+                        <span class="text-[10px] text-amber-600/80 uppercase font-mono mt-4 block tracking-widest border border-amber-600/30 rounded-full py-1 w-3/4 mx-auto">POESÍA / ROMANCE</span>
+                    </div>
                 </div>
-                <button type="submit" class="w-full bg-accentEsmeralda text-slate-900 font-bold text-lg py-4 rounded-xl hover:bg-emerald-400 transition shadow-lg shadow-emerald-900/20">
-                    Enviar Mensaje
-                </button>
-            </form>
+            </div>
+
         </div>
     </section>
-
-    <footer class="py-12 text-center border-t border-white/10 text-slate-400 text-sm">
-        <p>&copy; 2026 AJVALENZ. Tecnología y Letras.</p>
-    </footer>
-
-    <script>
-        const form = document.getElementById('form-contacto');
-        form.addEventListener('submit', async function(event) {
-            event.preventDefault(); 
-            const data = new FormData(form);
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (response.ok) {
-                    form.reset(); 
-                    alert("¡Mensaje enviado con éxito! Te contactaré a la brevedad.");
-                } else {
-                    alert("Hubo un problema al enviar el mensaje. Intenta nuevamente.");
-                }
-            } catch (error) {
-                alert("Error de conexión. Verifica tu internet.");
-            }
-        });
-    </script>
-</body>
-</html>
