@@ -84,11 +84,13 @@
         const contenedor = document.getElementById('galeria-dinamica');
         
         // AQUÍ CONFIGURAS CUÁNTAS TIENES EN CADA CARPETA
-        const configuracion = [
-            { prefijo: 'paisaje', total: 100, carpeta: 'img/paisajes' },
-            { prefijo: 'luna', total: 50, carpeta: 'img/luna' },
-            { prefijo: 'flor', total: 80, carpeta: 'img/flores' },
-            { prefijo: 'varias', total: 170, carpeta: 'img/varias' }
+        // CONFIGURACIÓN ACTUALIZADA SEGÚN TUS CARPETAS REALES
+const configuracion = [
+    { prefijo: 'paisajes', total: 141, carpeta: 'img/PAISAJES' }, // Cambié a MAYÚSCULAS según tu captura
+    { prefijo: 'luna', total: 9, carpeta: 'img/LUNA' },
+    { prefijo: 'flores', total: 97, carpeta: 'img/FLORES' },
+    { prefijo: 'varias', total: 13, carpeta: 'img/VARIAS' }
+    { prefijo: 'atardeceres', total: 140, carpeta: 'img/ATARDECERES' }
         ];
 
         function mostrar(filtro) {
