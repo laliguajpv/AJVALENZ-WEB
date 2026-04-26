@@ -121,4 +121,117 @@
                 <div class="p-5 pt-2 flex-grow flex flex-col bg-slate-900/30">
                     <h4 class="text-white font-bold text-base leading-tight group-hover:text-emerald-300 transition">ENTRE LA LUZ Y LA OSCURIDAD</h4>
                     <p class="text-slate-200 text-xs mt-2 italic font-medium flex-grow">Viaje autobiográfico sobre la dualidad y guardianes.</p>
-                    <a href="#contacto" data-item="eBook: Entre la Luz y la Oscuridad" class="auto-fill-btn mt-4 block w-full text-center bg-emerald-500/10 border border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-slate-900 text-xs font-bold py-2 rounded
+                    <a href="#contacto" data-item="eBook: Entre la Luz y la Oscuridad" class="auto-fill-btn mt-4 block w-full text-center bg-emerald-500/10 border border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-slate-900 text-xs font-bold py-2 rounded-lg transition">Comprar eBook</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 px-6 max-w-7xl mx-auto relative z-10 mb-20">
+        <div class="mb-10 flex items-center gap-4">
+            <h3 class="text-2xl font-bold text-slate-200">Colección Poética</h3>
+            <div class="h-px flex-grow bg-slate-700/50"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 max-w-4xl mx-auto gap-12">
+            <div class="glass-card rounded-3xl overflow-hidden flex flex-col group border-slate-600/50 hover:border-amber-500/50 transition-all duration-300">
+                <div class="p-6 pb-2"><div class="aspect-[2/3] rounded-xl overflow-hidden shadow-2xl border border-amber-900/30 relative"><img src="Copilot_20260402_010925.png" alt="Historias de Amor Vol I" class="book-img w-full h-full object-cover"></div></div>
+                <div class="p-6 pt-2 flex-grow text-center flex flex-col">
+                    <h4 class="text-white font-bold text-xl leading-tight group-hover:text-amber-400 transition">HISTORIAS DE AMOR</h4>
+                    <h5 class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-3">Volumen I</h5>
+                    <p class="text-slate-300 text-sm italic flex-grow">Versos que exploran el inicio del romance, la melancolía bajo la lluvia y la fuerza indomable del corazón.</p>
+                    <a href="#contacto" data-item="eBook: Historias de Amor Vol. I" class="auto-fill-btn mt-6 block w-3/4 mx-auto text-center border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-slate-900 text-sm font-bold py-2 rounded-full transition">Comprar eBook</a>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl overflow-hidden flex flex-col group border-slate-600/50 hover:border-amber-500/50 transition-all duration-300">
+                <div class="p-6 pb-2"><div class="aspect-[2/3] rounded-xl overflow-hidden shadow-2xl border border-amber-900/30 relative"><img src="Copilot_20260402_002635.png" alt="Historias de Amor Vol II" class="book-img w-full h-full object-cover"></div></div>
+                <div class="p-6 pt-2 flex-grow text-center flex flex-col">
+                    <h4 class="text-white font-bold text-xl leading-tight group-hover:text-amber-400 transition">HISTORIAS DE AMOR</h4>
+                    <h5 class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-3">Volumen II</h5>
+                    <p class="text-slate-300 text-sm italic flex-grow">La continuación del viaje emocional. Poemas que profundizan en el amor maduro, el tiempo y la esperanza.</p>
+                    <a href="#contacto" data-item="eBook: Historias de Amor Vol. II" class="auto-fill-btn mt-6 block w-3/4 mx-auto text-center border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-slate-900 text-sm font-bold py-2 rounded-full transition">Comprar eBook</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 px-6 bg-slate-900/40 border-t border-white/5 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card p-10 md:p-16 rounded-3xl shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-accentEsmeralda/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="mb-10 text-center relative z-10">
+                    <h2 class="text-4xl font-bold text-white mb-4">¿Te interesa algún ejemplar?</h2>
+                    <p class="text-slate-300">Escríbeme para adquirir copias digitales o consultar por disponibilidad en formato físico.</p>
+                </div>
+                <form id="form-contacto" action="https://formspree.io/f/mbdplakn" method="POST" class="space-y-6 relative z-10">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-accentEsmeralda mb-2">Nombre</label>
+                            <input type="text" name="name" required placeholder="Tu nombre" class="input-form">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-accentEsmeralda mb-2">Email</label>
+                            <input type="email" name="email" required placeholder="tu@correo.com" class="input-form">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-accentEsmeralda mb-2">Mensaje</label>
+                        <textarea id="campo-mensaje" name="message" rows="4" required placeholder="¿Qué libro deseas adquirir?" class="input-form resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-accentEsmeralda text-slate-900 font-bold text-lg py-4 rounded-xl hover:bg-emerald-400 transition shadow-lg shadow-emerald-900/20">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-500 text-sm relative z-10 flex flex-col items-center">
+        <p>&copy; 2026 AJVALENZ.cl - Tecnología, Letras y Conocimiento.</p>
+        <div class="mt-6 flex flex-col items-center">
+            <span class="text-xs uppercase tracking-widest font-bold mb-2">Visitantes</span>
+            <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fajvalenz.cl&label=TOTAL&labelColor=%23334155&countColor=%2310b981" alt="Contador de visitas" class="pointer-events-none rounded shadow-lg opacity-80 hover:opacity-100 transition">
+        </div>
+    </footer>
+
+    <a href="https://wa.me/56975510325" target="_blank" class="wp-btn fixed bottom-6 right-6 bg-emerald-500 text-white p-4 rounded-full z-[100] shadow-lg">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.564 0 5.826-4.739 10.564-10.563 10.564z"/></svg>
+    </a>
+
+    <script>
+        // SEGURIDAD JS
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert("⚠️ El contenido y las portadas de este sitio están protegidos por derechos de autor.");
+        });
+        document.addEventListener('dragstart', function(e) { e.preventDefault(); });
+
+        // MANEJO DEL FORMULARIO Y AUTO-COMPLETADO
+        const form = document.getElementById('form-contacto');
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault(); 
+            const data = new FormData(form);
+            try {
+                const response = await fetch(form.action, { method: form.method, body: data, headers: { 'Accept': 'application/json' } });
+                if (response.ok) {
+                    form.reset(); 
+                    alert("¡Mensaje enviado con éxito! Te contactaré a la brevedad.");
+                } else {
+                    alert("Hubo un problema al enviar el mensaje. Intenta nuevamente.");
+                }
+            } catch (error) {
+                alert("Error de conexión. Verifica tu internet.");
+            }
+        });
+
+        document.querySelectorAll('.auto-fill-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const itemDeseado = this.getAttribute('data-item');
+                const campoMensaje = document.getElementById('campo-mensaje');
+                campoMensaje.value = `Hola AJVALENZ,\n\nMe interesa adquirir una copia de "${itemDeseado}".\n\n¿Cuáles son los pasos a seguir para la compra? Quedo atento.`;
+            });
+        });
+    </script>
+</body>
+</html>
