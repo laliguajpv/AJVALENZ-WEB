@@ -23,8 +23,14 @@
         .glass-card:hover { border-color: #10b981; transform: translateY(-3px); box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2); }
         .logo-watermark { position: absolute; opacity: 0.06; pointer-events: none; z-index: -1; }
         .book-container { padding: 1rem; }
-        .book-img { width: 100%; height: auto; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1); object-fit: contain; transition: transform 0.5s ease; }
-        .glass-card:hover .book-img { transform: scale(1.08); }
+        
+        /* Estilos para imágenes de libros y proyectos */
+        .book-img, .project-img { width: 100%; height: auto; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.5s ease; }
+        .project-img { object-fit: cover; aspect-ratio: 16/9; } /* Formato horizontal para capturas de software */
+        .book-img { object-fit: contain; } /* Formato portada para libros */
+        
+        .glass-card:hover .book-img, .glass-card:hover .project-img { transform: scale(1.05); }
+        
         html { scroll-behavior: smooth; }
         .input-form { background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 0.75rem; padding: 1rem; width: 100%; outline: none; transition: border-color 0.3s ease; }
         .input-form:focus { border-color: #10b981; }
@@ -102,7 +108,7 @@
                         <div class="text-slate-300 text-sm leading-relaxed space-y-4 text-justify font-medium">
                             <p>Nacido en <span class="font-bold text-white">La Ligua</span>, mi viaje literario comenzó en las aulas de mi adolescencia, donde descubrí que la escritura es el mejor acto de rescate para el mundo interior.</p>
                             <p>Como autor, he explorado desde la profundidad lírica de tres poemarios de amor hasta el suspenso y el terror autobiográfico, género que me abrió las puertas para ser publicado en <span class="font-bold text-white">Amazon</span> a través de una prestigiosa antología española.</p>
-                            <p>Muchas de mis historias—cargadas de mundos antiguos y tecnologías celestiales—nacen de visiones y sueños recurrentes. Para mí, la realidad a menudo no basta para contener lo que imaginamos; por eso, transformo esos ecos nocturnos en las semillas de mis libros.</p>
+                            <p>Muchas de mis historias—cargadas de mundos antiguos y tecnologías celestiales—nacen de visiones y sueños recurrentes. Para mí, la reality a menudo no basta para contener lo que imaginamos; por eso, transformo esos ecos nocturnos en las semillas de mis libros.</p>
                         </div>
                     </div>
                 </div>
@@ -151,13 +157,19 @@
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
             <div class="glass-card p-8 rounded-3xl shadow-xl group flex flex-col">
-                <h4 class="text-xl font-bold mb-3 text-white group-hover:text-accentEsmeralda transition">SaaS Seguridad</h4>
-                <p class="text-slate-200 text-sm mb-4 flex-grow">Control cloud de instalaciones y licencias dinámicas para seguridad privada.</p>
-                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/40 px-3 py-1.5 rounded-full tracking-tighter self-start mb-6">SUPABASE • VERCEL</span>
+                <div class="mb-6 overflow-hidden rounded-xl border border-white/10 shadow-lg">
+                    <img src="Copilot_20260425_002402.jpg" alt="Póster SIGES" class="project-img">
+                </div>
+                
+                <h4 class="text-2xl font-bold mb-3 text-white group-hover:text-accentEsmeralda transition tracking-tight">SIGES</h4>
+                <p class="text-slate-200 text-sm mb-4 flex-grow leading-relaxed">Sistema Integral de Gestión de Seguridad. Control centralizado de instalaciones, operaciones y licencias en la nube.</p>
+                <span class="text-xs font-mono text-accentEsmeralda bg-slate-900/40 px-3 py-1.5 rounded-full tracking-tighter self-start mb-6">SUPABASE • VERCEL • CLOUD</span>
+                
                 <div class="flex gap-3 mt-auto">
-                    <a href="#contacto" data-item="Software: SaaS Seguridad" class="auto-fill-btn flex-1 text-center bg-accentEsmeralda text-slate-900 text-sm font-bold py-2.5 rounded-xl hover:bg-emerald-400 transition">Cotizar</a>
-                    <a href="#contacto" data-item="Demo: SaaS Seguridad" class="auto-fill-btn flex-1 text-center border border-accentEsmeralda text-accentEsmeralda text-sm font-bold py-2.5 rounded-xl hover:bg-accentEsmeralda hover:text-slate-900 transition">Ver Demo</a>
+                    <a href="#contacto" data-item="Software: SIGES" class="auto-fill-btn flex-1 text-center bg-accentEsmeralda text-slate-900 text-sm font-bold py-2.5 rounded-xl hover:bg-emerald-400 transition">Cotizar</a>
+                    <a href="#contacto" data-item="Demo: SIGES" class="auto-fill-btn flex-1 text-center border border-accentEsmeralda text-accentEsmeralda text-sm font-bold py-2.5 rounded-xl hover:bg-accentEsmeralda hover:text-slate-900 transition">Ver Demo</a>
                 </div>
             </div>
 
