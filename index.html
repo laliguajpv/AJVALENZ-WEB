@@ -36,6 +36,15 @@
             100% { transform: translateY(0px); }
         }
         .wp-btn { animation: float-wp 3s ease-in-out infinite; }
+
+        /* --- INICIO SEGURIDAD AGREGADA (CSS) --- */
+        img {
+            -webkit-user-drag: none; /* Bloquea arrastrar en navegadores basados en WebKit (Chrome, Safari) */
+            user-drag: none; /* Bloquea arrastre estándar */
+            -webkit-touch-callout: none; /* Bloquea el menú emergente al mantener presionado en móviles iOS */
+            pointer-events: auto;
+        }
+        /* --- FIN SEGURIDAD AGREGADA --- */
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -347,6 +356,19 @@
     </a>
 
     <script>
+        // --- INICIO SEGURIDAD AGREGADA (JS) ---
+        // Bloquear clic derecho y mostrar alerta
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert("⚠️ Las imágenes y el contenido de este sitio están protegidos por derechos de autor.");
+        });
+
+        // Bloquear arrastre de elementos (drag and drop)
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+        // --- FIN SEGURIDAD AGREGADA ---
+
         const form = document.getElementById('form-contacto');
         form.addEventListener('submit', async function(event) {
             event.preventDefault(); 
