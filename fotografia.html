@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería Realista | AJVALENZ</title>
+    <title>Galería Fotográfica | AJVALENZ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -11,8 +11,8 @@
         }
     </script>
     <style>
-        body { background-color: #334155; color: #f1f5f9; min-height: 100vh; }
-        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+        body { background-color: #334155; color: #f1f5f9; min-height: 100vh; overflow-x: hidden; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; }
         .photo-container { overflow: hidden; border-radius: 1rem; aspect-ratio: 4/3; background: #1e293b; position: relative; }
         .photo-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .glass-card:hover .photo-img { transform: scale(1.05); }
@@ -46,20 +46,19 @@
             </p>
         </div>
 
-        <div class="inline-block bg-slate-800 border border-white/10 px-8 py-4 rounded-2xl">
+        <div class="inline-block bg-slate-800 border border-white/10 px-8 py-4 rounded-2xl mb-12">
             <p class="text-slate-400 text-sm uppercase tracking-widest">Valor Único por Licencia Digital</p>
             <p class="text-3xl font-bold text-white">$2.500 CLP <span class="text-sm text-slate-500">/ $3 USD</span></p>
         </div>
     </header>
 
-    <div class="flex flex-wrap justify-center gap-4 mb-12 px-6">
-        <button onclick="mostrar('todas')" class="px-6 py-2 rounded-full bg-accentEsmeralda text-slate-900 font-bold hover:scale-105 transition">Todas</button>
-        <button onclick="mostrar('paisaje')" class="px-6 py-2 rounded-full bg-slate-700 text-white hover:bg-accentEsmeralda hover:text-slate-900 transition">Paisajes</button>
-        <button onclick="mostrar('luna')" class="px-6 py-2 rounded-full bg-slate-700 text-white hover:bg-accentEsmeralda hover:text-slate-900 transition">Luna</button>
-        <button onclick="mostrar('flor')" class="px-6 py-2 rounded-full bg-slate-700 text-white hover:bg-accentEsmeralda hover:text-slate-900 transition">Flores</button>
-    </div>
+    <section class="px-6 max-w-7xl mx-auto mb-16">
+        <h3 class="text-center text-white text-xl font-bold mb-8 uppercase tracking-widest">Explora nuestras Galerías</h3>
+        <div id="portadas-categorias" class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            </div>
+    </section>
 
-    <section class="py-12 px-6 max-w-7xl mx-auto">
+    <section class="py-12 px-6 max-w-7xl mx-auto border-t border-white/5">
         <div id="galeria-dinamica" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
     </section>
@@ -68,59 +67,91 @@
         <div class="max-w-4xl mx-auto">
             <div class="glass-card p-10 rounded-3xl shadow-2xl">
                 <h2 class="text-3xl font-bold text-white mb-6 text-center">Adquirir Obra</h2>
-                <form action="https://formspree.io/f/TU_NUEVO_ID" method="POST" class="space-y-6">
+                <form action="https://formspree.io/f/mbdplakn" method="POST" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <input type="text" name="name" required placeholder="Tu nombre" class="input-form">
                         <input type="email" name="email" required placeholder="tu@correo.com" class="input-form">
                     </div>
-                    <textarea id="campo-mensaje" name="message" rows="4" required class="input-form"></textarea>
+                    <textarea id="campo-mensaje" name="message" rows="4" required class="input-form" placeholder="¿Qué fotografía te interesa?"></textarea>
                     <button type="submit" class="w-full bg-accentEsmeralda text-slate-900 font-bold text-lg py-4 rounded-xl hover:bg-emerald-400 transition">Enviar Solicitud</button>
                 </form>
             </div>
         </div>
     </section>
 
+    <footer class="py-12 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 AJVALENZ.cl - joseperezvalenzuela@ajvalenz.cl</p>
+    </footer>
+
     <script>
-        const contenedor = document.getElementById('galeria-dinamica');
+        const contenedorGaleria = document.getElementById('galeria-dinamica');
+        const contenedorPortadas = document.getElementById('portadas-categorias');
         
-        // AQUÍ CONFIGURAS CUÁNTAS TIENES EN CADA CARPETA
-        // CONFIGURACIÓN ACTUALIZADA SEGÚN TUS CARPETAS REALES
-const configuracion = [
-    { prefijo: 'paisajes', total: 141, carpeta: 'img/PAISAJES' }, // Cambié a MAYÚSCULAS según tu captura
-    { prefijo: 'luna', total: 9, carpeta: 'img/LUNA' },
-    { prefijo: 'flores', total: 97, carpeta: 'img/FLORES' },
-    { prefijo: 'varias', total: 13, carpeta: 'img/VARIAS' }
-    { prefijo: 'atardeceres', total: 140, carpeta: 'img/ATARDECERES' }
+        // DATOS EXACTOS DE TU CAPTURA Y TRANSCRIPCIÓN
+        const configuracion = [
+            { prefijo: 'paisajes', total: 141, carpeta: 'img/PAISAJES', label: 'PAISAJES' },
+            { prefijo: 'luna', total: 9, carpeta: 'img/LUNA', label: 'LUNA' },
+            { prefijo: 'flores', total: 97, carpeta: 'img/FLORES', label: 'FLORES' },
+            { prefijo: 'varias', total: 13, carpeta: 'img/VARIAS', label: 'VARIAS' },
+            { prefijo: 'atardeceres', total: 140, carpeta: 'img/ATARDECERES', label: 'ATARDECERES' }
         ];
 
-        function mostrar(filtro) {
-            contenedor.innerHTML = "";
+        // Función para crear las portadas (invitación)
+        function cargarPortadas() {
             configuracion.forEach(cat => {
-                if (filtro === 'todas' || filtro === cat.prefijo) {
-                    for (let i = 1; i <= cat.total; i++) {
-                        contenedor.innerHTML += `
-                            <div class="glass-card p-4 rounded-2xl shadow-xl group">
-                                <div class="photo-container">
-                                    <div class="absolute inset-0 z-10 cursor-pointer" onclick="seleccionar('${cat.prefijo} # ${i}')"></div>
-                                    <img src="${cat.carpeta}/${cat.prefijo}${i}.jpg" class="photo-img" loading="lazy">
-                                </div>
-                                <div class="mt-4 text-center">
-                                    <h4 class="text-lg font-bold text-white uppercase tracking-tighter">Obra ${cat.prefijo} ${i}</h4>
-                                    <button class="text-accentEsmeralda text-xs font-bold mt-2 hover:underline">SOLICITAR COPIA</button>
-                                </div>
-                            </div>
-                        `;
-                    }
-                }
+                contenedorPortadas.innerHTML += `
+                    <div onclick="mostrarGaleria('${cat.prefijo}')" class="glass-card p-2 rounded-2xl cursor-pointer hover:border-accentEsmeralda transition group">
+                        <div class="photo-container aspect-square mb-2">
+                            <img src="${cat.carpeta}/${cat.prefijo}1.jpg" class="photo-img" alt="${cat.label}">
+                        </div>
+                        <p class="text-center text-[10px] font-bold uppercase text-slate-300 group-hover:text-accentEsmeralda">${cat.label}</p>
+                    </div>
+                `;
             });
         }
 
+        // Función para mostrar la galería completa de una categoría
+        function mostrarGaleria(prefijo) {
+            const cat = configuracion.find(c => c.prefijo === prefijo);
+            if (!cat) return;
+
+            contenedorGaleria.innerHTML = ""; // Limpiar galería previa
+            
+            // Título de la sección
+            const header = document.createElement('div');
+            header.className = "col-span-full text-center mb-8";
+            header.innerHTML = `<h3 class="text-2xl font-bold text-accentEsmeralda uppercase tracking-widest">Galería: ${cat.label}</h3><p class="text-slate-400 text-sm">${cat.total} fotografías encontradas</p>`;
+            contenedorGaleria.appendChild(header);
+
+            for (let i = 1; i <= cat.total; i++) {
+                contenedorGaleria.innerHTML += `
+                    <div class="glass-card p-4 rounded-2xl shadow-xl group">
+                        <div class="photo-container">
+                            <div class="absolute inset-0 z-10 cursor-pointer" onclick="seleccionar('${cat.label} # ${i}')"></div>
+                            <img src="${cat.carpeta}/${cat.prefijo}${i}.jpg" class="photo-img" loading="lazy" alt="${cat.label} ${i}">
+                        </div>
+                        <div class="mt-4 text-center">
+                            <h4 class="text-sm font-bold text-white uppercase tracking-tighter">Obra ${i}</h4>
+                            <button class="text-accentEsmeralda text-[10px] font-bold mt-2 hover:underline">SOLICITAR COPIA</button>
+                        </div>
+                    </div>
+                `;
+            }
+            // Scroll suave hacia la galería
+            contenedorGaleria.scrollIntoView({ behavior: 'smooth' });
+        }
+
         function seleccionar(id) {
-            document.getElementById('campo-mensaje').value = `Hola AJVALENZ, me interesa adquirir la obra: ${id}.`;
+            document.getElementById('campo-mensaje').value = `Hola AJVALENZ, me interesa adquirir una copia digital de la obra: ${id}.`;
             window.location.href = '#contacto';
         }
 
-        mostrar('todas');
+        // Cargar portadas al iniciar
+        cargarPortadas();
+
+        // Seguridad
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('dragstart', e => e.preventDefault());
     </script>
 </body>
 </html>
