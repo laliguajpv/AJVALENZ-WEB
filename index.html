@@ -285,9 +285,8 @@
 <button onclick="toggleChat()" class="fixed bottom-6 right-24 bg-[#10b981] text-slate-900 p-4 rounded-full z-[100] shadow-lg hover:scale-110 transition active:scale-95 border-4 border-slate-700">
     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
 </button>
-
-    <script>
-    // 1. Limpiamos la clave de cualquier espacio accidental
+<script>
+    // 1. Limpiamos la clave (asegúrate de que sea la misma que creaste)
     const API_KEY = "AIzaSyAhH5OmUI3vCmsoIjp7CohywcNpM0WbGjs".trim(); 
     
     const messagesContainer = document.getElementById('chat-messages');
@@ -309,17 +308,18 @@
         appendMessage("Escribiendo...", 'ai', loadingId);
 
         try {
-            // CAMBIO CLAVE: Usamos la versión 'v1' que es la más estable hoy
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
+            // VOLVEMOS A v1beta: Es la única que soporta 'gemini-1.5-flash' actualmente
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+            
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     contents: [{ 
                         parts: [{ 
-                            text: `Eres el asistente oficial de AJVALENZ.cl. 
-                            Responde de forma breve, profesional y con chispa chilena. 
-                            Conoces SIGES, MediSalud, H.E. GGSS PRO y las fotos de $2.500.
-                            Pregunta: ${text}` 
+                            text: `Actúa como el asistente de AJVALENZ.cl. 
+                            Información: Software SIGES, MediSalud, H.E. GGSS PRO, y fotos a $2.500. 
+                            Responde corto y amable. Pregunta: ${text}` 
                         }] 
                     }]
                 })
@@ -327,17 +327,22 @@
 
             const data = await response.json();
             
-            // Si Google responde con un error, lo mostramos para saber qué pasa
+            // Si Google nos manda un error, lo vemos aquí
             if (data.error) {
-                document.getElementById(loadingId).innerText = "Google dice: " + data.error.message;
+                console.error("Detalle del error:", data.error);
+                document.getElementById(loadingId).innerText = "Aviso: " + data.error.message;
                 return;
             }
 
-            const aiText = data.candidates[0].content.parts[0].text;
-            document.getElementById(loadingId).innerText = aiText;
+            if (data.candidates && data.candidates[0].content) {
+                const aiText = data.candidates[0].content.parts[0].text;
+                document.getElementById(loadingId).innerText = aiText;
+            } else {
+                document.getElementById(loadingId).innerText = "No obtuve respuesta, intenta de nuevo.";
+            }
 
         } catch (error) {
-            document.getElementById(loadingId).innerText = "Error de conexión. Revisa tu internet o la API KEY.";
+            document.getElementById(loadingId).innerText = "Pucha, hay un problema de conexión. Revisa la consola.";
         }
     }
 
@@ -354,5 +359,5 @@
 
     chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(); });
 </script>
-   </body>
+       </body>
 </html>
