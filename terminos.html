@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones | AJVALENZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { customBlue: '#334155', accentEsmeralda: '#10b981' } } }
+        }
+    </script>
+    <style>
+        body { background-color: #334155; color: #f1f5f9; min-height: 100vh; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); }
+        section { line-height: 1.8; }
+        h3 { color: #10b981; margin-top: 2rem; margin-bottom: 1rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <nav class="p-6 glass-card border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="h-8 w-auto"> 
+                <span class="text-xl font-bold text-white uppercase">AJ<span class="text-accentEsmeralda">VALENZ</span></span>
+            </a>
+            <a href="index.html" class="text-xs font-bold uppercase text-slate-400 hover:text-accentEsmeralda transition">Volver al Inicio</a>
+        </div>
+    </nav>
+
+    <main class="pt-20 pb-24 px-6 max-w-4xl mx-auto">
+        <div class="glass-card p-10 md:p-16 rounded-3xl shadow-2xl">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight text-center">Términos, Condiciones y <span class="text-accentEsmeralda">Licencia de Uso</span></h2>
+            <p class="text-slate-400 text-center mb-12 italic">Versión oficial 1.0 - Abril 2026</p>
+
+            <div class="space-y-8 text-slate-200">
+                
+                <section>
+                    <h3>1. Declaración General</h3>
+                    <p>El presente documento regula el uso de los servicios y productos digitales ofrecidos por <strong>AJVALENZ</strong> a través del sitio <strong>ajvalenz.cl</strong>. Al navegar o adquirir cualquier producto, el usuario acepta estos términos de forma irrevocable.</p>
+                </section>
+
+                <section>
+                    <h3>2. Propiedad Intelectual y Protección de Contenido</h3>
+                    <p>Todo el material gráfico, códigos de programación y textos son propiedad exclusiva de AJVALENZ bajo la <strong>Ley 17.336 (Chile)</strong>.</p>
+                    <ul class="list-disc ml-6 mt-4 space-y-2 text-slate-300">
+                        <li><strong>Fotografías:</strong> Queda prohibida la reproducción, descarga no autorizada, capturas de pantalla (screenshots) o técnicas de <i>scraping</i>. Cada imagen está protegida y su uso sin licencia facultará al Autor para ejercer acciones civiles y criminales.</li>
+                        <li><strong>Software:</strong> Los sistemas expuestos son creaciones originales. El uso indebido de la marca o la copia de la lógica de negocio será perseguido legalmente.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>3. Licencias de Software y Venta de Código Fuente</h3>
+                    <p>AJVALENZ ofrece dos modalidades de adquisición para sus desarrollos:</p>
+                    <div class="grid md:grid-cols-2 gap-6 mt-4">
+                        <div class="bg-slate-900/40 p-4 rounded-xl border border-white/5">
+                            <p class="font-bold text-white mb-2 italic">Licencia de Uso Estándar</p>
+                            <p class="text-xs text-slate-400">Otorga el derecho a usar el software en su formato ejecutable. No permite ver ni modificar la "receta" (código fuente).</p>
+                        </div>
+                        <div class="bg-accentEsmeralda/10 p-4 rounded-xl border border-accentEsmeralda/30">
+                            <p class="font-bold text-accentEsmeralda mb-2 italic">Venta de Código Fuente</p>
+                            <p class="text-xs text-slate-200">Disponible bajo solicitud expresa. Requiere un <strong>pago adicional único y diferenciado</strong>. Otorga al cliente la propiedad del código para modificaciones propias, manteniendo los derechos morales el Autor original.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>4. Servicios de Diseño Web</h3>
+                    <p>Los proyectos de desarrollo de sitios web se rigen por presupuestos individuales. AJVALENZ garantiza la entrega de un producto funcional, pero se reserva la propiedad de las librerías propietarias desarrolladas internamente, salvo acuerdo de transferencia total.</p>
+                </section>
+
+                <section>
+                    <h3>5. Pagos, Impuestos y Envíos</h3>
+                    <p>Las transacciones se realizan mediante plataformas seguras (Flow, Mercado Pago o PayPal). AJVALENZ no almacena información bancaria. Los precios pueden variar según la carga impositiva vigente exigida por el <strong>Servicio de Impuestos Internos (SII)</strong>.</p>
+                </section>
+
+                <section>
+                    <h3>6. Jurisdicción</h3>
+                    <p>Cualquier disputa legal relacionada con el contenido de este sitio o los productos adquiridos se someterá exclusivamente a la jurisdicción de los <strong>Tribunales de Justicia de Santiago de Chile</strong>.</p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 text-center text-slate-500 text-xs">
+        <p>© 2026 AJVALENZ.cl - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
