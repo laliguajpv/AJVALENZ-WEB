@@ -18,6 +18,8 @@
         .glass-card:hover .photo-img { transform: scale(1.05); }
         .input-form { background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 0.75rem; padding: 1rem; width: 100%; outline: none; }
         html { scroll-behavior: smooth; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -25,7 +27,7 @@
     <nav class="p-6 fixed top-0 w-full z-50 glass-card border-b border-white/10 h-auto">
         <div class="max-w-7xl mx-auto flex justify-between items-center w-full">
             <a href="index.html" class="flex items-center gap-3">
-                <img src="logo.png" alt="Logo" class="h-10 w-auto"> 
+                <img src="logo.png" alt="Logo" class="h-10 w-auto" onerror="this.src='https://via.placeholder.com/40?text=AJ';"> 
                 <h1 class="text-xl font-bold text-white uppercase tracking-tight">AJ<span class="text-accentEsmeralda">VALENZ</span></h1>
             </a>
             <div class="space-x-6 hidden md:block text-xs uppercase tracking-widest font-bold text-slate-200">
@@ -36,11 +38,11 @@
         </div>
     </nav>
 
-    <header class="pt-44 pb-12 px-6 text-center max-w-5xl mx-auto">
+    <header class="pt-44 pb-12 px-6 text-center max-w-5xl mx-auto relative z-10">
         <span class="text-accentEsmeralda font-mono mb-2 uppercase tracking-widest text-sm font-bold">Realidad sin Filtros</span>
         <h2 class="text-4xl md:text-6xl font-extrabold mb-8 text-white tracking-tight">Capturas <span class="text-accentEsmeralda">Espontáneas</span></h2>
         
-        <div class="glass-card p-8 rounded-3xl mb-8 border-l-4 border-l-accentEsmeralda text-left">
+        <div class="glass-card p-8 rounded-3xl mb-8 border-l-4 border-l-accentEsmeralda text-left h-auto relative overflow-hidden">
             <p class="text-xl text-slate-200 leading-relaxed italic">
                 "Esta no es una galería retocada. Cada imagen aquí es un fragmento de tiempo capturado de forma <strong>amateur y espontánea</strong>, directamente desde el lente de mi celular. Sin ediciones, sin trucos de estudio; solo la belleza de lo auténtico tal cual sucedió ante mis ojos."
             </p>
@@ -52,34 +54,34 @@
         </div>
     </header>
 
-    <section class="px-6 max-w-7xl mx-auto mb-16">
+    <section class="px-6 max-w-7xl mx-auto mb-16 relative z-10">
         <h3 class="text-center text-white text-xl font-bold mb-8 uppercase tracking-widest">Explora nuestras Galerías</h3>
         <div id="portadas-categorias" class="grid grid-cols-2 md:grid-cols-5 gap-4">
             </div>
     </section>
 
-    <section class="py-12 px-6 max-w-7xl mx-auto border-t border-white/5">
+    <section class="py-12 px-6 max-w-7xl mx-auto border-t border-white/5 relative z-10 fade-in">
         <div id="galeria-dinamica" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
     </section>
 
-    <section id="contacto" class="py-24 px-6 bg-slate-900/40 border-t border-white/5">
+    <section id="contacto" class="py-24 px-6 bg-slate-900/40 border-t border-white/5 relative z-10 mt-20">
         <div class="max-w-4xl mx-auto">
-            <div class="glass-card p-10 rounded-3xl shadow-2xl">
-                <h2 class="text-3xl font-bold text-white mb-6 text-center">Adquirir Obra</h2>
-                <form action="https://formspree.io/f/mbdplakn" method="POST" class="space-y-6">
+            <div class="glass-card p-10 md:p-16 rounded-3xl shadow-2xl relative overflow-hidden">
+                <h2 class="text-3xl font-bold text-white mb-6 text-center z-10 relative">Adquirir Obra</h2>
+                <form action="https://formspree.io/f/mbdplakn" method="POST" class="space-y-6 z-10 relative">
                     <div class="grid md:grid-cols-2 gap-6">
                         <input type="text" name="name" required placeholder="Tu nombre" class="input-form">
                         <input type="email" name="email" required placeholder="tu@correo.com" class="input-form">
                     </div>
-                    <textarea id="campo-mensaje" name="message" rows="4" required class="input-form" placeholder="¿Qué fotografía te interesa?"></textarea>
-                    <button type="submit" class="w-full bg-accentEsmeralda text-slate-900 font-bold text-lg py-4 rounded-xl hover:bg-emerald-400 transition">Enviar Solicitud</button>
+                    <textarea id="campo-mensaje" name="message" rows="4" required class="input-formresize-none" placeholder="¿Qué fotografía te interesa?"></textarea>
+                    <button type="submit" class="w-full bg-accentEsmeralda text-slate-900 font-bold text-lg py-4 rounded-xl hover:bg-emerald-400 transition hover:scale-105 transition">Enviar Solicitud</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-slate-500 text-sm">
+    <footer class="py-12 text-center text-slate-500 text-sm relative z-10">
         <p>&copy; 2026 AJVALENZ.cl - joseperezvalenzuela@ajvalenz.cl</p>
     </footer>
 
@@ -87,63 +89,70 @@
         const contenedorGaleria = document.getElementById('galeria-dinamica');
         const contenedorPortadas = document.getElementById('portadas-categorias');
         
-        // DATOS EXACTOS DE TU CAPTURA Y TRANSCRIPCIÓN
+        // DATOS EXACTOS DE TU TRANSCRIPCIÓN
         const configuracion = [
-            { prefijo: 'paisajes', total: 141, carpeta: 'img/PAISAJES', label: 'PAISAJES' },
-            { prefijo: 'luna', total: 9, carpeta: 'img/LUNA', label: 'LUNA' },
-            { prefijo: 'flores', total: 97, carpeta: 'img/FLORES', label: 'FLORES' },
-            { prefijo: 'varias', total: 13, carpeta: 'img/VARIAS', label: 'VARIAS' },
-            { prefijo: 'atardeceres', total: 140, carpeta: 'img/ATARDECERES', label: 'ATARDECERES' }
+            { id: 'paisajes', prefijo: 'paisajes', total: 141, carpeta: 'img/PAISAJES', label: 'PAISAJES' },
+            { id: 'luna', prefijo: 'luna', total: 9, carpeta: 'img/LUNA', label: 'LUNA' },
+            { id: 'flores', prefijo: 'flores', total: 97, carpeta: 'img/FLORES', label: 'FLORES' },
+            { id: 'varias', prefijo: 'varias', total: 13, carpeta: 'img/VARIAS', label: 'VARIAS' },
+            { id: 'atardeceres', prefijo: 'atardeceres', total: 140, carpeta: 'img/ATARDECERES', label: 'ATARDECERES' }
         ];
 
-        // Función para crear las portadas (invitación)
+        // Función para crear las portadas (invitación) robusta
         function cargarPortadas() {
+            contenedorPortadas.innerHTML = "";
             configuracion.forEach(cat => {
+                const srcFirstPhoto = `${cat.carpeta}/${cat.prefijo}1.jpg`; // Ruta corregida
                 contenedorPortadas.innerHTML += `
-                    <div onclick="mostrarGaleria('${cat.prefijo}')" class="glass-card p-2 rounded-2xl cursor-pointer hover:border-accentEsmeralda transition group">
-                        <div class="photo-container aspect-square mb-2">
-                            <img src="${cat.carpeta}/${cat.prefijo}1.jpg" class="photo-img" alt="${cat.label}">
+                    <div onclick="mostrarGaleria('${cat.id}')" class="glass-card p-3 rounded-2xl cursor-pointer hover:border-accentEsmeralda transition group flex flex-col items-center">
+                        <div class="photo-container aspect-square mb-3 w-full">
+                            <img src="${srcFirstPhoto}" class="photo-img" alt="Portada ${cat.label}" onerror="this.src='https://via.placeholder.com/300x225?text=${cat.label}'; this.classList.add('opacity-50');">
                         </div>
-                        <p class="text-center text-[10px] font-bold uppercase text-slate-300 group-hover:text-accentEsmeralda">${cat.label}</p>
+                        <p class="text-center text-[10px] font-bold uppercase text-slate-300 group-hover:text-accentEsmeralda tracking-widest">${cat.label}</p>
                     </div>
                 `;
             });
         }
 
-        // Función para mostrar la galería completa de una categoría
-        function mostrarGaleria(prefijo) {
-            const cat = configuracion.find(c => c.prefijo === prefijo);
+        // Función para mostrar la galería completa de una categoría robusta
+        function mostrarGaleria(idCategoria) {
+            const cat = configuracion.find(c => c.id === idCategoria);
             if (!cat) return;
 
             contenedorGaleria.innerHTML = ""; // Limpiar galería previa
             
             // Título de la sección
             const header = document.createElement('div');
-            header.className = "col-span-full text-center mb-8";
-            header.innerHTML = `<h3 class="text-2xl font-bold text-accentEsmeralda uppercase tracking-widest">Galería: ${cat.label}</h3><p class="text-slate-400 text-sm">${cat.total} fotografías encontradas</p>`;
+            header.className = "col-span-full text-center mb-12 fade-in";
+            header.innerHTML = `<h3 class="text-2xl font-bold text-accentEsmeralda uppercase tracking-widest">Galería: ${cat.label}</h3><p class="text-slate-400 text-sm italic mt-1">${cat.total} capturas espontáneas</p>`;
             contenedorGaleria.appendChild(header);
 
             for (let i = 1; i <= cat.total; i++) {
-                contenedorGaleria.innerHTML += `
-                    <div class="glass-card p-4 rounded-2xl shadow-xl group">
+                const srcPhoto = `${cat.carpeta}/${cat.prefijo}${i}.jpg`; // Ruta corregida
+                const card = `
+                    <div class="glass-card p-5 rounded-2xl shadow-xl group flex flex-col fade-in">
                         <div class="photo-container">
                             <div class="absolute inset-0 z-10 cursor-pointer" onclick="seleccionar('${cat.label} # ${i}')"></div>
-                            <img src="${cat.carpeta}/${cat.prefijo}${i}.jpg" class="photo-img" loading="lazy" alt="${cat.label} ${i}">
+                            <img src="${srcPhoto}" class="photo-img" loading="lazy" alt="${cat.label} ${i}" onerror="this.src='https://via.placeholder.com/300x225?text=AJV'; this.classList.add('opacity-30');">
                         </div>
-                        <div class="mt-4 text-center">
+                        <div class="mt-5 text-center mt-auto">
                             <h4 class="text-sm font-bold text-white uppercase tracking-tighter">Obra ${i}</h4>
-                            <button class="text-accentEsmeralda text-[10px] font-bold mt-2 hover:underline">SOLICITAR COPIA</button>
+                            <button class="text-accentEsmeralda text-[10px] font-bold mt-2 hover:underline hover:scale-105 transition">SOLICITAR COPIA</button>
                         </div>
                     </div>
                 `;
+                contenedorGaleria.innerHTML += card;
             }
             // Scroll suave hacia la galería
-            contenedorGaleria.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                contenedorGaleria.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
         }
 
         function seleccionar(id) {
             document.getElementById('campo-mensaje').value = `Hola AJVALENZ, me interesa adquirir una copia digital de la obra: ${id}.`;
-            window.location.href = '#contacto';
+            // Scroll suave al contacto
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
         }
 
         // Cargar portadas al iniciar
