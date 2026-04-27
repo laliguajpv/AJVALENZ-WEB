@@ -286,9 +286,9 @@
     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
 </button>
 
-<script>
-    // --- AQUÍ PEGAS TU LLAVE ---
-    const API_KEY = "AIzaSyAhH5OmUI3vCmsoIjp7CohywcNpM0WbGjs"; 
+    <script>
+    // 1. Limpiamos la clave de cualquier espacio accidental
+    const API_KEY = "AIzaSyAhH5OmUI3vCmsoIjp7CohywcNpM0WbGjs".trim(); 
     
     const messagesContainer = document.getElementById('chat-messages');
     const chatInput = document.getElementById('chat-input');
@@ -302,43 +302,42 @@
         const text = chatInput.value.trim();
         if (!text) return;
 
-        // Mostrar mensaje del usuario en pantalla
         appendMessage(text, 'user');
         chatInput.value = '';
 
-        // Crear un mensaje temporal de "pensando..."
         const loadingId = Date.now();
         appendMessage("Escribiendo...", 'ai', loadingId);
 
         try {
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
+            // CAMBIO CLAVE: Usamos la versión 'v1' que es la más estable hoy
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     contents: [{ 
                         parts: [{ 
-                            text: `Actúa como el asistente oficial de AJVALENZ.cl. 
-                            Tu nombre es 'Asistente AJVALENZ'. 
-                            Información importante: 
-                            - Vendemos Software: SIGES (Gestión de Seguridad), MediSalud (Clínicas), H.E. GGSS PRO (Horas Extras), MiniAlmacén Pro.
-                            - Vendemos Fotografías AMATEUR a $2.500 CLP.
-                            - Ofrecemos servicios de Diseño Web.
-                            - El dueño es José Antonio Pérez Valenzuela.
-                            Responde de forma profesional, breve y con modismos chilenos sutiles (ej: 'impeque', 'claro que sí'). 
-                            Pregunta del usuario: ${text}` 
+                            text: `Eres el asistente oficial de AJVALENZ.cl. 
+                            Responde de forma breve, profesional y con chispa chilena. 
+                            Conoces SIGES, MediSalud, H.E. GGSS PRO y las fotos de $2.500.
+                            Pregunta: ${text}` 
                         }] 
                     }]
                 })
             });
 
             const data = await response.json();
-            const aiText = data.candidates[0].content.parts[0].text;
             
-            // Reemplazar el "escribiendo..." con la respuesta real
+            // Si Google responde con un error, lo mostramos para saber qué pasa
+            if (data.error) {
+                document.getElementById(loadingId).innerText = "Google dice: " + data.error.message;
+                return;
+            }
+
+            const aiText = data.candidates[0].content.parts[0].text;
             document.getElementById(loadingId).innerText = aiText;
 
         } catch (error) {
-            document.getElementById(loadingId).innerText = "Pucha, tuve un problema de conexión. ¿Me repites la pregunta?";
+            document.getElementById(loadingId).innerText = "Error de conexión. Revisa tu internet o la API KEY.";
         }
     }
 
@@ -346,15 +345,14 @@
         const div = document.createElement('div');
         if(id) div.id = id;
         div.className = sender === 'user' 
-            ? 'bg-slate-700 p-3 rounded-2xl rounded-tr-none text-white self-end ml-12 border border-white/5 shadow-md'
-            : 'bg-[#10b981]/20 p-3 rounded-2xl rounded-tl-none text-slate-200 mr-12 border border-white/5 shadow-md';
+            ? 'bg-slate-700 p-3 rounded-2xl rounded-tr-none text-white self-end ml-12 border border-white/5 shadow-md mb-2'
+            : 'bg-[#10b981]/20 p-3 rounded-2xl rounded-tl-none text-slate-200 mr-12 border border-white/5 shadow-md mb-2';
         div.innerText = text;
         messagesContainer.appendChild(div);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
-    // Permitir enviar con la tecla Enter
     chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(); });
 </script>
-</body>
+   </body>
 </html>
