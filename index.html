@@ -286,7 +286,7 @@
     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
 </button>
 <script>
-    // 1. Tu llave (sin espacios)
+    // 1. Pega aquí tu clave (sin espacios)
     const API_KEY = "AIzaSyAhH5OmUI3vCmsoIjp7CohywcNpM0WbGjs".trim(); 
     
     const messagesContainer = document.getElementById('chat-messages');
@@ -308,8 +308,9 @@
         appendMessage("Escribiendo...", 'ai', loadingId);
 
         try {
-            // CAMBIO MAESTRO: gemini-3-flash es el modelo de tu AI Studio (2026)
-            const url = `https://generativelanguage.googleapis.com/v1/models/gemini-3-flash:generateContent?key=${API_KEY}`;
+            // USAMOS EL MODELO EXACTO QUE ENCONTRASTE: gemini-3-flash-preview
+            // Y la ruta v1beta que es donde viven los modelos preview
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`;
             
             const response = await fetch(url, {
                 method: 'POST',
@@ -318,9 +319,9 @@
                     contents: [{ 
                         parts: [{ 
                             text: `Eres el asistente experto de AJVALENZ.cl. 
-                            Responde corto y con estilo chileno. 
-                            Info: SIGES, MediSalud, H.E. GGSS PRO y fotos a $2.500. 
-                            Pregunta: ${text}` 
+                            Información: Software SIGES, MediSalud, H.E. GGSS PRO, y fotos a $2.500. 
+                            Responde de forma profesional y amable en español de Chile. 
+                            Pregunta del usuario: ${text}` 
                         }] 
                     }]
                 })
@@ -328,18 +329,14 @@
 
             const data = await response.json();
             
-            // Si hay error de Google, lo vemos directo en el chat para no adivinar
             if (data.error) {
-                document.getElementById(loadingId).innerText = "Aviso Google: " + data.error.message;
+                document.getElementById(loadingId).innerText = "Aviso: " + data.error.message;
                 return;
             }
 
-            if (data.candidates && data.candidates[0].content) {
-                const aiText = data.candidates[0].content.parts[0].text;
-                document.getElementById(loadingId).innerText = aiText;
-            } else {
-                document.getElementById(loadingId).innerText = "No obtuve respuesta del cerebro. Reintenta.";
-            }
+            // Extraemos la respuesta de la estructura de Google
+            const aiText = data.candidates[0].content.parts[0].text;
+            document.getElementById(loadingId).innerText = aiText;
 
         } catch (error) {
             document.getElementById(loadingId).innerText = "Pucha, hay un atado de conexión. Revisa la consola.";
