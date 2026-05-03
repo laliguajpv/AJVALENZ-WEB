@@ -139,66 +139,72 @@
 
             </div>
         </div>
-    </section>
     <!-- ============================================= -->
-    <!-- SECCIÓN: INSPIRACIÓN & ORÍGENES (PUNTO 2) -->
+    <!-- SECCIÓN: BITÁCORA DE EXPERIENCIAS (PUNTO 2) -->
     <!-- ============================================= -->
-    <section id="origenes" class="py-24 px-6 max-w-7xl mx-auto relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+    <section id="bitacora-viva" class="py-24 px-6 max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 h-[600px]">
             
-            <!-- Columna Izquierda: El Génesis del Software -->
-            <div class="glass-card p-10 rounded-[40px] border-l-8 border-accentEsmeralda shadow-2xl relative overflow-hidden">
-                <!-- Adorno de fondo -->
-                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-accentEsmeralda/5 rounded-full blur-2xl"></div>
-                
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="p-3 bg-accentEsmeralda/20 rounded-2xl">
-                        <svg class="w-8 h-8 text-accentEsmeralda" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.364-6.364l-.707-.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M12 21V3"></path></svg>
+            <!-- COLUMNA IZQUIERDA: LÓGICA & SOFTWARE (Fondo Blanco/Terminal) -->
+            <div class="flex flex-col bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-accentEsmeralda">
+                <div class="bg-accentEsmeralda p-4 flex justify-between items-center">
+                    <span class="text-slate-900 font-black uppercase tracking-tighter text-sm">/var/log/ajvalenz_software.sh</span>
+                    <div class="flex gap-1">
+                        <div class="w-3 h-3 rounded-full bg-slate-900/20"></div>
+                        <div class="w-3 h-3 rounded-full bg-slate-900/20"></div>
                     </div>
-                    <h3 class="text-3xl font-bold text-white uppercase tracking-tighter">Génesis del <span class="text-accentEsmeralda">Software</span></h3>
                 </div>
+                
+                <!-- ESTE ES EL RECTÁNGULO DONDE NARRAS -->
+                <div id="feed-software" class="flex-grow p-6 overflow-y-auto custom-scrollbar bg-slate-50 space-y-4">
+                    <!-- Ejemplo de cómo agregarías líneas tú mismo -->
+                    <div class="border-l-2 border-accentEsmeralda pl-4 py-1">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase">2026-05-02 10:15 AM</span>
+                        <p class="text-slate-700 font-mono text-sm">Iniciando depuración del módulo SIGES en Rapa Nui. La latencia de la red me obliga a repensar el almacenamiento local...</p>
+                    </div>
 
-                <div class="space-y-6 text-slate-300 leading-relaxed text-justify italic font-medium">
-                    <p class="border-b border-white/5 pb-4">
-                        "Mis ideas para sistemas como SIGES o MediSalud no nacen frente a un monitor, sino en el terreno. Surgen de la observación crítica de los problemas cotidianos en la minería, los hospitales y las industrias que he liderado."
-                    </p>
-                    <p class="border-b border-white/5 pb-4">
-                        "Cada software es una respuesta a una ineficiencia detectada. Para mí, programar es un acto de orden: transformar el caos operativo en una interfaz fluida que dé seguridad al usuario."
-                    </p>
-                    <p>
-                        "La motivación es simple: si hay un proceso que puede ser más seguro y rápido, hay un software AJVALENZ esperando ser escrito."
-                    </p>
+                    <div class="border-l-2 border-accentEsmeralda pl-4 py-1">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase">2026-04-28 11:30 PM</span>
+                        <p class="text-slate-700 font-mono text-sm">Idea: ¿Y si MediSalud usara reconocimiento de voz para el triaje médico? Facilitaría la gestión en zonas rurales.</p>
+                    </div>
+                    
+                    <!-- AQUÍ IRÁS AGREGANDO TUS NUEVAS LÍNEAS ABAJO -->
+                </div>
+                <div class="p-3 bg-slate-100 text-center">
+                    <span class="text-[10px] text-slate-400 font-bold italic">Desliza para ver más de mi proceso lógico ↑</span>
                 </div>
             </div>
 
-            <!-- Columna Derecha: Luz, Letras y Motivación -->
-            <div class="glass-card p-10 rounded-[40px] border-r-8 border-blue-400 shadow-2xl relative overflow-hidden">
-                <!-- Adorno de fondo -->
-                <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-400/5 rounded-full blur-2xl"></div>
-
-                <div class="flex items-center gap-4 mb-8 justify-end">
-                    <h3 class="text-3xl font-bold text-white uppercase tracking-tighter text-right">Luz & <span class="text-blue-400">Letras</span></h3>
-                    <div class="p-3 bg-blue-400/20 rounded-2xl">
-                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                    </div>
+            <!-- COLUMNA DERECHA: LETRAS & INSPIRACIÓN (Fondo Blanco/Papel) -->
+            <div class="flex flex-col bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-blue-500">
+                <div class="bg-blue-500 p-4 flex justify-between items-center">
+                    <span class="text-white font-black uppercase tracking-tighter text-sm">Hojas de Ruta Literaria</span>
+                    <svg class="w-5 h-5 text-white/50" fill="currentColor" viewBox="0 0 20 20"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>
                 </div>
 
-                <div class="space-y-6 text-slate-300 leading-relaxed text-justify italic font-medium">
-                    <p class="border-b border-white/5 pb-4 text-right">
-                        "Mis libros son el rescate de mi mundo interior. Nacen de visiones y sueños recurrentes donde la realidad no es suficiente. Escribo para capturar el misterio y lo que las sombras intentan decirnos."
-                    </p>
-                    <p class="border-b border-white/5 pb-4 text-right">
-                        "En la fotografía, busco la 'verdad' del instante. Me motiva la luz espontánea, esa que no se puede fingir. Cada foto es el complemento visual de una historia que aún no ha sido escrita."
-                    </p>
-                    <p class="text-right">
-                        "Sea con una cámara o una pluma, mi fin es el mismo: narrar la existencia desde una perspectiva que invite a la reflexión crítica."
-                    </p>
+                <!-- ESTE ES EL RECTÁNGULO DONDE NARRAS -->
+                <div id="feed-letras" class="flex-grow p-6 overflow-y-auto custom-scrollbar bg-slate-50 space-y-4">
+                    <!-- Ejemplo de cómo agregarías líneas tú mismo -->
+                    <div class="border-b border-slate-200 pb-4">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase italic">Anotación Nocturna</span>
+                        <p class="text-slate-800 font-serif leading-relaxed">Hoy soñé con una ciudad de cobre bajo el desierto. Creo que será el escenario de mi próximo thriller...</p>
+                    </div>
+
+                    <div class="border-b border-slate-200 pb-4">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase italic">Motivación Fotográfica</span>
+                        <p class="text-slate-800 font-serif leading-relaxed">La luz en La Ligua a las 6 PM tiene un tono cobrizo que me recuerda a la nostalgia de los 90. Mañana salgo con la cámara.</p>
+                    </div>
+
+                    <!-- AQUÍ IRÁS AGREGANDO TUS NUEVAS LÍNEAS ABAJO -->
+                </div>
+                <div class="p-3 bg-slate-100 text-center">
+                    <span class="text-[10px] text-slate-400 font-bold italic">Desliza para leer mi viaje creativo ↑</span>
                 </div>
             </div>
 
         </div>
     </section>
-    <section class="py-24 px-6 max-w-7xl mx-auto relative z-10 border-t border-white/5 mt-12">
+        <section class="py-24 px-6 max-w-7xl mx-auto relative z-10 border-t border-white/5 mt-12">
         <div class="mb-16 text-center">
             <span class="text-accentEsmeralda font-mono mb-2 uppercase tracking-widest text-xs font-bold">Navegación</span>
             <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Explora mis <span class="text-accentEsmeralda">Distritos</span></h2>
