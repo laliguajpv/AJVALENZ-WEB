@@ -24,17 +24,8 @@
         .logo-watermark { position: absolute; opacity: 0.06; pointer-events: none; z-index: -1; }
         
         html { scroll-behavior: smooth; }
-        .input-form { background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 0.75rem; padding: 1rem; width: 100%; outline: none; transition: border-color 0.3s ease; }
-        .input-form:focus { border-color: #10b981; }
         
-        @keyframes float-wp {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
-        }
-        .wp-btn { animation: float-wp 3s ease-in-out infinite; }
-
-        /* --- CASCADA INFINITA (PUNTO 2) --- */
+        /* --- CASCADA VERTICAL --- */
         @keyframes cascada-anim {
             0% { transform: translateY(0); }
             100% { transform: translateY(-50%); }
@@ -45,6 +36,16 @@
         .texto-item { padding: 25px; color: #1e293b; font-size: 0.85rem; line-height: 1.6; border-bottom: 1px solid #e2e8f0; text-align: justify; }
         .item-software { font-family: monospace; border-left: 4px solid #10b981; }
         .item-letras { font-family: serif; border-right: 4px solid #3b82f6; font-style: italic; }
+
+        /* --- BANNER HORIZONTAL DE RESEÑAS (NUEVO) --- */
+        @keyframes scroll-x {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .banner-resenas { overflow: hidden; white-space: nowrap; background: rgba(0,0,0,0.2); border-top: 1px solid rgba(16, 185, 129, 0.2); border-bottom: 1px solid rgba(16, 185, 129, 0.2); padding: 30px 0; position: relative; }
+        .scroll-x-content { display: inline-block; animation: scroll-x 40s linear infinite; }
+        .scroll-x-content:hover { animation-play-state: paused; }
+        .resena-card { display: inline-block; background: rgba(255,255,255,0.03); padding: 20px 40px; margin: 0 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
 
         img { -webkit-user-drag: none; user-drag: none; -webkit-touch-callout: none; pointer-events: auto; }
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
@@ -67,7 +68,7 @@
                 <a href="libros.html" class="hover:text-accentEsmeralda transition">Escritor</a>
                 <a href="fotografia.html" class="hover:text-accentEsmeralda transition">Fotografía</a>
                 <a href="academia.html" class="hover:text-accentEsmeralda transition">Cursos</a>
-                <a href="#contacto" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full hover:bg-emerald-400 transition font-bold">Contacto</a>
+                <a href="contacto.html" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full hover:bg-emerald-400 transition font-bold">Contacto</a>
             </div>
         </div>
     </nav>
@@ -84,202 +85,156 @@
     <main class="max-w-[1750px] mx-auto px-4 relative z-10">
         <div class="flex flex-col lg:flex-row gap-10 items-start">
 
-            <!-- CASCADA IZQUIERDA: SOFTWARE (REAL) -->
+            <!-- CASCADA IZQUIERDA -->
             <aside class="hidden lg:block w-72 sticky top-32 contenedor-cascada rounded-[2rem] border-2 border-accentEsmeralda/30">
                 <div class="bg-accentEsmeralda p-3 text-center text-slate-900 font-black text-[10px] uppercase">Bitácora Software</div>
                 <div class="contenido-cascada">
                     <div class="texto-item item-software font-bold uppercase text-[9px] text-accentEsmeralda mb-[-15px]">Génesis SIGES</div>
                     <div class="texto-item item-software">SIGES nació de la experiencia en el rubro de la Seguridad Privada y en la necesidad de gestionar datos críticos en la operatividad de la supervisión en terreno de dicha actividad.</div>
                     <div class="texto-item item-software font-bold uppercase text-[9px] text-accentEsmeralda mb-[-15px]">Génesis MediSalud</div>
-                    <div class="texto-item item-software">MediSalud nació de la observación en la administración de los centros médicos de mi ciudad, donde el tiempo es vital tanto para la empresa como para los pacientes, donde tiene que haber un software intuitivo, práctico y transparente.</div>
-                    <!-- REPETICIÓN -->
+                    <div class="texto-item item-software">MediSalud nació de la observación en la administración de los centros médicos de mi ciudad, donde el tiempo es vital tanto para la empresa como para los pacientes.</div>
                     <div class="texto-item item-software font-bold uppercase text-[9px] text-accentEsmeralda mb-[-15px]">Génesis SIGES</div>
                     <div class="texto-item item-software">SIGES nació de la experiencia en el rubro de la Seguridad Privada y en la necesidad de gestionar datos críticos en la operatividad de la supervisión en terreno de dicha actividad.</div>
-                    <div class="texto-item item-software font-bold uppercase text-[9px] text-accentEsmeralda mb-[-15px]">Génesis MediSalud</div>
-                    <div class="texto-item item-software">MediSalud nació de la observación en la administración de los centros médicos de mi ciudad, donde el tiempo es vital tanto para la empresa como para los pacientes, donde tiene que haber un software intuitivo, práctico y transparente.</div>
                 </div>
             </aside>
 
             <!-- CONTENIDO CENTRAL -->
             <div class="flex-1 min-w-0 space-y-24">
-                
-                <!-- PERFIL RESTAURADO (TEXTO EXACTO CAPTURAS 761/762) -->
                 <section id="perfil" class="glass-card p-10 md:p-16 rounded-[40px] shadow-2xl relative overflow-hidden">
                     <div class="mb-16 text-center md:text-left">
                         <span class="text-accentEsmeralda font-mono mb-2 uppercase tracking-widest text-xs font-bold">El Hombre detrás del Código</span>
                         <h3 class="text-3xl md:text-4xl font-bold text-white mb-2 uppercase">Conoce a JOSÉ ANTONIO PÉREZ VALENZUELA</h3>
-                        <p class="text-slate-400 text-sm mt-3 font-medium uppercase tracking-widest">Liderazgo Operativo & Creación Literaria</p>
                         <div class="h-1 w-24 bg-accentEsmeralda rounded-full mt-4 mx-auto md:mx-0"></div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-                        <!-- EL AUTOR: AJVALENZ (CAPTURAS 761) -->
+                        <!-- EL AUTOR -->
                         <div class="md:col-span-5 glass-card p-6 rounded-3xl border border-slate-700/50 flex flex-col items-center">
-                            <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-xl border border-white/5 relative bg-slate-900 flex items-center justify-center p-2">
-                                <img src="FB_IMG_1776491654188.jpg" alt="AJVALENZ Autor" class="w-full h-full object-contain">
+                            <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-900 flex items-center justify-center p-2">
+                                <img src="FB_IMG_1776491654188.jpg" alt="Autor" class="w-full h-full object-contain">
                             </div>
                             <h4 class="text-2xl font-bold text-white mb-2 uppercase">El Autor: AJVALENZ</h4>
-                            <span class="inline-block px-3 py-1 bg-accentEsmeralda/10 text-accentEsmeralda border border-accentEsmeralda/30 rounded-full text-[10px] font-mono mb-6 uppercase tracking-widest">Misterio & Poesía</span>
                             <div class="text-slate-300 text-sm leading-relaxed space-y-4 text-justify font-medium">
                                 <p>Nacido en <span class="font-bold text-white">La Ligua</span>, mi viaje literario comenzó en las aulas de mi adolescencia, donde descubrí que la escritura es el mejor acto de rescate para el mundo interior.</p>
-                                <p>Como autor, he explorado desde la profundidad lírica de tres poemarios de amor hasta el suspenso y el terror autobiográfico, género que me abrió las puertas para ser publicado en <span class="font-bold text-white">Amazon</span> a través de una prestigiosa antología española.</p>
-                                <p>Muchas de mis historias—cargadas de mundos antiguos y tecnologías celestiales—nacen de visiones y sueños recurrentes. Para mí, la realidad a menudo no basta para contener lo que imaginamos; por eso, transformo esos ecos nocturnos en las semillas de mis libros.</p>
+                                <p>Como autor, he explorado desde la profundidad lírica hasta el suspenso y el terror autobiográfico, publicado en <span class="font-bold text-white">Amazon</span>.</p>
                             </div>
                         </div>
 
-                        <!-- EL PROFESIONAL (CAPTURAS 762 + PROMPT) -->
+                        <!-- EL PROFESIONAL -->
                         <div class="md:col-span-7 glass-card p-8 rounded-3xl border border-accentEsmeralda/30 bg-accentEsmeralda/5">
-                            <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-xl border border-white/5 relative bg-slate-900 flex items-center justify-center p-2">
-                                <img src="FB_IMG_1776491470801.jpg" alt="AJVALENZ Profesional" class="w-full h-full object-contain">
+                            <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-900 flex items-center justify-center p-2">
+                                <img src="FB_IMG_1776491470801.jpg" alt="Profesional" class="w-full h-full object-contain">
                             </div>
-                            <h4 class="text-2xl font-bold text-white mb-3 text-center uppercase tracking-tighter">El Profesional</h4>
-                            <div class="text-center mb-6">
-                                <span class="inline-block px-3 py-1 bg-slate-900/40 text-slate-300 border border-slate-700 rounded-full text-[10px] font-mono uppercase tracking-widest">Seguridad & Tecnología</span>
-                            </div>
-                            <div class="text-slate-300 text-sm leading-relaxed space-y-4 font-medium text-justify">
-                                <p>Soy un líder apasionado por la <span class="font-bold text-white">Seguridad Privada</span> y la Gestión Tecnológica, respaldado por mi formación como Programador de Computadores. He dirigido operaciones críticas en rubros de alta exigencia (minería, hospitales, industrias), llegando a gestionar <span class="font-bold text-white">16 instalaciones simultáneamente</span>.</p>
-                                <p>Creo firmemente que la seguridad la hacen las personas, por lo que mi enfoque se basa en crear sinergias, fomentar la cooperación y mantener un excelente clima de trabajo.</p>
-                                <p>Esta capacidad de liderazgo humano y adaptación cultural la consolidé viviendo casi siete años en <span class="font-bold text-white">Rapa Nui</span>, donde, más allá del soporte tecnológico, descubrí mi profunda vocación por enseñar y promover la alfabetización digital entre la comunidad.</p>
-                                <p>Profesional de la informática, tanto en software como en hardware, dedicado a sus clientes y alumnos, efectuando capacitaciones y cursos desde el año 2000, en el área de Seguridad Privada con más de 15 años de experiencia.</p>
+                            <h4 class="text-2xl font-bold text-white mb-3 text-center uppercase">El Profesional</h4>
+                            <div class="text-slate-300 text-sm leading-relaxed space-y-4 text-justify font-medium">
+                                <p>Profesional de la informática, tanto en software como en hardware, dedicado a sus clientes y alumnos, efectuando capacitaciones y cursos desde el año 2000.</p>
+                                <p>En el área de Seguridad Privada cuento con más de 15 años de experiencia, con enfoque en el liderazgo, empatía y desarrollo de habilidades blandas.</p>
                             </div>
                             <div class="grid grid-cols-3 gap-4 mt-8">
-                                <img src="FB_IMG_1776491359442.jpg" class="rounded-xl border border-white/5 bg-slate-900 p-1 h-24 object-contain">
-                                <img src="FB_IMG_1776491393140.jpg" class="rounded-xl border border-white/5 bg-slate-900 p-1 h-24 object-contain">
-                                <img src="FB_IMG_1776491408352.jpg" class="rounded-xl border border-white/5 bg-slate-900 p-1 h-24 object-contain">
+                                <img src="FB_IMG_1776491359442.jpg" class="rounded-xl bg-slate-900 p-1 h-24 object-contain">
+                                <img src="FB_IMG_1776491393140.jpg" class="rounded-xl bg-slate-900 p-1 h-24 object-contain">
+                                <img src="FB_IMG_1776491408352.jpg" class="rounded-xl bg-slate-900 p-1 h-24 object-contain">
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- DISTRITOS (RESTABLECIDO SEGÚN CAPTURA 759) -->
-                <section class="py-12 border-t border-white/5">
-                    <div class="mb-16 text-center">
-                        <span class="text-accentEsmeralda font-mono mb-2 uppercase tracking-widest text-xs font-bold">Navegación</span>
-                        <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight uppercase">Explora mis <span class="text-accentEsmeralda">Distritos</span></h2>
-                        <div class="h-1 w-32 bg-accentEsmeralda mx-auto mt-6 rounded-full"></div>
-                        <p class="text-slate-400 mt-6 max-w-2xl mx-auto text-sm italic">Selecciona el área de mi portafolio que deseas descubrir. Desde sistemas operativos corporativos hasta mundos de ciencia ficción y fotografía.</p>
-                    </div>
-
+                <!-- DISTRITOS -->
+                <section class="py-12 border-t border-white/5 text-center">
+                    <h2 class="text-4xl font-bold text-white tracking-tight uppercase mb-16">Explora mis <span class="text-accentEsmeralda">Distritos</span></h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- SOFTWARE -->
-                        <div class="glass-card p-8 rounded-3xl text-center group">
-                            <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-6 border border-slate-600 group-hover:border-accentEsmeralda transition shadow-lg">
-                                <svg class="w-8 h-8 text-accentEsmeralda" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2 uppercase">Software</h3>
-                            <p class="text-slate-400 text-[10px] mb-8 leading-relaxed">Desarrollo de aplicaciones SaaS y automatización.</p>
-                            <a href="software.html" class="w-full block bg-accentEsmeralda/10 border border-accentEsmeralda text-accentEsmeralda hover:bg-accentEsmeralda hover:text-slate-900 font-bold py-3 rounded-xl transition text-sm uppercase">Ingresar</a>
+                        <div class="glass-card p-8 rounded-3xl group">
+                            <h3 class="text-xl font-bold text-white mb-2">Software</h3>
+                            <a href="software.html" class="w-full block bg-accentEsmeralda/10 border border-accentEsmeralda text-accentEsmeralda py-3 rounded-xl transition text-sm uppercase">Ingresar</a>
                         </div>
-                        <!-- ESCRITOR -->
-                        <div class="glass-card p-8 rounded-3xl text-center group">
-                            <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-6 border border-slate-600 group-hover:border-accentEsmeralda transition shadow-lg">
-                                <svg class="w-8 h-8 text-accentEsmeralda" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2 uppercase">Escritor</h3>
-                            <p class="text-slate-400 text-[10px] mb-8 leading-relaxed">Mi catálogo completo de novelas y poesía.</p>
-                            <a href="libros.html" class="w-full block bg-accentEsmeralda/10 border border-accentEsmeralda text-accentEsmeralda hover:bg-accentEsmeralda hover:text-slate-900 font-bold py-3 rounded-xl transition text-sm uppercase">Ingresar</a>
+                        <div class="glass-card p-8 rounded-3xl group">
+                            <h3 class="text-xl font-bold text-white mb-2">Escritor</h3>
+                            <a href="libros.html" class="w-full block bg-accentEsmeralda/10 border border-accentEsmeralda text-accentEsmeralda py-3 rounded-xl transition text-sm uppercase">Ingresar</a>
                         </div>
-                        <!-- FOTOGRAFÍA -->
-                        <div class="glass-card p-8 rounded-3xl text-center group">
-                            <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-6 border border-slate-600 group-hover:border-accentEsmeralda transition shadow-lg">
-                                <svg class="w-8 h-8 text-accentEsmeralda" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2 uppercase">Fotografía</h3>
-                            <p class="text-slate-400 text-[10px] mb-8 leading-relaxed">Galería de imágenes disponibles para adquisición.</p>
-                            <a href="fotografia.html" class="w-full block bg-accentEsmeralda/10 border border-accentEsmeralda text-accentEsmeralda hover:bg-accentEsmeralda hover:text-slate-900 font-bold py-3 rounded-xl transition text-sm uppercase">Ingresar</a>
+                        <div class="glass-card p-8 rounded-3xl group">
+                            <h3 class="text-xl font-bold text-white mb-2">Fotografía</h3>
+                            <a href="fotografia.html" class="w-full block bg-accentEsmeralda/10 border border-accentEsmeralda text-accentEsmeralda py-3 rounded-xl transition text-sm uppercase">Ingresar</a>
                         </div>
-                        <!-- ACADEMIA -->
-                        <div class="glass-card p-8 rounded-3xl text-center group">
-                            <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-6 border border-slate-600 shadow-lg">
-                                <svg class="w-8 h-8 text-accentEsmeralda" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2 uppercase">Academia</h3>
-                            <p class="text-slate-400 text-[10px] mb-8 leading-relaxed">Cursos de capacitación en herramientas de ofimática.</p>
-                            <div class="w-full bg-slate-800 text-slate-500 font-bold py-3 rounded-xl text-xs uppercase">En Desarrollo</div>
+                        <div class="glass-card p-8 rounded-3xl group">
+                            <h3 class="text-xl font-bold text-white mb-2">Academia</h3>
+                            <div class="w-full bg-slate-800 text-slate-500 py-3 rounded-xl text-xs uppercase font-bold">En Desarrollo</div>
                         </div>
                     </div>
                 </section>
 
-                <!-- SERVICIOS ESPECIALIZADOS (CAPTURAS 760) -->
-                <section id="servicios-especializados" class="py-12">
-                    <div class="text-center mb-16">
-                        <h2 class="text-4xl font-bold text-white uppercase tracking-tighter">Servicios <span class="text-blue-400">Especializados</span></h2>
-                        <div class="h-1 w-24 bg-blue-500 mx-auto mt-4"></div>
-                    </div>
-
+                <!-- SERVICIOS ESPECIALIZADOS -->
+                <section id="servicios" class="py-12">
                     <div class="grid md:grid-cols-3 gap-8">
-                        <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-accentEsmeralda shadow-lg">
-                            <div class="w-12 h-12 bg-accentEsmeralda/20 rounded-xl flex items-center justify-center mb-8">
-                                <svg class="w-6 h-6 text-accentEsmeralda" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path></svg>
-                            </div>
+                        <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-accentEsmeralda">
                             <h3 class="text-xl font-black text-white mb-6 uppercase">Recuperación de Datos</h3>
-                            <p class="text-slate-400 text-[11px] leading-relaxed mb-8">Especialista en el rescate crítico de información desde discos duros, memorias SD y sistemas operativos dañados. Seguridad y confidencialidad total.</p>
-                            <div class="mt-auto pt-6 border-t border-white/5 text-[9px] uppercase tracking-widest text-slate-600 font-bold">Protocolos Forenses</div>
+                            <p class="text-slate-400 text-[11px] leading-relaxed">Especialista en el rescate crítico de información desde discos duros, memorias SD y sistemas operativos dañados.</p>
                         </div>
-
-                        <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-blue-500 shadow-lg">
-                            <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-8">
-                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </div>
+                        <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-blue-500">
                             <h3 class="text-xl font-black text-white mb-6 uppercase">Soporte Windows & Mac</h3>
-                            <p class="text-slate-400 text-[11px] leading-relaxed mb-8">Mantenimiento preventivo, correctivo y optimización de alto nivel. Solución de conflictos de hardware y software en plataformas PC y Apple.</p>
-                            <div class="mt-auto pt-6 border-t border-white/5 text-[9px] uppercase tracking-widest text-slate-600 font-bold">Atención Presencial/Remota</div>
+                            <p class="text-slate-400 text-[11px] leading-relaxed">Mantenimiento preventivo, correctivo y optimización de alto nivel.</p>
                         </div>
-
-                        <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-slate-500 shadow-lg">
-                            <div class="w-12 h-12 bg-slate-500/20 rounded-xl flex items-center justify-center mb-8">
-                                <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                            </div>
+                        <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-slate-500">
                             <h3 class="text-xl font-black text-white mb-6 uppercase">Seguridad & Asesorías</h3>
-                            <p class="text-slate-400 text-[11px] leading-relaxed mb-8">Especialista en Seguridad Privada y capacitación en herramientas de ofimática. Consultoría estratégica para empresas y particulares.</p>
-                            <div class="mt-auto pt-6 border-t border-white/5 text-[9px] uppercase tracking-widest text-slate-600 font-bold">Capacitación Certificada</div>
+                            <p class="text-slate-400 text-[11px] leading-relaxed">Especialista en Seguridad Privada y capacitación en herramientas de ofimática.</p>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <!-- CASCADA DERECHA: HISTORIAS LETRAS (REAL) -->
+            <!-- CASCADA DERECHA -->
             <aside class="hidden lg:block w-72 sticky top-32 contenedor-cascada rounded-[2rem] border-2 border-blue-400/30">
-                <div class="bg-blue-500 p-3 text-center text-white font-black text-[10px] uppercase">Bitácora de Letras</div>
+                <div class="bg-blue-500 p-3 text-center text-white font-black text-[10px] uppercase">Bitácora Letras</div>
                 <div class="contenido-cascada">
                     <div class="texto-item item-letras font-bold uppercase text-[9px] text-blue-500 mb-[-15px]">Ciencia Ficción</div>
                     <div class="texto-item item-letras">Los cuentos de ciencia ficción nacieron de sueños recurrentes en mi juventud, otros de comentarios y palabras dispersas en el viento.</div>
-                    
                     <div class="texto-item item-letras font-bold uppercase text-[9px] text-blue-500 mb-[-15px]">Relatos de Terror</div>
-                    <div class="texto-item item-letras">El cuento de terror nació de una autobiografía muy personal de mis primeros años de nacimiento y juventud, todo matizado con un poco de ficción.</div>
-                    
-                    <!-- REPETICIÓN LOOP -->
+                    <div class="texto-item item-letras">El cuento de terror nació de una autobiografía muy personal de mis primeros años de nacimiento y juventud.</div>
                     <div class="texto-item item-letras font-bold uppercase text-[9px] text-blue-500 mb-[-15px]">Ciencia Ficción</div>
                     <div class="texto-item item-letras">Los cuentos de ciencia ficción nacieron de sueños recurrentes en mi juventud, otros de comentarios y palabras dispersas en el viento.</div>
-                    
-                    <div class="texto-item item-letras font-bold uppercase text-[9px] text-blue-500 mb-[-15px]">Relatos de Terror</div>
-                    <div class="texto-item item-letras">El cuento de terror nació de una autobiografía muy personal de mis primeros años de nacimiento y juventud, todo matizado con un poco de ficción.</div>
                 </div>
             </aside>
         </div>
     </main>
 
-    <!-- CONTACTO Y FOOTER -->
-    <section id="contacto" class="py-24 px-6 bg-slate-900/40 border-t border-white/5 relative z-10 mt-24">
-        <div class="max-w-4xl mx-auto glass-card p-10 md:p-16 rounded-3xl shadow-2xl relative">
-            <h2 class="text-4xl font-bold text-white mb-6 text-center uppercase tracking-tighter">¿Iniciamos un Proyecto?</h2>
-            <form action="https://formspree.io/f/xjgjdgdn" method="POST" class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" name="name" required placeholder="Tu nombre" class="input-form">
-                    <input type="email" name="email" required placeholder="tu@correo.com" class="input-form">
+    <!-- BANNER DE RESEÑAS (NUEVO PUNTO 3) -->
+    <section class="mt-24 py-12">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl font-bold text-white uppercase tracking-widest">Lo que dicen mis <span class="text-accentEsmeralda">Clientes</span></h2>
+        </div>
+        <div class="banner-resenas">
+            <div class="scroll-x-content">
+                <div class="resena-card">
+                    <p class="text-white text-sm italic">"Excelente software SIGES, nos cambió la forma de supervisar en terreno."</p>
+                    <span class="text-accentEsmeralda text-[10px] font-bold uppercase mt-2 block">- Cliente Seguridad Privada</span>
                 </div>
-                <textarea name="message" rows="4" required placeholder="¿En qué te puedo ayudar?" class="input-form resize-none"></textarea>
-                <button type="submit" class="w-full bg-accentEsmeralda text-slate-900 font-bold py-4 rounded-xl hover:bg-emerald-400 transition shadow-lg uppercase">Enviar Mensaje</button>
-            </form>
+                <div class="resena-card">
+                    <p class="text-white text-sm italic">"Recuperación de datos impecable en un disco dañado. Muy profesional."</p>
+                    <span class="text-accentEsmeralda text-[10px] font-bold uppercase mt-2 block">- Soporte Técnico</span>
+                </div>
+                <div class="resena-card">
+                    <p class="text-white text-sm italic">"MediSalud es intuitivo y rápido. Ideal para la gestión de nuestro centro."</p>
+                    <span class="text-accentEsmeralda text-[10px] font-bold uppercase mt-2 block">- Administración Médica</span>
+                </div>
+                <div class="resena-card">
+                    <p class="text-white text-sm italic">"Capacitaciones de alto nivel. Gran enfoque en habilidades blandas."</p>
+                    <span class="text-accentEsmeralda text-[10px] font-bold uppercase mt-2 block">- Alumno Academia</span>
+                </div>
+                <!-- REPETICIÓN PARA LOOP INFINITO -->
+                <div class="resena-card">
+                    <p class="text-white text-sm italic">"Excelente software SIGES, nos cambió la forma de supervisar en terreno."</p>
+                    <span class="text-accentEsmeralda text-[10px] font-bold uppercase mt-2 block">- Cliente Seguridad Privada</span>
+                </div>
+                <div class="resena-card">
+                    <p class="text-white text-sm italic">"Recuperación de datos impecable en un disco dañado. Muy profesional."</p>
+                    <span class="text-accentEsmeralda text-[10px] font-bold uppercase mt-2 block">- Soporte Técnico</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-slate-500 text-sm relative z-10 flex flex-col items-center">
+    <footer class="py-12 text-center text-slate-500 text-sm relative z-10 flex flex-col items-center mt-12 border-t border-white/5">
         <p>&copy; 2026 AJVALENZ.cl - Tecnología, Letras y Conocimiento.</p>
         <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fajvalenz.cl&label=TOTAL&labelColor=%23334155&countColor=%2310b981" class="mt-4 opacity-70">
-        <div class="mt-4 flex gap-4">
-            <a href="terminos.html" class="hover:text-accentEsmeralda underline transition text-xs">Términos y Licencia</a>
-        </div>
     </footer>
 
     <!-- BOTONES FLOTANTES -->
@@ -287,7 +242,6 @@
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.564 0 5.826-4.739 10.564-10.563 10.564z"/></svg>
     </a>
 
-    <!-- ASISTENTE AI -->
     <button onclick="toggleChat()" class="fixed bottom-6 right-24 bg-[#10b981] text-slate-900 p-4 rounded-full z-[100] shadow-lg border-4 border-slate-700">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
     </button>
@@ -326,7 +280,7 @@
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: `Eres el asistente de AJVALENZ.cl. Responde corto y amable. Pregunta: ${text}` }] }] })
+                    body: JSON.stringify({ contents: [{ parts: [{ text: `Eres el asistente de AJVALENZ.cl. Responde corto. Pregunta: ${text}` }] }] })
                 });
                 const data = await response.json();
                 document.getElementById(loadingId).innerText = data.candidates[0].content.parts[0].text;
