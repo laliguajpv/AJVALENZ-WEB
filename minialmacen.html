@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniAlmacén Pro V3.0 | AJVALENZ</title>
+  <meta name="description" content="MiniAlmacén Pro V3.0: sistema profesional de ventas, inventario, caja, reportes y gestión monocaja o multicaja para almacenes, minimarkets, botillerías y comercios.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            customBlue: '#334155',
+            accentEsmeralda: '#10b981',
+            cyanAj: '#22d3ee',
+            darkAj: '#07111f'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body{
+      background:
+        radial-gradient(circle at top center, rgba(16,185,129,.18), transparent 34%),
+        radial-gradient(circle at 80% 20%, rgba(34,211,238,.12), transparent 28%),
+        #334155;
+      color:#f1f5f9;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    html{scroll-behavior:smooth;}
+
+    .glass-card{
+      background:rgba(255,255,255,.055);
+      backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 25px 60px rgba(0,0,0,.22);
+    }
+
+    .card-hover{
+      transition:all .25s ease;
+    }
+    .card-hover:hover{
+      transform:translateY(-4px);
+      border-color:#10b981;
+      box-shadow:0 20px 45px rgba(16,185,129,.16);
+    }
+
+    .gradient-title{
+      background:linear-gradient(90deg,#fff,#67e8f9,#10b981);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero-frame{
+      background:linear-gradient(145deg,rgba(2,6,23,.92),rgba(15,23,42,.88));
+      border:1px solid rgba(34,211,238,.28);
+      box-shadow:0 0 40px rgba(34,211,238,.12);
+    }
+
+    .promo-img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+    }
+
+    .poster-box{
+      background:#020617;
+      border:1px solid rgba(34,211,238,.20);
+      border-radius:1.5rem;
+      overflow:hidden;
+      min-height:360px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:.5rem;
+    }
+
+    .btn-main{
+      background:linear-gradient(90deg,#10b981,#22d3ee);
+      color:#0f172a;
+      font-weight:900;
+      transition:.2s ease;
+    }
+    .btn-main:hover{filter:brightness(1.08); transform:translateY(-2px);}
+
+    .btn-outline{
+      border:1px solid rgba(34,211,238,.45);
+      color:#67e8f9;
+      transition:.2s ease;
+    }
+    .btn-outline:hover{background:rgba(34,211,238,.10); transform:translateY(-2px);}
+
+    .feature-pill{
+      background:rgba(15,23,42,.62);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    video{
+      width:100%;
+      border-radius:1.5rem;
+      border:1px solid rgba(34,211,238,.25);
+      background:#020617;
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased">
+
+  <!-- NAV -->
+  <nav class="p-6 fixed top-0 w-full z-50 glass-card border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.png" alt="Logo AJVALENZ" class="h-10 w-auto">
+        <h1 class="text-xl font-bold text-white uppercase tracking-tight">AJ<span class="text-accentEsmeralda">VALENZ</span></h1>
+      </a>
+
+      <div class="space-x-6 hidden md:block text-xs uppercase tracking-widest font-bold text-slate-200">
+        <a href="index.html" class="hover:text-accentEsmeralda transition">Inicio</a>
+        <a href="software.html" class="hover:text-accentEsmeralda transition">Software</a>
+        <a href="libros.html" class="hover:text-accentEsmeralda transition">Escritor</a>
+        <a href="fotografia.html" class="hover:text-accentEsmeralda transition">Fotografía</a>
+        <a href="academia.html" class="hover:text-accentEsmeralda transition">Cursos</a>
+        <a href="contacto.html" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full hover:bg-emerald-400 transition font-bold">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="pt-40 pb-16 px-6">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-[1fr_.9fr] gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-emerald-400/10 border border-emerald-300/25 text-emerald-300 text-xs font-black uppercase tracking-widest mb-6">
+          Sistema terminado • Oferta de lanzamiento
+        </div>
+
+        <h2 class="text-5xl md:text-7xl font-extrabold uppercase leading-tight">
+          MiniAlmacén <span class="gradient-title">Pro V3.0</span>
+        </h2>
+
+        <p class="mt-5 text-xl md:text-2xl text-slate-200 font-bold">
+          Controla tu negocio de forma simple, segura y profesional.
+        </p>
+
+        <p class="mt-5 text-slate-300 leading-relaxed max-w-2xl">
+          Sistema de ventas, inventario, caja, clientes, proveedores, reportes y gestión Monocaja o Multicaja para almacenes, minimarkets, botillerías, bazares y comercios.
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-4 max-w-2xl text-sm">
+          <div class="feature-pill rounded-2xl p-4">✅ Sin suscripciones mensuales obligatorias</div>
+          <div class="feature-pill rounded-2xl p-4">✅ Pago único, sin ataduras</div>
+          <div class="feature-pill rounded-2xl p-4">✅ Monocaja o Multicaja</div>
+          <div class="feature-pill rounded-2xl p-4">✅ Instalación y capacitación inicial</div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ,%20quiero%20cotizar%20MiniAlmac%C3%A9n%20Pro%20V3.0" target="_blank" class="btn-main px-7 py-4 rounded-2xl text-center uppercase">
+            Cotizar por WhatsApp
+          </a>
+          <a href="#planes" class="btn-outline px-7 py-4 rounded-2xl text-center uppercase font-black">
+            Ver planes
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-frame rounded-[2rem] overflow-hidden p-3">
+        <img src="PROMO-MINIALMACEN-2.png" alt="MiniAlmacén Pro V3.0" class="w-full rounded-[1.5rem] object-contain">
+      </div>
+    </div>
+  </header>
+
+  <!-- BENEFICIOS -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl md:text-5xl font-black uppercase">Diseñado para <span class="text-accentEsmeralda">negocios reales</span></h3>
+      <p class="text-slate-400 mt-4 max-w-3xl mx-auto">Una herramienta práctica para dejar atrás el cuaderno, las planillas sueltas y el desorden diario.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass-card card-hover rounded-3xl p-8">
+        <div class="text-4xl mb-4">🛒</div>
+        <h4 class="text-xl font-black text-white uppercase mb-3">Punto de venta rápido</h4>
+        <p class="text-slate-300 text-sm leading-relaxed">Registra ventas de manera sencilla, rápida y pensada para el trabajo cotidiano en caja.</p>
+      </div>
+      <div class="glass-card card-hover rounded-3xl p-8">
+        <div class="text-4xl mb-4">📦</div>
+        <h4 class="text-xl font-black text-white uppercase mb-3">Control de inventario</h4>
+        <p class="text-slate-300 text-sm leading-relaxed">Administra productos, stock, precios, categorías y alertas para mantener el negocio ordenado.</p>
+      </div>
+      <div class="glass-card card-hover rounded-3xl p-8">
+        <div class="text-4xl mb-4">📊</div>
+        <h4 class="text-xl font-black text-white uppercase mb-3">Reportes claros</h4>
+        <p class="text-slate-300 text-sm leading-relaxed">Visualiza ventas, caja, movimientos y estadísticas para tomar mejores decisiones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-8 items-center">
+      <div>
+        <span class="text-accentEsmeralda font-mono uppercase tracking-widest text-xs font-bold">Video promocional</span>
+        <h3 class="text-4xl font-black uppercase mt-3 mb-5">Conoce MiniAlmacén Pro en acción</h3>
+        <p class="text-slate-300 leading-relaxed">
+          Video corto para redes sociales, ideal para mostrar la propuesta del sistema, sus beneficios principales y el enfoque profesional de AJVALENZ.
+        </p>
+      </div>
+      <div class="glass-card rounded-[2rem] p-4">
+        <video controls preload="metadata" poster="PROMOCION_4.png">
+          <source src="VIDEO_PROMO_RRSS.mp4" type="video/mp4">
+          Tu navegador no permite reproducir este video.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNCIONES -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="glass-card rounded-[2rem] p-8 md:p-12">
+      <div class="text-center mb-10">
+        <h3 class="text-4xl font-black uppercase">Qué incluye el sistema</h3>
+        <p class="text-slate-400 mt-3">Módulos principales para controlar la operación diaria.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <div class="feature-pill rounded-2xl p-4">✅ Panel de control</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Punto de venta</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Inventario de productos</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Clientes</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Proveedores</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Factura / compra</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Arqueo de caja</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Caja chica</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Historial de ventas</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Reportes operativos</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Gestión de usuarios</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Respaldo inicial</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA PROMOCIONAL -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl md:text-5xl font-black uppercase">Material visual <span class="text-accentEsmeralda">promocional</span></h3>
+      <p class="text-slate-400 mt-4">Piezas gráficas creadas para presentar el sistema en redes, WhatsApp y página web.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="poster-box">
+        <img src="PROMOCION_1.png" alt="Promoción MiniAlmacén Pro 1" class="promo-img">
+      </div>
+      <div class="poster-box">
+        <img src="PROMOCION_2.png" alt="Promoción MiniAlmacén Pro 2" class="promo-img">
+      </div>
+      <div class="poster-box">
+        <img src="PROMOCION_3.png" alt="Promoción MiniAlmacén Pro 3" class="promo-img">
+      </div>
+      <div class="poster-box">
+        <img src="PROMOCION_4.png" alt="Promoción MiniAlmacén Pro 4" class="promo-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section id="planes" class="max-w-7xl mx-auto px-6 py-12">
+    <div class="text-center mb-12">
+      <span class="text-accentEsmeralda font-mono uppercase tracking-widest text-xs font-bold">Oferta de lanzamiento</span>
+      <h3 class="text-4xl md:text-5xl font-black uppercase mt-3">Planes disponibles</h3>
+      <p class="text-slate-400 mt-4">Valores promocionales por tiempo limitado. Pago único, sin mensualidad obligatoria.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="glass-card card-hover rounded-[2rem] p-8 border border-accentEsmeralda/30">
+        <div class="flex items-center justify-between gap-4 mb-6">
+          <h4 class="text-3xl font-black uppercase">Plan Monocaja</h4>
+          <span class="text-xs font-black px-3 py-1 rounded-full bg-emerald-400/15 text-emerald-300 border border-emerald-300/25">1 equipo</span>
+        </div>
+        <p class="text-slate-300 mb-6">Ideal para negocios que trabajan desde un solo computador o punto de venta.</p>
+        <div class="mb-6">
+          <div class="text-slate-400 line-through text-xl">Antes: $249.990</div>
+          <div class="text-5xl font-black text-white mt-2">$199.990</div>
+          <div class="text-accentEsmeralda font-black uppercase mt-1">Pago único</div>
+        </div>
+        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+          <li>✅ Instalación inicial</li>
+          <li>✅ Configuración básica</li>
+          <li>✅ Licencia Monocaja</li>
+          <li>✅ Capacitación inicial</li>
+          <li>✅ Respaldo inicial</li>
+        </ul>
+        <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ,%20quiero%20cotizar%20el%20Plan%20Monocaja%20de%20MiniAlmac%C3%A9n%20Pro" target="_blank" class="btn-main block text-center py-4 rounded-2xl uppercase">Cotizar Monocaja</a>
+      </div>
+
+      <div class="glass-card card-hover rounded-[2rem] p-8 border border-cyan-400/30">
+        <div class="flex items-center justify-between gap-4 mb-6">
+          <h4 class="text-3xl font-black uppercase">Plan Multicaja</h4>
+          <span class="text-xs font-black px-3 py-1 rounded-full bg-cyan-400/15 text-cyan-300 border border-cyan-300/25">Varias cajas</span>
+        </div>
+        <p class="text-slate-300 mb-6">Para negocios que requieren equipo principal, cajas adicionales y red local.</p>
+        <div class="mb-6">
+          <div class="text-slate-400 line-through text-xl">Antes: $449.990</div>
+          <div class="text-5xl font-black text-white mt-2">$399.990</div>
+          <div class="text-cyan-300 font-black uppercase mt-1">Pago único</div>
+        </div>
+        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+          <li>✅ Configuración equipo principal</li>
+          <li>✅ Cajas adicionales</li>
+          <li>✅ Red local</li>
+          <li>✅ Licencia Multicaja</li>
+          <li>✅ Capacitación y respaldo inicial</li>
+        </ul>
+        <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ,%20quiero%20cotizar%20el%20Plan%20Multicaja%20de%20MiniAlmac%C3%A9n%20Pro" target="_blank" class="btn-main block text-center py-4 rounded-2xl uppercase">Cotizar Multicaja</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDICIONES -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="glass-card rounded-[2rem] p-8 md:p-10">
+      <h3 class="text-3xl font-black uppercase mb-6">Condiciones generales</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-300">
+        <div class="feature-pill rounded-2xl p-4">📌 Los valores corresponden a promoción de lanzamiento.</div>
+        <div class="feature-pill rounded-2xl p-4">📌 Los precios pueden variar según requerimientos especiales.</div>
+        <div class="feature-pill rounded-2xl p-4">📌 El cliente debe contar con equipo compatible y condiciones mínimas de instalación.</div>
+        <div class="feature-pill rounded-2xl p-4">📌 Servicios adicionales, soporte extendido o migración de datos se cotizan aparte.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="max-w-7xl mx-auto px-6 py-16 pb-24">
+    <div class="glass-card rounded-[2rem] p-10 md:p-14 text-center border border-accentEsmeralda/25">
+      <h3 class="text-4xl md:text-5xl font-black uppercase">Solicita información y cotiza</h3>
+      <p class="text-slate-300 mt-4 max-w-3xl mx-auto">
+        Da el siguiente paso para profesionalizar tu negocio con MiniAlmacén Pro V3.0.
+      </p>
+
+      <div class="mt-8 flex flex-col md:flex-row justify-center gap-4">
+        <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ,%20quiero%20informaci%C3%B3n%20sobre%20MiniAlmac%C3%A9n%20Pro%20V3.0" target="_blank" class="btn-main px-8 py-4 rounded-2xl uppercase">WhatsApp +569 75510325</a>
+        <a href="mailto:contacto@ajvalenz.cl?subject=Cotización MiniAlmacén Pro V3.0" class="btn-outline px-8 py-4 rounded-2xl uppercase font-black">contacto@ajvalenz.cl</a>
+        <a href="index.html" class="btn-outline px-8 py-4 rounded-2xl uppercase font-black">Volver al inicio</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center text-slate-400 text-sm border-t border-white/5">
+    <p>&copy; 2026 Sistemas Computacionales AJVALENZ - MiniAlmacén Pro V3.0</p>
+    <p class="mt-2 text-accentEsmeralda">Tecnología aplicada para negocios reales</p>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/56975510325" target="_blank" class="fixed bottom-6 right-6 bg-emerald-500 text-white p-4 rounded-full z-[100] shadow-xl hover:bg-emerald-400 transition">
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.564 0 5.826-4.739 10.564-10.563 10.564z"/></svg>
+  </a>
+
+</body>
+</html>
