@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SIGES Seguridad | AJVALENZ</title>
+  <meta name="description" content="SIGES Seguridad: plataforma multitenant SaaS para gestión de seguridad, supervisión, reportes, instalaciones, carta Gantt, horas extras y control operativo en tiempo real.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            customBlue: '#334155',
+            accentEsmeralda: '#10b981',
+            sigesBlue: '#2563eb',
+            sigesCyan: '#22d3ee',
+            sigesDark: '#06111f'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body{
+      background:
+        radial-gradient(circle at top center, rgba(37,99,235,.20), transparent 34%),
+        radial-gradient(circle at 80% 15%, rgba(34,211,238,.14), transparent 28%),
+        #334155;
+      color:#f1f5f9;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    html{scroll-behavior:smooth;}
+
+    .glass-card{
+      background:rgba(255,255,255,.055);
+      backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 25px 60px rgba(0,0,0,.22);
+    }
+
+    .card-hover{
+      transition:all .25s ease;
+    }
+
+    .card-hover:hover{
+      transform:translateY(-4px);
+      border-color:#38bdf8;
+      box-shadow:0 20px 45px rgba(37,99,235,.18);
+    }
+
+    .gradient-title{
+      background:linear-gradient(90deg,#fff,#60a5fa,#22d3ee);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero-frame{
+      background:linear-gradient(145deg,rgba(2,6,23,.94),rgba(15,23,42,.88));
+      border:1px solid rgba(34,211,238,.30);
+      box-shadow:0 0 45px rgba(37,99,235,.18);
+    }
+
+    .promo-img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+    }
+
+    .poster-box{
+      background:#020617;
+      border:1px solid rgba(34,211,238,.24);
+      border-radius:1.5rem;
+      overflow:hidden;
+      min-height:360px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:.5rem;
+    }
+
+    .btn-main{
+      background:linear-gradient(90deg,#2563eb,#22d3ee);
+      color:white;
+      font-weight:900;
+      transition:.2s ease;
+      box-shadow:0 15px 35px rgba(37,99,235,.22);
+    }
+
+    .btn-main:hover{
+      filter:brightness(1.08);
+      transform:translateY(-2px);
+    }
+
+    .btn-outline{
+      border:1px solid rgba(34,211,238,.48);
+      color:#67e8f9;
+      transition:.2s ease;
+    }
+
+    .btn-outline:hover{
+      background:rgba(34,211,238,.10);
+      transform:translateY(-2px);
+    }
+
+    .feature-pill{
+      background:rgba(15,23,42,.62);
+      border:1px solid rgba(255,255,255,.08);
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased">
+
+  <!-- NAV -->
+  <nav class="p-6 fixed top-0 w-full z-50 glass-card border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.png" alt="Logo AJVALENZ" class="h-10 w-auto">
+        <h1 class="text-xl font-bold text-white uppercase tracking-tight">AJ<span class="text-accentEsmeralda">VALENZ</span></h1>
+      </a>
+
+      <div class="space-x-6 hidden md:block text-xs uppercase tracking-widest font-bold text-slate-200">
+        <a href="index.html" class="hover:text-accentEsmeralda transition">Inicio</a>
+        <a href="software.html" class="hover:text-accentEsmeralda transition">Software</a>
+        <a href="libros.html" class="hover:text-accentEsmeralda transition">Escritor</a>
+        <a href="fotografia.html" class="hover:text-accentEsmeralda transition">Fotografía</a>
+        <a href="academia.html" class="hover:text-accentEsmeralda transition">Cursos</a>
+        <a href="contacto.html" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full hover:bg-emerald-400 transition font-bold">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="pt-40 pb-16 px-6">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-[1fr_.95fr] gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-500/15 border border-blue-300/25 text-blue-200 text-xs font-black uppercase tracking-widest mb-6">
+          Sistema terminado • Multitenant / SaaS
+        </div>
+
+        <h2 class="text-5xl md:text-7xl font-extrabold uppercase leading-tight">
+          SIGES <span class="gradient-title">Seguridad</span>
+        </h2>
+
+        <p class="mt-5 text-xl md:text-2xl text-slate-200 font-bold">
+          Plataforma multitenant SaaS para gestión de seguridad.
+        </p>
+
+        <p class="mt-5 text-slate-300 leading-relaxed max-w-2xl">
+          Control operativo, supervisión, reportes, instalaciones, carta Gantt, horas extras, soporte y monitoreo centralizado para empresas de seguridad y operaciones en terreno.
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-4 max-w-2xl text-sm">
+          <div class="feature-pill rounded-2xl p-4">✅ Panel global en tiempo real</div>
+          <div class="feature-pill rounded-2xl p-4">✅ Gestión multiempresa</div>
+          <div class="feature-pill rounded-2xl p-4">✅ Reportes y auditoría</div>
+          <div class="feature-pill rounded-2xl p-4">✅ Control centralizado</div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ,%20quiero%20cotizar%20planes%20de%20SIGES%20Seguridad" target="_blank" class="btn-main px-7 py-4 rounded-2xl text-center uppercase">
+            Cotizar planes
+          </a>
+          <a href="#funciones" class="btn-outline px-7 py-4 rounded-2xl text-center uppercase font-black">
+            Ver módulos
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-frame rounded-[2rem] overflow-hidden p-3">
+        <img src="siges_banner.png" alt="SIGES Seguridad Banner" class="w-full rounded-[1.5rem] object-contain">
+      </div>
+    </div>
+  </header>
+
+  <!-- BENEFICIOS -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl md:text-5xl font-black uppercase">Control operativo <span class="text-sigesCyan">total</span></h3>
+      <p class="text-slate-400 mt-4 max-w-3xl mx-auto">
+        Diseñado para administrar operaciones de seguridad desde una plataforma centralizada, moderna y escalable.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass-card card-hover rounded-3xl p-8">
+        <div class="text-4xl mb-4">🌐</div>
+        <h4 class="text-xl font-black text-white uppercase mb-3">Multitenant / SaaS</h4>
+        <p class="text-slate-300 text-sm leading-relaxed">Aislamiento de datos y administración por empresa desde una estructura escalable.</p>
+      </div>
+      <div class="glass-card card-hover rounded-3xl p-8">
+        <div class="text-4xl mb-4">📊</div>
+        <h4 class="text-xl font-black text-white uppercase mb-3">Indicadores operativos</h4>
+        <p class="text-slate-300 text-sm leading-relaxed">Métricas claras para supervisión, alertas, visitas pendientes y estado del sistema.</p>
+      </div>
+      <div class="glass-card card-hover rounded-3xl p-8">
+        <div class="text-4xl mb-4">🛡️</div>
+        <h4 class="text-xl font-black text-white uppercase mb-3">Seguridad y control</h4>
+        <p class="text-slate-300 text-sm leading-relaxed">Usuarios, permisos, auditoría, reportes y control centralizado de la operación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER PROMOCIONAL -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="glass-card rounded-[2rem] p-4 md:p-6">
+      <img src="siges_promo.png" alt="SIGES Seguridad Promocional" class="w-full rounded-[1.5rem] object-contain">
+    </div>
+  </section>
+
+  <!-- FUNCIONES -->
+  <section id="funciones" class="max-w-7xl mx-auto px-6 py-12">
+    <div class="glass-card rounded-[2rem] p-8 md:p-12">
+      <div class="text-center mb-10">
+        <h3 class="text-4xl font-black uppercase">Módulos principales</h3>
+        <p class="text-slate-400 mt-3">Herramientas para supervisar, controlar y respaldar la operación diaria.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <div class="feature-pill rounded-2xl p-4">✅ Panel de control</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Usuarios y RRHH</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Maestro GGSS</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Reportes</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Instalaciones</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Carta Gantt operativa</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Horas extras</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Soporte y ayuda</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Auditoría y logs</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Alertas críticas</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Control de licencias</div>
+        <div class="feature-pill rounded-2xl p-4">✅ Administración multiempresa</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl md:text-5xl font-black uppercase">Material visual <span class="text-sigesCyan">promocional</span></h3>
+      <p class="text-slate-400 mt-4">Piezas gráficas preparadas para presentar SIGES Seguridad en web, redes sociales y propuestas comerciales.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="poster-box md:col-span-2">
+        <img src="siges_promocion3.png" alt="Promoción SIGES Seguridad 3" class="promo-img">
+      </div>
+      <div class="poster-box">
+        <img src="siges_promocion1.png" alt="Promoción SIGES Seguridad 1" class="promo-img">
+      </div>
+      <div class="poster-box">
+        <img src="siges_promocion2.png" alt="Promoción SIGES Seguridad 2" class="promo-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section id="planes" class="max-w-7xl mx-auto px-6 py-12">
+    <div class="text-center mb-12">
+      <span class="text-sigesCyan font-mono uppercase tracking-widest text-xs font-bold">Cotización personalizada</span>
+      <h3 class="text-4xl md:text-5xl font-black uppercase mt-3">Planes SIGES Seguridad</h3>
+      <p class="text-slate-400 mt-4">Planes según cantidad de empresas, usuarios, instalaciones, módulos y nivel de soporte requerido.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="glass-card card-hover rounded-[2rem] p-8 border border-blue-400/25">
+        <h4 class="text-2xl font-black uppercase mb-4">Plan Operativo</h4>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">Para operaciones que requieren panel de control, usuarios, instalaciones y reportes principales.</p>
+        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+          <li>✅ Panel administrativo</li>
+          <li>✅ Instalaciones</li>
+          <li>✅ Usuarios</li>
+          <li>✅ Reportes base</li>
+        </ul>
+        <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ,%20quiero%20cotizar%20planes%20de%20SIGES%20Seguridad" target="_blank" class="btn-main block text-center py-4 rounded-2xl uppercase">Cotizar planes</a>
+      </div>
+
+      <div class="glass-card card-hover rounded-[2rem] p-8 border border-cyan-400/35">
+        <h4 class="text-2xl font-black uppercase mb-4">Plan Multitenant</h4>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">Para empresas que requieren administración multiempresa, monitoreo y módulos avanzados.</p>
+        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+          <li>✅ Gestión multiempresa</li>
+          <li>✅ Carta Gantt</li>
+          <li>✅ Horas extras</li>
+          <li>✅ Soporte y ayuda</li>
+        </ul>
+        <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ,%20quiero%20cotizar%20planes%20multitenant%20de%20SIGES%20Seguridad" target="_blank" class="btn-main block text-center py-4 rounded-2xl uppercase">Cotizar planes</a>
+      </div>
+
+      <div class="glass-card card-hover rounded-[2rem] p-8 border border-emerald-400/25">
+        <h4 class="text-2xl font-black uppercase mb-4">Plan Corporativo</h4>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">Para operaciones con mayor escala, personalización, soporte extendido y requerimientos especiales.</p>
+        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+          <li>✅ Módulos avanzados</li>
+          <li>✅ Reportes personalizados</li>
+          <li>✅ Configuración especial</li>
+          <li>✅ Soporte extendido</li>
+        </ul>
+        <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ,%20quiero%20cotizar%20un%20plan%20corporativo%20de%20SIGES%20Seguridad" target="_blank" class="btn-main block text-center py-4 rounded-2xl uppercase">Cotizar planes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDICIONES -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="glass-card rounded-[2rem] p-8 md:p-10">
+      <h3 class="text-3xl font-black uppercase mb-6">Condiciones generales</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-300">
+        <div class="feature-pill rounded-2xl p-4">📌 La implementación se cotiza según cantidad de empresas, usuarios e instalaciones.</div>
+        <div class="feature-pill rounded-2xl p-4">📌 Los módulos pueden ajustarse según la operación del cliente.</div>
+        <div class="feature-pill rounded-2xl p-4">📌 Servicios adicionales, soporte extendido o personalizaciones se cotizan aparte.</div>
+        <div class="feature-pill rounded-2xl p-4">📌 La propuesta final se formaliza mediante cotización comercial AJVALENZ.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="max-w-7xl mx-auto px-6 py-16 pb-24">
+    <div class="glass-card rounded-[2rem] p-10 md:p-14 text-center border border-blue-400/25">
+      <h3 class="text-4xl md:text-5xl font-black uppercase">Solicita información y cotizar planes</h3>
+      <p class="text-slate-300 mt-4 max-w-3xl mx-auto">
+        Lleva el control de tu operación de seguridad al siguiente nivel con SIGES Seguridad.
+      </p>
+
+      <div class="mt-8 flex flex-col md:flex-row justify-center gap-4">
+        <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ,%20quiero%20cotizar%20planes%20de%20SIGES%20Seguridad" target="_blank" class="btn-main px-8 py-4 rounded-2xl uppercase">WhatsApp +569 75510325</a>
+        <a href="mailto:contacto@ajvalenz.cl?subject=Cotizar planes SIGES Seguridad" class="btn-outline px-8 py-4 rounded-2xl uppercase font-black">contacto@ajvalenz.cl</a>
+        <a href="index.html" class="btn-outline px-8 py-4 rounded-2xl uppercase font-black">Volver al inicio</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center text-slate-400 text-sm border-t border-white/5">
+    <p>&copy; 2026 Sistemas Computacionales AJVALENZ - SIGES Seguridad</p>
+    <p class="mt-2 text-sigesCyan">Tecnología que protege tu operación</p>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/56975510325" target="_blank" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full z-[100] shadow-xl hover:bg-blue-500 transition">
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.564 0 5.826-4.739 10.564-10.563 10.564z"/></svg>
+  </a>
+
+</body>
+</html>
