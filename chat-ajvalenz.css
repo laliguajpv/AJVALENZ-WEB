@@ -1,0 +1,231 @@
+/* =========================================================
+   ASISTENTE AJVALENZ v1
+   Chat inteligente sin API, sin costos y sin backend.
+   Archivo: chat-ajvalenz.css
+   ========================================================= */
+
+:root {
+  --aj-chat-bg: #0f172a;
+  --aj-chat-card: rgba(15, 23, 42, 0.96);
+  --aj-chat-border: rgba(16, 185, 129, 0.35);
+  --aj-chat-green: #10b981;
+  --aj-chat-cyan: #22d3ee;
+  --aj-chat-text: #f1f5f9;
+  --aj-chat-muted: #94a3b8;
+}
+
+#aj-chat-launcher {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  z-index: 9998;
+  border: 1px solid var(--aj-chat-border);
+  background: linear-gradient(135deg, var(--aj-chat-green), var(--aj-chat-cyan));
+  color: #0f172a;
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35), 0 0 28px rgba(34, 211, 238, 0.22);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+#aj-chat-launcher:hover {
+  transform: translateY(-3px) scale(1.03);
+  filter: brightness(1.08);
+}
+
+#aj-chat-window {
+  position: fixed;
+  right: 24px;
+  bottom: 170px;
+  z-index: 9999;
+  width: min(390px, calc(100vw - 32px));
+  max-height: min(650px, calc(100vh - 210px));
+  background: var(--aj-chat-card);
+  color: var(--aj-chat-text);
+  border: 1px solid var(--aj-chat-border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(18px);
+  display: none;
+}
+
+#aj-chat-window.aj-open {
+  display: flex;
+  flex-direction: column;
+}
+
+.aj-chat-header {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(34, 211, 238, 0.14));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.aj-chat-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aj-chat-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: rgba(2, 6, 23, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px;
+}
+
+.aj-chat-title strong {
+  display: block;
+  font-size: 14px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.aj-chat-title span {
+  display: block;
+  font-size: 11px;
+  color: #bae6fd;
+  margin-top: 2px;
+}
+
+.aj-chat-close {
+  border: 0;
+  background: rgba(15, 23, 42, 0.6);
+  color: #e2e8f0;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.aj-chat-body {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+  scroll-behavior: smooth;
+}
+
+.aj-chat-message {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.aj-chat-message.aj-bot { justify-content: flex-start; }
+.aj-chat-message.aj-user { justify-content: flex-end; }
+
+.aj-chat-bubble {
+  max-width: 88%;
+  padding: 11px 13px;
+  border-radius: 18px;
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+.aj-bot .aj-chat-bubble {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e5e7eb;
+  border-bottom-left-radius: 6px;
+}
+
+.aj-user .aj-chat-bubble {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.95), rgba(34, 211, 238, 0.85));
+  color: #0f172a;
+  font-weight: 700;
+  border-bottom-right-radius: 6px;
+}
+
+.aj-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 14px;
+}
+
+.aj-quick-actions button {
+  border: 1px solid rgba(34, 211, 238, 0.32);
+  background: rgba(2, 6, 23, 0.45);
+  color: #dffafe;
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.aj-quick-actions button:hover {
+  background: rgba(34, 211, 238, 0.15);
+  transform: translateY(-1px);
+}
+
+.aj-chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(2, 6, 23, 0.55);
+}
+
+#aj-chat-input {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(15, 23, 42, 0.9);
+  color: white;
+  border-radius: 16px;
+  padding: 12px 13px;
+  font-size: 13px;
+  outline: none;
+}
+
+#aj-chat-input:focus { border-color: rgba(34, 211, 238, 0.55); }
+
+.aj-chat-send {
+  border: 0;
+  background: linear-gradient(135deg, var(--aj-chat-green), var(--aj-chat-cyan));
+  color: #0f172a;
+  font-weight: 900;
+  border-radius: 16px;
+  padding: 0 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.aj-chat-footer {
+  padding: 0 16px 14px;
+  font-size: 10px;
+  color: var(--aj-chat-muted);
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  #aj-chat-window {
+    right: 12px;
+    bottom: 92px;
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 120px);
+  }
+
+  #aj-chat-launcher {
+    right: 18px;
+    bottom: 86px;
+    width: 58px;
+    height: 58px;
+  }
+}
