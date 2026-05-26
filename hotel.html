@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJVALENZ Hotel PMS | Sistema hotelero SaaS</title>
+    <meta name="description" content="AJVALENZ Hotel PMS: sistema hotelero para hoteles pequeños, hostales, cabañas y alojamientos con reservas online, caja, documentos, reportes y módulos adicionales.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        customBlue: '#334155',
+                        accentEsmeralda: '#10b981',
+                        hotelCyan: '#06b6d4',
+                        hotelDeep: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        body { background-color: #334155; color: #f1f5f9; position: relative; min-height: 100vh; overflow-x: hidden; }
+        html { scroll-behavior: smooth; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+        .glass-card:hover { border-color: #06b6d4; transform: translateY(-3px); box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.24); }
+        .hotel-gradient { background: radial-gradient(circle at top left, rgba(6,182,212,.26), transparent 38%), radial-gradient(circle at bottom right, rgba(16,185,129,.22), transparent 42%), linear-gradient(135deg, rgba(15,23,42,.96), rgba(30,64,86,.92)); }
+        .soft-grid { background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 42px 42px; }
+        .pricing-card { background: rgba(15,23,42,.54); border: 1px solid rgba(255,255,255,.10); border-radius: 2rem; }
+        .pricing-card.featured { border-color: rgba(6,182,212,.60); box-shadow: 0 20px 60px -24px rgba(6,182,212,.55); }
+        .tag { border: 1px solid rgba(255,255,255,.12); background: rgba(15,23,42,.42); }
+        img { -webkit-user-drag: none; user-drag: none; -webkit-touch-callout: none; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <nav class="p-6 fixed top-0 w-full z-50 glass-card border-b border-white/10 h-auto">
+        <div class="max-w-7xl mx-auto flex justify-between items-center w-full">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo AJVALENZ" class="h-10 w-auto">
+                <h1 class="text-xl font-bold text-white uppercase tracking-tight">AJ<span class="text-accentEsmeralda">VALENZ</span></h1>
+            </a>
+            <div class="space-x-6 hidden md:block text-xs uppercase tracking-widest font-bold text-slate-200">
+                <a href="index.html" class="hover:text-accentEsmeralda transition">Inicio</a>
+                <a href="software.html" class="hover:text-accentEsmeralda transition">Software</a>
+                <a href="#planes" class="hover:text-accentEsmeralda transition">Planes</a>
+                <a href="#modulos" class="hover:text-accentEsmeralda transition">Módulos</a>
+                <a href="contacto.html" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full hover:bg-emerald-400 transition font-bold">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-36 pb-20 px-6 relative overflow-hidden hotel-gradient soft-grid">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full tag text-cyan-200 text-[11px] uppercase tracking-widest font-black mb-7">🏨 Sistema hotelero SaaS AJVALENZ</span>
+                <h2 class="text-5xl md:text-7xl font-extrabold mb-7 text-white tracking-tight uppercase leading-none">
+                    AJVALENZ <span class="text-cyan-300">Hotel PMS</span>
+                </h2>
+                <p class="text-xl text-slate-200 leading-relaxed max-w-2xl mb-8 font-medium">
+                    Gestión hotelera operativa, reservas internas y reservas online para hoteles pequeños, hostales, cabañas y arriendos turísticos.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-4 mb-9 text-sm text-slate-200">
+                    <div class="glass-card rounded-2xl p-4">✅ Operación diaria sin planillas</div>
+                    <div class="glass-card rounded-2xl p-4">✅ Portal de reservas online</div>
+                    <div class="glass-card rounded-2xl p-4">✅ Caja, pagos y documentos</div>
+                    <div class="glass-card rounded-2xl p-4">✅ Reportes, roles y ayuda PRO</div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#planes" class="bg-cyan-300 text-slate-950 hover:bg-cyan-200 font-black px-8 py-4 rounded-2xl transition text-sm uppercase tracking-widest text-center">Consultar planes</a>
+                    <a href="#reservas-online" class="border border-white/20 text-white hover:border-cyan-300 hover:text-cyan-200 font-black px-8 py-4 rounded-2xl transition text-sm uppercase tracking-widest text-center">Ver reservas online</a>
+                </div>
+            </div>
+            <div class="glass-card rounded-[2rem] overflow-hidden border-cyan-300/30 shadow-2xl bg-slate-950/40">
+                <video class="w-full aspect-video object-cover bg-slate-950" poster="promo_hotel.png" controls muted playsinline>
+                    <source src="promo_hotel_video_hevc.mp4" type="video/mp4">
+                    Tu navegador no soporta video HTML5.
+                </video>
+                <div class="p-5 text-xs text-slate-300 flex flex-wrap gap-3 justify-between items-center">
+                    <span>Video promocional AJVALENZ Hotel PMS</span>
+                    <span class="text-cyan-300 font-bold uppercase tracking-widest">Consulte planes</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-20 space-y-24">
+
+        <section class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-1">
+                <span class="text-cyan-300 font-mono uppercase tracking-widest text-xs font-bold">Enfoque comercial</span>
+                <h3 class="text-4xl font-black text-white mt-3 mb-5 uppercase tracking-tight">Pensado para alojamientos pequeños</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">Una solución profesional para quienes necesitan ordenar su operación, recibir reservas y controlar pagos sin depender de planillas dispersas.</p>
+            </div>
+            <div class="lg:col-span-2 grid md:grid-cols-3 gap-5">
+                <div class="glass-card p-6 rounded-3xl">
+                    <div class="text-3xl mb-4">🌐</div>
+                    <h4 class="font-black text-white text-lg mb-2">Sin sitio web</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">AJVALENZ entrega una página privada de reservas online lista para compartir.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl">
+                    <div class="text-3xl mb-4">🔗</div>
+                    <h4 class="font-black text-white text-lg mb-2">Web sin motor</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">El cliente puede agregar un botón “Reservar ahora” apuntando al portal AJVALENZ.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl">
+                    <div class="text-3xl mb-4">🏕️</div>
+                    <h4 class="font-black text-white text-lg mb-2">Hostales y cabañas</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Ideal para cabañas, arriendos turísticos, hostales y hoteles boutique.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="funciones" class="glass-card rounded-[2.5rem] p-8 md:p-12 overflow-hidden">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-4">Funciones principales</h3>
+                <p class="text-slate-400 max-w-3xl mx-auto">Todo lo necesario para operar el día a día del alojamiento desde un panel ordenado y seguro.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                <div class="bg-slate-950/40 rounded-2xl p-5 border border-white/5">✅ Reservas y check-in</div>
+                <div class="bg-slate-950/40 rounded-2xl p-5 border border-white/5">✅ Clientes / huéspedes</div>
+                <div class="bg-slate-950/40 rounded-2xl p-5 border border-white/5">✅ Habitaciones</div>
+                <div class="bg-slate-950/40 rounded-2xl p-5 border border-white/5">✅ Limpieza</div>
+                <div class="bg-slate-950/40 rounded-2xl p-5 border border-white/5">✅ Mantenimiento</div>
+                <div class="bg-slate-950/40 rounded-2xl p-5 border border-white/5">✅ Caja y pagos</div>
+                <div class="bg-slate-950/40 rounded-2xl p-5 border border-white/5">✅ Documentos de cobro</div>
+                <div class="bg-slate-950/40 rounded-2xl p-5 border border-white/5">✅ Reportes y bitácora</div>
+            </div>
+        </section>
+
+        <section id="reservas-online" class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="rounded-[2rem] overflow-hidden border border-cyan-300/30 bg-slate-950 shadow-2xl">
+                <img src="promo_hotel1.png" alt="Reservas online AJVALENZ" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <span class="text-cyan-300 font-mono uppercase tracking-widest text-xs font-bold">Reservas online</span>
+                <h3 class="text-4xl font-black text-white mt-3 mb-5 uppercase tracking-tight">Vende reservas aunque tu cliente no tenga sitio web</h3>
+                <p class="text-slate-300 leading-relaxed mb-6">El portal de reservas AJVALENZ permite entregar un enlace privado para que el huésped consulte disponibilidad y envíe una solicitud desde internet.</p>
+                <div class="space-y-3 text-sm text-slate-300">
+                    <div class="glass-card rounded-2xl p-4">✅ Link compartible por WhatsApp, Instagram, Facebook, correo y Google Business.</div>
+                    <div class="glass-card rounded-2xl p-4">✅ Útil para clientes sin sitio web o con sitio web sin motor de reservas.</div>
+                    <div class="glass-card rounded-2xl p-4">✅ Las solicitudes pueden ser gestionadas por recepción desde el sistema.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="planes" class="py-4">
+            <div class="text-center mb-12">
+                <span class="text-cyan-300 font-mono uppercase tracking-widest text-xs font-bold">Comercialización SaaS</span>
+                <h3 class="text-4xl md:text-5xl font-black text-white mt-3 mb-4 uppercase tracking-tight">Planes y precios</h3>
+                <p class="text-slate-400 max-w-3xl mx-auto">Valores orientativos para pymes hoteleras, hostales, cabañas y alojamientos pequeños.</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="pricing-card p-8">
+                    <h4 class="text-2xl font-black text-white uppercase mb-2">Plan Base</h4>
+                    <p class="text-slate-400 text-sm mb-6">Sistema interno hotelero para operación diaria.</p>
+                    <div class="text-4xl font-black text-white mb-1">$59.990</div>
+                    <div class="text-slate-400 text-sm mb-6">CLP / mes · US$67 aprox.</div>
+                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                        <li>✅ Reservas manuales por recepción</li>
+                        <li>✅ Clientes, habitaciones y operación</li>
+                        <li>✅ Caja, documentos y reportes</li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center border border-cyan-300 text-cyan-200 hover:bg-cyan-300 hover:text-slate-950 font-black py-3 rounded-xl transition uppercase text-xs">Consulte planes</a>
+                </div>
+                <div class="pricing-card featured p-8 relative">
+                    <span class="absolute top-5 right-5 px-3 py-1 rounded-full bg-cyan-300 text-slate-950 text-[10px] uppercase font-black tracking-widest">Más vendido</span>
+                    <h4 class="text-2xl font-black text-white uppercase mb-2">Plan Pro</h4>
+                    <p class="text-slate-400 text-sm mb-6">Sistema interno + página privada de reservas online AJVALENZ.</p>
+                    <div class="text-4xl font-black text-cyan-200 mb-1">$100.784</div>
+                    <div class="text-slate-400 text-sm mb-6">CLP / mes · US$112 aprox.</div>
+                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                        <li>✅ Todo el Plan Base</li>
+                        <li>✅ Portal privado de reservas online</li>
+                        <li>✅ Link compartible en redes y WhatsApp</li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-cyan-300 text-slate-950 hover:bg-cyan-200 font-black py-3 rounded-xl transition uppercase text-xs">Consulte planes</a>
+                </div>
+                <div class="pricing-card p-8">
+                    <h4 class="text-2xl font-black text-white uppercase mb-2">Plan Premium</h4>
+                    <p class="text-slate-400 text-sm mb-6">Sistema interno + reservas online + página pública personalizada.</p>
+                    <div class="text-4xl font-black text-white mb-1">$129.990</div>
+                    <div class="text-slate-400 text-sm mb-6">CLP / mes · US$144 aprox.</div>
+                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                        <li>✅ Todo el Plan Pro</li>
+                        <li>✅ Página pública personalizada</li>
+                        <li>✅ Mejor presentación comercial</li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center border border-cyan-300 text-cyan-200 hover:bg-cyan-300 hover:text-slate-950 font-black py-3 rounded-xl transition uppercase text-xs">Consulte planes</a>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5 mt-6">
+                <div class="glass-card rounded-3xl p-6 border-cyan-400/20">
+                    <h4 class="font-black text-white uppercase mb-3">Implementación inicial Base</h4>
+                    <p class="text-3xl font-black text-cyan-200">$249.990 CLP</p>
+                    <p class="text-slate-400 text-sm">Pago único · US$278 aprox.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6 border-cyan-400/20">
+                    <h4 class="font-black text-white uppercase mb-3">Implementación Pro / Premium</h4>
+                    <p class="text-3xl font-black text-cyan-200">$349.990 CLP</p>
+                    <p class="text-slate-400 text-sm">Pago único · US$389 aprox.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="modulos" class="glass-card rounded-[2.5rem] p-8 md:p-12">
+            <div class="grid lg:grid-cols-3 gap-8 items-start">
+                <div>
+                    <span class="text-cyan-300 font-mono uppercase tracking-widest text-xs font-bold">Servicios adicionales</span>
+                    <h3 class="text-4xl font-black text-white mt-3 mb-5 uppercase tracking-tight">Módulos para ampliar el sistema</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Activa solo lo que cada cliente necesita. Ideal para monetizar funciones especiales sin subir el costo base.</p>
+                </div>
+                <div class="lg:col-span-2 grid md:grid-cols-2 gap-5">
+                    <div class="bg-slate-950/40 rounded-3xl p-6 border border-white/5">
+                        <h4 class="font-black text-white mb-2">Servicios extra</h4>
+                        <p class="text-3xl font-black text-cyan-200">0,60 UF / mes</p>
+                        <p class="text-slate-400 text-sm mt-3">Consumos, cobros y documentos.</p>
+                    </div>
+                    <div class="bg-slate-950/40 rounded-3xl p-6 border border-white/5">
+                        <h4 class="font-black text-white mb-2">Arriendo de vehículos</h4>
+                        <p class="text-3xl font-black text-cyan-200">1,00 UF / mes</p>
+                        <p class="text-slate-400 text-sm mt-3">Módulo adicional para flota o arriendos.</p>
+                    </div>
+                    <div class="bg-slate-950/40 rounded-3xl p-6 border border-white/5">
+                        <h4 class="font-black text-white mb-2">Página pública personalizada</h4>
+                        <p class="text-3xl font-black text-cyan-200">2,50 UF</p>
+                        <p class="text-slate-400 text-sm mt-3">Habilitación para presencia web comercial.</p>
+                    </div>
+                    <div class="bg-slate-950/40 rounded-3xl p-6 border border-white/5">
+                        <h4 class="font-black text-white mb-2">Reservas online adicional</h4>
+                        <p class="text-3xl font-black text-cyan-200">1,00 UF / mes</p>
+                        <p class="text-slate-400 text-sm mt-3">Link y portal de reservas AJVALENZ.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-3 gap-6">
+            <img src="promo_hotel2.png" alt="AJVALENZ Hotel PMS panel" class="rounded-[2rem] border border-white/10 shadow-2xl w-full h-full object-cover">
+            <img src="promo_hotel3.png" alt="AJVALENZ Hotel PMS reservas" class="rounded-[2rem] border border-white/10 shadow-2xl w-full h-full object-cover">
+            <img src="promo_hotel5.png" alt="AJVALENZ Hotel PMS módulos" class="rounded-[2rem] border border-white/10 shadow-2xl w-full h-full object-cover">
+        </section>
+
+        <section class="hotel-gradient rounded-[2.5rem] p-10 md:p-16 text-center overflow-hidden relative">
+            <h3 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-5">AJVALENZ Hotel PMS</h3>
+            <p class="text-slate-200 max-w-3xl mx-auto leading-relaxed mb-8">Sistema pensado para negocios pequeños que quieren ordenar su operación, controlar pagos y vender reservas online sin construir una plataforma desde cero.</p>
+            <a href="contacto.html" class="inline-block bg-accentEsmeralda text-slate-950 hover:bg-emerald-400 font-black px-10 py-4 rounded-2xl uppercase tracking-widest text-sm transition">Consulte planes</a>
+            <p class="text-cyan-100 text-sm mt-6 font-bold">contacto@ajvalenz.cl</p>
+        </section>
+
+    </main>
+
+    <footer class="py-12 text-center text-slate-500 text-sm relative z-10 flex flex-col items-center mt-12 border-t border-white/5">
+        <p>&copy; 2026 AJVALENZ.cl - Tecnología, Letras y Conocimiento.</p>
+    </footer>
+
+    <a href="https://wa.me/56975510325" target="_blank" class="fixed bottom-6 right-6 bg-emerald-500 text-white p-4 rounded-full z-[100] shadow-xl" aria-label="WhatsApp AJVALENZ">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.564 0 5.826-4.739 10.564-10.563 10.564z"/></svg>
+    </a>
+    <link rel="stylesheet" href="chat-ajvalenz.css">
+    <script src="chat-ajvalenz.js"></script>
+</body>
+</html>
