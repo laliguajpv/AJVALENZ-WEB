@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- AJVALENZ HOTEL PMS WEB FIX POSTERS SIN VALORES + VIDEO H264 V2 -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -31,6 +32,10 @@
         .pricing-card.featured { border-color: rgba(6,182,212,.60); box-shadow: 0 20px 60px -24px rgba(6,182,212,.55); }
         .tag { border: 1px solid rgba(255,255,255,.12); background: rgba(15,23,42,.42); }
         img { -webkit-user-drag: none; user-drag: none; -webkit-touch-callout: none; }
+        .promo-poster-frame { background: rgba(15,23,42,.78); border: 1px solid rgba(255,255,255,.10); box-shadow: 0 18px 45px -22px rgba(0,0,0,.55); display: flex; align-items: center; justify-content: center; }
+        .promo-safe-img { width: 100%; height: 100%; object-fit: contain !important; object-position: center center; background: rgba(15,23,42,.88); padding: .45rem; display: block; }
+        .video-safe { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #020617; }
+
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -73,8 +78,9 @@
                 </div>
             </div>
             <div class="glass-card rounded-[2rem] overflow-hidden border-cyan-300/30 shadow-2xl bg-slate-950/40">
-                <video class="w-full aspect-video object-cover bg-slate-950" poster="promo_hotel.png" controls muted playsinline>
-                    <source src="promo_hotel_video_hevc.mp4" type="video/mp4">
+                <video class="video-safe" poster="promo_hotel6.png?v=20260525v2" controls preload="metadata" playsinline>
+                    <source src="promo_hotel_video.mp4?v=20260525v2" type="video/mp4">
+                    <source src="promo_hotel_video_hevc.mp4?v=20260525v2" type="video/mp4">
                     Tu navegador no soporta video HTML5.
                 </video>
                 <div class="p-5 text-xs text-slate-300 flex flex-wrap gap-3 justify-between items-center">
@@ -131,7 +137,7 @@
 
         <section id="reservas-online" class="grid lg:grid-cols-2 gap-8 items-center">
             <div class="rounded-[2rem] overflow-hidden border border-cyan-300/30 bg-slate-950 shadow-2xl">
-                <img src="promo_hotel1.png" alt="Reservas online AJVALENZ" class="w-full h-full object-cover">
+                <img src="promo_hotel6.png?v=20260525v2" alt="Reservas online AJVALENZ" class="promo-safe-img">
             </div>
             <div>
                 <span class="text-cyan-300 font-mono uppercase tracking-widest text-xs font-bold">Reservas online</span>
@@ -237,9 +243,16 @@
         </section>
 
         <section class="grid md:grid-cols-3 gap-6">
-            <img src="promo_hotel2.png" alt="AJVALENZ Hotel PMS panel" class="rounded-[2rem] border border-white/10 shadow-2xl w-full h-full object-cover">
-            <img src="promo_hotel3.png" alt="AJVALENZ Hotel PMS reservas" class="rounded-[2rem] border border-white/10 shadow-2xl w-full h-full object-cover">
-            <img src="promo_hotel5.png" alt="AJVALENZ Hotel PMS módulos" class="rounded-[2rem] border border-white/10 shadow-2xl w-full h-full object-cover">
+            <!-- Posters sin valores. Si cambias las imágenes, mantén solo piezas con la leyenda CONSULTE PLANES. -->
+            <div class="rounded-[2rem] overflow-hidden promo-poster-frame h-[420px] md:h-[520px]">
+                <img src="promo_hotel1.png?v=20260525v2" alt="AJVALENZ Hotel PMS - consulte planes" class="promo-safe-img">
+            </div>
+            <div class="rounded-[2rem] overflow-hidden promo-poster-frame h-[420px] md:h-[520px]">
+                <img src="promo_hotel4.png?v=20260525v2" alt="AJVALENZ Hotel PMS - gestión hotelera sin valores" class="promo-safe-img">
+            </div>
+            <div class="rounded-[2rem] overflow-hidden promo-poster-frame h-[420px] md:h-[520px]">
+                <img src="promo_hotel6.png?v=20260525v2" alt="AJVALENZ Hotel PMS - reservas online consulte planes" class="promo-safe-img">
+            </div>
         </section>
 
         <section class="hotel-gradient rounded-[2.5rem] p-10 md:p-16 text-center overflow-hidden relative">
