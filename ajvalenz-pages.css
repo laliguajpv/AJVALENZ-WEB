@@ -133,3 +133,16 @@ body.ajv-unified footer img{max-width:180px;}
  body.ajv-unified>footer{margin-top:15px;}
 }
 @media(prefers-reduced-motion:reduce){body.ajv-unified *{scroll-behavior:auto!important;}}
+
+/* Términos y condiciones, integrado a la identidad AJVALENZ */
+body.ajv-terms>main {padding-top:30px!important;}
+body.ajv-terms>main>.glass-card {
+  background:linear-gradient(140deg,#143b4f,#1e5064)!important;
+  border:1px solid rgba(201,156,71,.42)!important;border-top:4px solid var(--ajv-gold)!important;
+  color:#f3f7f8;box-shadow:0 20px 43px rgba(14,51,69,.13);
+}
+body.ajv-terms>main h2,body.ajv-terms>main h2.text-white {color:#fff!important;}
+body.ajv-terms>main h3 {color:#d8b574!important;}
+body.ajv-terms>main p {color:#e0e9ed;}
+body.ajv-terms>main .text-slate-400 {color:#c1d3da!important;}
+@media(max-width:767px){body.ajv-terms>main {padding:20px 14px!important;}body.ajv-terms>main>.glass-card {padding:28px 20px!important;}}
