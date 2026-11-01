@@ -476,3 +476,28 @@ body.ajv-home #testimonios { margin-top:20px!important; }
 .ajv-gallery-controls span{font-size:11px;font-weight:800;color:#536e7b;}
 .ajv-gallery-full{display:block;text-align:center;color:#0d746b;font-size:11px;text-decoration:underline;font-weight:800;margin-top:8px;}
 @media(max-width:767px){.ajv-app-gallery{padding:14px;border-radius:17px;}.ajv-gallery-image{max-height:65vh;}.ajv-gallery-image img{max-height:calc(65vh - 16px);}.ajv-gallery-controls button{padding:10px;font-size:10px;}}
+
+/* Navegación corporativa: portada, catálogo y ficha SalonPro.
+   Mismas proporciones y botones que las páginas interiores. */
+body.ajv-home .ajv-nav .max-w-7xl>a,
+body.ajv-home .ajv-nav .max-w-7xl>div:first-child>a { text-decoration:none; }
+body.ajv-home .ajv-nav .max-w-7xl>div:first-child>a h1,
+body.ajv-home .ajv-nav .max-w-7xl>a h1 {font-size:20px!important;letter-spacing:-.025em!important;font-weight:900!important;}
+body.ajv-home .ajv-nav .max-w-7xl>div.hidden a,
+body.ajv-home .ajv-nav .max-w-7xl>div.space-x-6 a {
+  font-size:11px!important;letter-spacing:.12em!important;color:#385c6b!important;font-weight:800!important;
+}
+body.ajv-home .ajv-nav .max-w-7xl>div.hidden a.text-accentEsmeralda,
+body.ajv-home .ajv-nav .max-w-7xl>div.space-x-6 a.text-accentEsmeralda {color:var(--ajv-teal)!important;}
+body.ajv-home .ajv-nav .max-w-7xl>div.hidden a[href="contacto.html"],
+body.ajv-home .ajv-nav .max-w-7xl>div.space-x-6 a[href="contacto.html"] {
+  display:inline-block;background:var(--ajv-petrol)!important;color:#fff!important;
+  padding:11px 17px!important;border-radius:20px!important;border:0!important;
+}
+body.ajv-home .ajv-nav .max-w-7xl>div.hidden a[href="contacto.html"]:hover,
+body.ajv-home .ajv-nav .max-w-7xl>div.space-x-6 a[href="contacto.html"]:hover {background:#176779!important;}
+body.ajv-home .ajv-nav .ajv-mobile-toggle {padding:10px 13px;font-size:12px;}
+@media (max-width:767px) {
+ body.ajv-home .ajv-nav .max-w-7xl>div.hidden,
+ body.ajv-home .ajv-nav .max-w-7xl>div.space-x-6 {display:none!important;}
+}
