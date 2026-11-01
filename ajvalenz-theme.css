@@ -30,22 +30,26 @@ body.ajv-home .glass-card:hover {
   border-color: rgba(201,155,69,.65) !important;
   box-shadow: 0 17px 40px rgba(13,51,67,.11);
 }
-body.ajv-home .text-white,
-body.ajv-home .text-slate-200 { color: var(--ajv-petroleo-profundo) !important; }
-body.ajv-home .text-slate-300,
-body.ajv-home .text-slate-400 { color: #546e7b !important; }
-body.ajv-home .text-slate-500,
-body.ajv-home .text-slate-600 { color: #617783 !important; }
-body.ajv-home .text-accentEsmeralda { color: var(--ajv-esmeralda) !important; }
-body.ajv-home .text-blue-400,
-body.ajv-home .text-blue-300 { color: #1b5b7b !important; }
-body.ajv-home .text-cyan-200,
-body.ajv-home .text-cyan-300 { color: #196077 !important; }
-body.ajv-home [class*="bg-slate-900"] { background-color: #edf3f5 !important; }
-body.ajv-home .border-white\/5,
+body.ajv-home main .text-white,
+body.ajv-home main .text-slate-200,
+body.ajv-home section.mt-24 .text-white,
+body.ajv-home section.mt-24 .text-slate-200 { color: var(--ajv-petroleo-profundo) !important; }
+body.ajv-home main .text-slate-300,
+body.ajv-home main .text-slate-400,
+body.ajv-home section.mt-24 .text-slate-300,
+body.ajv-home section.mt-24 .text-slate-400 { color: #546e7b !important; }
+body.ajv-home main .text-slate-500,
+body.ajv-home main .text-slate-600 { color: #617783 !important; }
+body.ajv-home main .text-accentEsmeralda { color: var(--ajv-esmeralda) !important; }
+body.ajv-home main .text-blue-400,
+body.ajv-home main .text-blue-300 { color: #1b5b7b !important; }
+body.ajv-home main .text-cyan-200,
+body.ajv-home main .text-cyan-300 { color: #196077 !important; }
+body.ajv-home main [class*="bg-slate-900"] { background-color: #edf3f5 !important; }
+body.ajv-home main .border-white\/5,
 body.ajv-home .border-white\/10 { border-color: #dde8eb !important; }
-body.ajv-home .bg-accentEsmeralda { background-color: #0f987f !important; }
-body.ajv-home a.bg-accentEsmeralda:hover { background-color: #0c7868 !important; color: #fff !important; }
+body.ajv-home main .bg-accentEsmeralda { background-color: #0f987f !important; }
+body.ajv-home main a.bg-accentEsmeralda:hover { background-color: #0c7868 !important; color: #fff !important; }
 
 .ajv-nav {
   position: sticky !important;
