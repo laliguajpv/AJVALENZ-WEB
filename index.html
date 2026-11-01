@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJVALENZ | Portafolio Oficial</title>
+    <title>AJVALENZ | Software, Tecnología y Creación</title>
+    <meta name="description" content="Sistemas Computacionales AJVALENZ: software a medida, desarrollo web, soporte técnico, seguridad privada y catálogo literario.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -51,35 +52,47 @@
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #10b981; border-radius: 10px; }
     </style>
+    <link rel="stylesheet" href="ajvalenz-theme.css">
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans antialiased ajv-home">
 
-    <nav class="p-6 fixed top-0 w-full z-50 glass-card border-b border-white/10 h-auto">
-        <div class="max-w-7xl mx-auto flex justify-between items-center w-full">
-            <div class="flex items-center gap-3">
-                <a href="index.html" class="flex items-center gap-3">
-                    <img src="logo.png" alt="Logo" class="h-10 w-auto"> 
-                    <h1 class="text-xl font-bold text-white uppercase tracking-tight">AJ<span class="text-accentEsmeralda">VALENZ</span></h1>
-                </a>
-            </div>
-            <div class="space-x-6 hidden md:block text-xs uppercase tracking-widest font-bold text-slate-200">
-                <a href="index.html" class="text-accentEsmeralda transition">Inicio</a>
-                <a href="software.html" class="hover:text-accentEsmeralda transition">Software</a>
-                <a href="libros.html" class="hover:text-accentEsmeralda transition">Escritor</a>
-                
-                <a href="academia.html" class="hover:text-accentEsmeralda transition">Cursos</a>
-                <a href="contacto.html" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full hover:bg-emerald-400 transition font-bold">Contacto</a>
+    <nav class="ajv-nav" aria-label="Navegación principal">
+        <div class="ajv-nav-inner">
+            <a href="index.html" class="ajv-brand" aria-label="AJVALENZ, ir al inicio">
+                <span class="ajv-brand-mark"><img src="logo.png" alt=""></span>
+                <span class="ajv-brand-copy"><small>SISTEMAS COMPUTACIONALES</small><strong>AJVALENZ</strong></span>
+            </a>
+            <button class="ajv-mobile-toggle" id="ajv-menu-toggle" type="button" aria-expanded="false" aria-controls="ajv-nav-links">☰ Menú</button>
+            <div class="ajv-nav-links" id="ajv-nav-links">
+                <a href="index.html" aria-current="page">Inicio</a>
+                <a href="software.html">Software</a>
+                <a href="libros.html">Escritor</a>
+                <a href="academia.html">Cursos</a>
+                <a href="contacto.html" class="ajv-nav-contact">Contacto</a>
             </div>
         </div>
     </nav>
 
-    <header class="pt-48 pb-24 px-6 text-center max-w-6xl mx-auto relative z-10">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-8 text-white drop-shadow-md tracking-tight uppercase">
-            Tecnología, Narrativa & <span class="text-accentEsmeralda">Visión Crítica</span>
-        </h2>
-        <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
-            Arquitecto de sistemas, escritor versátil y líder operativo. Un portafolio donde el código robusto convive con la gestión crítica y la narrativa profunda.
-        </p>
+    <header class="ajv-hero">
+        <div class="ajv-hero-content">
+            <div class="ajv-kicker">Tecnología con identidad propia</div>
+            <h2>Soluciones tecnológicas <span>con sello AJVALENZ</span></h2>
+            <p>Software a medida, sitios web y soporte técnico para empresas y emprendedores. Experiencia, atención cercana y soluciones pensadas para necesidades reales.</p>
+            <div class="ajv-hero-actions">
+                <a href="#software-destacado" class="ajv-button-primary">Conocer nuestros sistemas</a>
+                <a href="libros.html" class="ajv-button-secondary">Explorar mis libros</a>
+            </div>
+            <div class="ajv-hero-tags">
+                <span>Software profesional</span>
+                <span>Diseño web</span>
+                <span>Soporte técnico</span>
+                <span>Creación literaria</span>
+            </div>
+        </div>
+        <div class="ajv-hero-visual" aria-hidden="true">
+            <img src="logo.png" class="ajv-hero-logo" alt="">
+            <span class="ajv-gold-dot"></span>
+        </div>
     </header>
 
     <main class="max-w-[1750px] mx-auto px-4 relative z-10">
@@ -105,7 +118,7 @@
                             <span class="inline-block px-3 py-1 bg-accentEsmeralda/10 text-accentEsmeralda border border-accentEsmeralda/30 rounded-full text-[10px] font-mono mb-6 uppercase tracking-widest">Misterio & Poesía</span>
                             <div class="text-slate-300 text-sm leading-relaxed space-y-4 text-justify font-medium">
                                 <p>Nacido en <span class="font-bold text-white">La Ligua</span>, mi viaje literario comenzó en las aulas de mi adolescencia, donde descubrí que la escritura es el mejor acto de rescate para el mundo interior.</p>
-                                <p>Como autor, he explorado desde la profundidad lírica de tres poemarios de amor hasta el suspenso y el terror autobiográfico, género que me abrió las puertas para ser publicado en <span class="font-bold text-white">Amazon</span> a través de una prestigiosa antología española.</p>
+                                <p>Como autor, he explorado desde la poesía reunida en una antología hasta el suspenso y el terror autobiográfico, género que me abrió las puertas para ser publicado en <span class="font-bold text-white">Amazon</span> a través de una prestigiosa antología española.</p>
                                 <p>Muchas de mis historias—cargadas de mundos antiguos y tecnologías celestiales—nacen de visiones y sueños recurrentes. Para mí, la realidad a menudo no basta para contener lo que imaginamos; por eso, transformo esos ecos nocturnos en las semillas de mis libros.</p>
                             </div>
                         </div>
@@ -151,7 +164,7 @@
                                 <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-300/40 text-cyan-200 text-[10px] font-bold uppercase tracking-widest">Hotel SaaS</span>
                                 <span class="px-3 py-1 rounded-full bg-accentEsmeralda/15 border border-accentEsmeralda/30 text-accentEsmeralda text-[10px] font-bold uppercase tracking-widest">Reservas online</span>
                             </div>
-                            <div class="h-[430px] md:h-[520px] bg-slate-900 overflow-hidden flex items-center justify-center p-2">
+                            <div class="promo-panel h-[280px] md:h-[320px] bg-slate-900 overflow-hidden flex items-center justify-center p-2">
                                 <img src="promo_hotel.png" alt="AJVALENZ Hotel PMS" class="w-full h-full object-contain object-center">
                             </div>
                             <div class="p-8">
@@ -173,7 +186,7 @@
 
                         <!-- MINI ALMACÉN PRO -->
                         <div class="glass-card rounded-[2rem] overflow-hidden border border-accentEsmeralda/30">
-                            <div class="h-[430px] md:h-[520px] bg-slate-900 overflow-hidden flex items-center justify-center p-2">
+                            <div class="promo-panel h-[280px] md:h-[320px] bg-slate-900 overflow-hidden flex items-center justify-center p-2">
                                 <img src="PROMOCION_4.png" alt="MiniAlmacén Pro V3.0" class="w-full h-full object-contain object-center">
                             </div>
                             <div class="p-8">
@@ -195,7 +208,7 @@
 
                         <!-- SIGES SEGURIDAD -->
                         <div class="glass-card rounded-[2rem] overflow-hidden border border-blue-400/30">
-                            <div class="h-[430px] md:h-[520px] bg-slate-900 overflow-hidden flex items-center justify-center p-2">
+                            <div class="promo-panel h-[280px] md:h-[320px] bg-slate-900 overflow-hidden flex items-center justify-center p-2">
                                 <img src="siges_promo.png" alt="SIGES Seguridad" class="w-full h-full object-contain object-center">
                             </div>
                             <div class="p-8">
@@ -332,5 +345,23 @@
     </a>
     <link rel="stylesheet" href="chat-ajvalenz.css">
 <script src="chat-ajvalenz.js"></script>
+
+<script>
+(function () {
+    const boton = document.getElementById('ajv-menu-toggle');
+    const menu = document.getElementById('ajv-nav-links');
+    if (!boton || !menu) return;
+    boton.addEventListener('click', function () {
+        const abierto = menu.classList.toggle('is-open');
+        boton.setAttribute('aria-expanded', String(abierto));
+    });
+    menu.querySelectorAll('a').forEach(function (enlace) {
+        enlace.addEventListener('click', function () {
+            menu.classList.remove('is-open');
+            boton.setAttribute('aria-expanded', 'false');
+        });
+    });
+})();
+</script>
 </body>
 </html>
