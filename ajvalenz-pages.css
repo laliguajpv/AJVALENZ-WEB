@@ -146,3 +146,44 @@ body.ajv-terms>main h3 {color:#d8b574!important;}
 body.ajv-terms>main p {color:#e0e9ed;}
 body.ajv-terms>main .text-slate-400 {color:#c1d3da!important;}
 @media(max-width:767px){body.ajv-terms>main {padding:20px 14px!important;}body.ajv-terms>main>.glass-card {padding:28px 20px!important;}}
+
+
+/* Refinamiento visual II: menú y estantería literaria */
+body.ajv-unified .ajv-nav-links {gap:8px!important;}
+body.ajv-unified .ajv-nav-links a:not(.ajv-contact-nav) {
+ display:inline-flex;align-items:center;justify-content:center;
+ padding:11px 15px;border:1px solid #cedfe5;border-radius:13px;
+ background:linear-gradient(145deg,#f8fbfc,#e5eff2);
+ box-shadow:0 3px 8px rgba(14,51,69,.055);
+ transition:background .2s,box-shadow .2s,border-color .2s,transform .2s;
+}
+body.ajv-unified .ajv-nav-links a:not(.ajv-contact-nav):hover {
+ background:#deeeed;border-color:#86bdb5;box-shadow:0 7px 17px rgba(14,51,69,.13);transform:translateY(-2px);
+}
+body.ajv-unified .ajv-nav-links a.ajv-active:not(.ajv-contact-nav) {
+ background:linear-gradient(145deg,#d9eeea,#e9f3f1);border-color:#77bcb2;
+ box-shadow:inset 0 -3px 0 #087e70;
+}
+body.ajv-unified .ajv-nav a:focus-visible {outline:3px solid #c99c47;outline-offset:3px;}
+body.ajv-writing>header {max-width:1180px!important;text-align:center!important;
+ border-left:1px solid #d2e2e6;border-top:4px solid #c99c47;
+ background:radial-gradient(circle at 50% -35%,#daeeeb,transparent 57%),linear-gradient(125deg,#f8fafb,#e4eef2);
+ box-shadow:0 18px 42px rgba(14,51,69,.10);}
+body.ajv-writing>header p {max-width:790px;margin-left:auto;margin-right:auto;}
+body.ajv-writing>section:first-of-type>.ajv-book-grid {display:flex!important;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:24px;}
+body.ajv-writing>section:first-of-type>.ajv-book-grid>.glass-card {
+ flex:0 1 calc((100% - 72px)/4);min-width:205px;max-width:285px;
+ border-top:4px solid #c99c47!important;box-shadow:0 15px 31px rgba(14,51,69,.17);
+ transition:transform .24s,box-shadow .24s;}
+body.ajv-writing>section:first-of-type>.ajv-book-grid>.glass-card:hover {
+ transform:translateY(-6px);box-shadow:0 23px 40px rgba(14,51,69,.25);}
+body.ajv-writing .book-img {display:block;aspect-ratio:2/3;object-fit:cover;}
+@media(max-width:1050px) {
+ body.ajv-writing>section:first-of-type>.ajv-book-grid>.glass-card {flex-basis:calc((100% - 48px)/3);}
+}
+@media(max-width:730px) {
+ body.ajv-writing>section:first-of-type>.ajv-book-grid>.glass-card {flex-basis:calc((100% - 20px)/2);min-width:0;}
+}
+@media(max-width:430px) {
+ body.ajv-writing>section:first-of-type>.ajv-book-grid>.glass-card {flex-basis:100%;max-width:330px;}
+}
