@@ -51,10 +51,11 @@
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #10b981; border-radius: 10px; }
     </style>
+    <link rel="stylesheet" href="ajvalenz-theme.css">
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans antialiased ajv-home">
 
-    <nav class="p-6 fixed top-0 w-full z-50 glass-card border-b border-white/10 h-auto">
+    <nav class="ajv-nav p-6 fixed top-0 w-full z-50 glass-card border-b border-white/10 h-auto">
         <div class="max-w-7xl mx-auto flex justify-between items-center w-full">
             <div class="flex items-center gap-3">
                 <a href="index.html" class="flex items-center gap-3">
@@ -70,32 +71,136 @@
                 <a href="academia.html" class="hover:text-accentEsmeralda transition">Cursos</a>
                 <a href="contacto.html" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full hover:bg-emerald-400 transition font-bold">Contacto</a>
             </div>
+            <button type="button" class="ajv-mobile-toggle" id="ajv-menu-toggle" aria-expanded="false" aria-controls="ajv-mobile-links">☰ Menú</button>
+        </div>
+        <div class="ajv-mobile-links" id="ajv-mobile-links" hidden>
+            <a href="index.html">Inicio</a>
+            <a href="software.html">Software</a>
+            <a href="libros.html">Escritor</a>
+            <a href="academia.html">Cursos</a>
+            <a href="contacto.html">Contacto</a>
         </div>
     </nav>
 
-    <header class="pt-48 pb-24 px-6 text-center max-w-6xl mx-auto relative z-10">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-8 text-white drop-shadow-md tracking-tight uppercase">
-            Tecnología, Narrativa & <span class="text-accentEsmeralda">Visión Crítica</span>
-        </h2>
-        <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
-            Arquitecto de sistemas, escritor versátil y líder operativo. Un portafolio donde el código robusto convive con la gestión crítica y la narrativa profunda.
-        </p>
+    <header class="ajv-hero-mix" aria-label="Presentación de AJVALENZ">
+        <div class="ajv-hero-copy">
+            <p class="ajv-hero-kicker">Sistemas Computacionales AJVALENZ</p>
+            <h2>Tecnología con identidad. <span>Soluciones que funcionan.</span></h2>
+            <p class="ajv-hero-description">Desarrollamos sitios web, software y aplicaciones con visión profesional y atención cercana. Tecnología que se adapta a tu negocio y a tus ideas.</p>
+            <div class="ajv-hero-actions">
+                <a class="principal" href="contacto.html">Solicitar mi sitio web</a>
+                <a class="secundario" href="#software-destacado">Ver nuestros sistemas</a>
+            </div>
+        </div>
+        <div class="ajv-hero-visual" aria-hidden="true">
+            <div class="ajv-hero-logo-box"><img src="logo.png" alt=""></div>
+        </div>
+        <div class="ajv-hero-services" aria-label="Servicios AJVALENZ">
+            <div class="ajv-hero-service"><span class="ajv-hero-service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"/></svg></span><span>Software a medida</span></div>
+            <div class="ajv-hero-service"><span class="ajv-hero-service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><span>Sitios web</span></div>
+            <div class="ajv-hero-service"><span class="ajv-hero-service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6a5 5 0 0 0-6 6l-5 5 4 4 5-5a5 5 0 0 0 6-6l-4 2-3-3 3-3z"/></svg></span><span>Soporte técnico</span></div>
+            <div class="ajv-hero-service"><span class="ajv-hero-service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg></span><span>Recuperación de datos</span></div>
+        </div>
     </header>
 
-    <main class="max-w-[1750px] mx-auto px-4 relative z-10">
-        <div class="flex flex-col lg:flex-row gap-10 items-start">
-
-            <!-- CONTENIDO CENTRAL -->
-            <div class="flex-1 min-w-0 space-y-24">
-                
-                <section id="perfil" class="glass-card p-10 md:p-16 rounded-[40px] shadow-2xl relative overflow-hidden">
-                    <div class="mb-16 text-center md:text-left">
-                        <span class="text-accentEsmeralda font-mono mb-2 uppercase tracking-widest text-xs font-bold">El Hombre detrás del Código</span>
-                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-2 uppercase tracking-tighter">José Antonio Pérez Valenzuela</h3>
-                        <div class="h-1 w-24 bg-accentEsmeralda rounded-full mt-4 mx-auto md:mx-0"></div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+    <main class="ajv-main max-w-[1400px] mx-auto relative z-10">
+<section id="desarrollo-web" class="ajv-web-promo" aria-labelledby="ajv-web-title">
+  <div class="ajv-web-copy">
+    <span class="ajv-section-kicker">Sitios web · Comercio electrónico · Sistemas a medida</span>
+    <h2 id="ajv-web-title">Tu negocio merece una <span>presencia digital profesional.</span></h2>
+    <p>Diseñamos y desarrollamos sitios web modernos, rápidos y adaptados a celulares. Desde la primera idea hasta la puesta en marcha, con atención cercana y soluciones para necesidades reales.</p>
+    <div class="ajv-web-specialties"><span>Sitios corporativos</span><span>Tiendas online</span><span>Aplicaciones web</span></div>
+    <a class="ajv-web-cta" href="contacto.html">Hablemos de tu sitio web <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="ajv-web-visual" aria-hidden="true">
+    <div class="ajv-web-browser">
+      <div class="ajv-web-browser-top"><i></i><i></i><i></i><span>tuempresa.cl</span></div>
+      <div class="ajv-web-browser-page">
+        <div class="ajv-web-browser-head"><b>MARCA</b><span></span><span></span><span></span></div>
+        <div class="ajv-web-browser-hero"><strong>Diseño que<br>impulsa tu marca</strong><span></span></div>
+        <div class="ajv-web-browser-blocks"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <div class="ajv-web-device"><div class="ajv-web-device-top"></div><div class="ajv-web-device-content"><span></span><strong>Tu negocio,<br>en cualquier lugar.</strong><i></i><i></i></div></div>
+  </div>
+</section>
+  <section id="software-destacado" class="ajv-featured-section" aria-labelledby="ajv-featured-title">
+    <div class="ajv-section-head">
+      <div><span class="ajv-section-kicker">Soluciones AJVALENZ</span><h2 id="ajv-featured-title">Sistemas que ya son realidad</h2>
+        <p>Cuatro soluciones profesionales, con versiones pensadas para cada tipo de negocio.</p></div>
+      <a class="ajv-section-all" href="software.html">Explorar todo el software <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="ajv-feature-grid"><article class="ajv-feature-card">
+  <div class="ajv-feature-media ajv-feature-media-salon">
+    <div class="ajv-salon-art"><span class="ajv-salon-monogram">SP</span><div><small>GESTIÓN PROFESIONAL</small><strong>SalonPro <em>&amp; Spa</em></strong><small>WEB · DESKTOP</small></div></div>
+  </div>
+  <div class="ajv-feature-content"><span class="ajv-feature-label">Gestión para salones</span>
+    <h3>SalonPro &amp; Spa</h3><p>Agenda, clientes, caja, inventario y comisiones para peluquerías, barberías y spas.</p>
+    <div class="ajv-feature-tags"><span>Versión Web</span><span>Versión Desktop</span></div>
+    <a class="ajv-feature-link" href="salonpro.html">Conocer SalonPro<span aria-hidden="true">→</span></a>
+  </div>
+</article>
+<article class="ajv-feature-card">
+  <div class="ajv-feature-media ">
+    <img src="PROMOCION_4.png" alt="Presentación de MiniAlmacén Pro V3.0" loading="lazy">
+  </div>
+  <div class="ajv-feature-content"><span class="ajv-feature-label">Comercio y punto de venta</span>
+    <h3>MiniAlmacén Pro V3.0</h3><p>Ventas, stock, clientes y reportes para pequeños y medianos comercios.</p>
+    <div class="ajv-feature-tags"><span>Monocaja</span><span>Multicaja</span></div>
+    <a class="ajv-feature-link" href="minialmacen.html">Ver MiniAlmacén<span aria-hidden="true">→</span></a>
+  </div>
+</article>
+<article class="ajv-feature-card">
+  <div class="ajv-feature-media ">
+    <img src="siges_promo.png" alt="Presentación de SIGES Seguridad" loading="lazy">
+  </div>
+  <div class="ajv-feature-content"><span class="ajv-feature-label">Operaciones y supervisión</span>
+    <h3>SIGES Seguridad</h3><p>Gestión de servicios de seguridad privada, supervisión y control multiempresa.</p>
+    <div class="ajv-feature-tags"><span>Web</span><span>SaaS</span></div>
+    <a class="ajv-feature-link" href="siges.html">Conocer SIGES<span aria-hidden="true">→</span></a>
+  </div>
+</article>
+<article class="ajv-feature-card">
+  <div class="ajv-feature-media ">
+    <img src="promo_hotel.png" alt="Presentación de AJVALENZ Hotel PMS" loading="lazy">
+  </div>
+  <div class="ajv-feature-content"><span class="ajv-feature-label">Gestión hotelera</span>
+    <h3>AJVALENZ Hotel PMS</h3><p>Reservas, huéspedes, habitaciones, caja y administración para alojamientos.</p>
+    <div class="ajv-feature-tags"><span>PMS</span><span>Reservas online</span></div>
+    <a class="ajv-feature-link" href="hotel.html">Ver Hotel PMS<span aria-hidden="true">→</span></a>
+  </div>
+</article></div>
+  </section>
+  <section id="apps-android" class="ajv-android-section" aria-labelledby="ajv-android-title">
+  <div class="ajv-section-head">
+    <div><span class="ajv-section-kicker">Creaciones AJVALENZ · Android</span><h2 id="ajv-android-title">Aplicaciones Android</h2>
+    <p>También desarrollamos experiencias y aplicaciones para dispositivos móviles.</p></div>
+  </div>
+  <div class="ajv-android-grid">
+    <article class="ajv-android-card">
+      <div class="ajv-android-art ajv-app-universal"><img src="assets/android/universe-battle-icon.png" alt="Ícono de UNIVERSAL BATTLE" loading="lazy"></div>
+      <div class="ajv-android-info"><span>Proyecto Android</span><h3>UNIVERSAL BATTLE</h3><small>Desarrollo AJVALENZ</small><button type="button" class="ajv-android-view" data-app="universal" aria-label="Ver capturas de UNIVERSAL BATTLE">Ver capturas →</button></div>
+    </article>
+<article class="ajv-android-card">
+      <div class="ajv-android-art ajv-app-space"><img src="assets/android/space-aliens-icon.png" alt="Ícono de SPACE ALIENS" loading="lazy"></div>
+      <div class="ajv-android-info"><span>Proyecto Android</span><h3>SPACE ALIENS</h3><small>Desarrollo AJVALENZ</small><button type="button" class="ajv-android-view" data-app="space" aria-label="Ver capturas de SPACE ALIENS">Ver capturas →</button></div>
+    </article>
+<article class="ajv-android-card">
+      <div class="ajv-android-art ajv-app-talk"><img src="assets/android/talk-anybody-icon.png" alt="Ícono de TALK ANYBODY" loading="lazy"></div>
+      <div class="ajv-android-info"><span>Proyecto Android</span><h3>TALK ANYBODY</h3><small>Desarrollo AJVALENZ</small><button type="button" class="ajv-android-view" data-app="talk" aria-label="Ver capturas de TALK ANYBODY">Ver capturas →</button></div>
+    </article>
+  </div>
+</section>
+  <section id="perfil" class="ajv-profile-short" aria-labelledby="ajv-profile-heading">
+    <div class="ajv-profile-summary">
+      <img src="FB_IMG_1776491408352.jpg" alt="José Antonio Pérez Valenzuela" loading="lazy">
+      <div><span class="ajv-section-kicker">La persona detrás de AJVALENZ</span>
+        <h2 id="ajv-profile-heading">José Antonio Pérez Valenzuela</h2>
+        <p>Programador de Computadores, especialista en Seguridad Privada y escritor. Tecnología con experiencia, criterio humano y vocación creativa.</p></div>
+    </div>
+    <details class="ajv-profile-details">
+      <summary>Conocer mi trayectoria profesional y literaria <span aria-hidden="true">＋</span></summary>
+      <div class="ajv-profile-extended"><div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
                         <!-- EL AUTOR: AJVALENZ -->
                         <div class="md:col-span-5 glass-card p-6 rounded-3xl border border-slate-700/50 flex flex-col items-center">
                             <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-900 flex items-center justify-center p-2">
@@ -105,7 +210,7 @@
                             <span class="inline-block px-3 py-1 bg-accentEsmeralda/10 text-accentEsmeralda border border-accentEsmeralda/30 rounded-full text-[10px] font-mono mb-6 uppercase tracking-widest">Misterio & Poesía</span>
                             <div class="text-slate-300 text-sm leading-relaxed space-y-4 text-justify font-medium">
                                 <p>Nacido en <span class="font-bold text-white">La Ligua</span>, mi viaje literario comenzó en las aulas de mi adolescencia, donde descubrí que la escritura es el mejor acto de rescate para el mundo interior.</p>
-                                <p>Como autor, he explorado desde la profundidad lírica de tres poemarios de amor hasta el suspenso y el terror autobiográfico, género que me abrió las puertas para ser publicado en <span class="font-bold text-white">Amazon</span> a través de una prestigiosa antología española.</p>
+                                <p>Como autor, he explorado desde la poesía reunida en una antología hasta el suspenso y el terror autobiográfico, género que me abrió las puertas para ser publicado en <span class="font-bold text-white">Amazon</span> a través de una prestigiosa antología española.</p>
                                 <p>Muchas de mis historias—cargadas de mundos antiguos y tecnologías celestiales—nacen de visiones y sueños recurrentes. Para mí, la realidad a menudo no basta para contener lo que imaginamos; por eso, transformo esos ecos nocturnos en las semillas de mis libros.</p>
                             </div>
                         </div>
@@ -132,172 +237,47 @@
                                 <img src="FB_IMG_1776491408352.jpg" class="rounded-xl border border-white/5 bg-slate-900 p-1 h-24 object-contain shadow-md">
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </div></div>
+    </details>
+  </section>
+  <section id="servicios-especializados" class="ajv-home-services" aria-labelledby="ajv-services-heading">
+    <div class="ajv-section-head"><div><span class="ajv-section-kicker">Más que software</span><h2 id="ajv-services-heading">Servicios especializados</h2></div></div>
+    <div class="ajv-service-compact-grid">
+      <article><span class="ajv-service-mark" aria-hidden="true">01</span><h3>Recuperación de datos</h3><p>Rescate de información y acompañamiento técnico.</p></article>
+      <article><span class="ajv-service-mark" aria-hidden="true">02</span><h3>Soporte técnico</h3><p>Diagnóstico, mantención y asistencia Windows y Mac.</p></article>
+      <article><span class="ajv-service-mark" aria-hidden="true">03</span><h3>Seguridad y asesorías</h3><p>Experiencia operativa, capacitación y consultoría.</p></article>
+    </div>
+  </section>
+</main>
 
-
-                <!-- SOFTWARE DESTACADO AJVALENZ -->
-                <section id="software-destacado" class="py-12 border-t border-white/5">
-                    <div class="mb-12 text-center">
-                        <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight uppercase mb-4">Software <span class="text-accentEsmeralda">Destacado</span></h2>
-                        <div class="h-1 w-32 bg-accentEsmeralda mx-auto rounded-full mb-6"></div>
-                        <p class="text-slate-400 max-w-3xl mx-auto text-sm italic">Soluciones listas para vender, desarrolladas por Sistemas Computacionales AJVALENZ.</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-                        <!-- AJVALENZ HOTEL PMS -->
-                        <div class="glass-card rounded-[2rem] overflow-hidden border border-cyan-400/30 relative">
-                            <div class="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
-                                <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-300/40 text-cyan-200 text-[10px] font-bold uppercase tracking-widest">Hotel SaaS</span>
-                                <span class="px-3 py-1 rounded-full bg-accentEsmeralda/15 border border-accentEsmeralda/30 text-accentEsmeralda text-[10px] font-bold uppercase tracking-widest">Reservas online</span>
-                            </div>
-                            <div class="h-[430px] md:h-[520px] bg-slate-900 overflow-hidden flex items-center justify-center p-2">
-                                <img src="promo_hotel.png" alt="AJVALENZ Hotel PMS" class="w-full h-full object-contain object-center">
-                            </div>
-                            <div class="p-8">
-                                <div class="flex flex-wrap items-center gap-3 mb-4">
-                                    <span class="px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-[10px] font-bold uppercase tracking-widest">PostgreSQL / SaaS</span>
-                                    <span class="px-3 py-1 rounded-full bg-slate-900/50 border border-white/10 text-slate-300 text-[10px] font-bold uppercase tracking-widest">Hoteles / Hostales / Cabañas</span>
-                                </div>
-                                <h3 class="text-2xl font-black text-white uppercase mb-3">AJVALENZ Hotel PMS</h3>
-                                <p class="text-slate-300 text-sm leading-relaxed mb-6">Sistema hotelero para operación diaria, reservas, huéspedes, habitaciones, caja, documentos, reportes y portal de reservas online para alojamientos pequeños.</p>
-                                <div class="grid grid-cols-2 gap-3 text-[11px] text-slate-300 mb-7">
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Reservas y check-in</div>
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Reservas online</div>
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Caja y documentos</div>
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Reportes y roles</div>
-                                </div>
-                                <a href="hotel.html" class="block w-full text-center bg-cyan-400 text-slate-950 hover:bg-cyan-300 font-black py-3 rounded-xl transition text-sm uppercase">Ver página Hotel PMS</a>
-                            </div>
-                        </div>
-
-                        <!-- MINI ALMACÉN PRO -->
-                        <div class="glass-card rounded-[2rem] overflow-hidden border border-accentEsmeralda/30">
-                            <div class="h-[430px] md:h-[520px] bg-slate-900 overflow-hidden flex items-center justify-center p-2">
-                                <img src="PROMOCION_4.png" alt="MiniAlmacén Pro V3.0" class="w-full h-full object-contain object-center">
-                            </div>
-                            <div class="p-8">
-                                <div class="flex flex-wrap items-center gap-3 mb-4">
-                                    <span class="px-3 py-1 rounded-full bg-accentEsmeralda/15 border border-accentEsmeralda/30 text-accentEsmeralda text-[10px] font-bold uppercase tracking-widest">Sistema terminado</span>
-                                    <span class="px-3 py-1 rounded-full bg-slate-900/50 border border-white/10 text-slate-300 text-[10px] font-bold uppercase tracking-widest">Monocaja / Multicaja</span>
-                                </div>
-                                <h3 class="text-2xl font-black text-white uppercase mb-3">MiniAlmacén Pro V3.0</h3>
-                                <p class="text-slate-300 text-sm leading-relaxed mb-6">Sistema profesional de ventas, inventario, caja y reportes para almacenes, minimarkets, botillerías y comercios.</p>
-                                <div class="grid grid-cols-2 gap-3 text-[11px] text-slate-300 mb-7">
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Punto de venta</div>
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Inventario</div>
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Caja y reportes</div>
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Sin mensualidad obligatoria</div>
-                                </div>
-                                <a href="minialmacen.html" class="block w-full text-center bg-accentEsmeralda text-slate-900 hover:bg-emerald-400 font-black py-3 rounded-xl transition text-sm uppercase">Ver página MiniAlmacén Pro</a>
-                            </div>
-                        </div>
-
-                        <!-- SIGES SEGURIDAD -->
-                        <div class="glass-card rounded-[2rem] overflow-hidden border border-blue-400/30">
-                            <div class="h-[430px] md:h-[520px] bg-slate-900 overflow-hidden flex items-center justify-center p-2">
-                                <img src="siges_promo.png" alt="SIGES Seguridad" class="w-full h-full object-contain object-center">
-                            </div>
-                            <div class="p-8">
-                                <div class="flex flex-wrap items-center gap-3 mb-4">
-                                    <span class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-300 text-[10px] font-bold uppercase tracking-widest">Sistema terminado</span>
-                                    <span class="px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-[10px] font-bold uppercase tracking-widest">Multitenant / SaaS</span>
-                                </div>
-                                <h3 class="text-2xl font-black text-white uppercase mb-3">SIGES Seguridad</h3>
-                                <p class="text-slate-300 text-sm leading-relaxed mb-6">Plataforma multitenant SaaS para gestión de seguridad, supervisión, monitoreo operativo, métricas en tiempo real y administración multiempresa.</p>
-                                <div class="grid grid-cols-2 gap-3 text-[11px] text-slate-300 mb-7">
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Panel global</div>
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Estadísticas operativas</div>
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Alertas y monitoreo</div>
-                                    <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5">✅ Control centralizado</div>
-                                </div>
-                                <a href="siges.html" class="block w-full text-center border border-blue-400 text-blue-300 hover:bg-blue-500 hover:text-white font-black py-3 rounded-xl transition text-sm uppercase">Ver página SIGES Seguridad</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- DISTRITOS (ESTILO EXACTO 759/760) -->
-                <section class="py-12 border-t border-white/5">
-                    <div class="mb-16 text-center">
-                        <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight uppercase mb-4">EXPLORA MIS <span class="text-accentEsmeralda">DISTRITOS</span></h2>
-                        <div class="h-1 w-32 bg-accentEsmeralda mx-auto rounded-full mb-6"></div>
-                        <p class="text-slate-400 max-w-2xl mx-auto text-sm italic">Selecciona el área de mi portafolio que deseas descubrir. Desde soluciones tecnológicas para empresas hasta mundos de ciencia ficción.</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- SOFTWARE -->
-                        <div class="glass-card p-8 rounded-3xl text-center group">
-                            <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-6 border border-slate-600 group-hover:border-accentEsmeralda transition shadow-lg">
-                                <svg class="w-8 h-8 text-accentEsmeralda" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2 uppercase">Software</h3>
-                            <p class="text-slate-400 text-[10px] mb-8 leading-relaxed">Desarrollo de aplicaciones SaaS y automatización.</p>
-                            <a href="software.html" class="w-full block border border-accentEsmeralda text-accentEsmeralda hover:bg-accentEsmeralda hover:text-slate-900 font-bold py-3 rounded-xl transition text-sm uppercase">Ingresar</a>
-                        </div>
-                        <!-- ESCRITOR -->
-                        <div class="glass-card p-8 rounded-3xl text-center group">
-                            <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-6 border border-slate-600 group-hover:border-accentEsmeralda transition shadow-lg">
-                                <svg class="w-8 h-8 text-accentEsmeralda" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2 uppercase">Escritor</h3>
-                            <p class="text-slate-400 text-[10px] mb-8 leading-relaxed">Mi catálogo completo de novelas y poesía.</p>
-                            <a href="libros.html" class="w-full block border border-accentEsmeralda text-accentEsmeralda hover:bg-accentEsmeralda hover:text-slate-900 font-bold py-3 rounded-xl transition text-sm uppercase">Ingresar</a>
-                        </div>
-                        <!-- ACADEMIA -->
-                        <div class="glass-card p-8 rounded-3xl text-center group">
-                            <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-6 border border-slate-600">
-                                <svg class="w-8 h-8 text-accentEsmeralda" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2 uppercase">Academia</h3>
-                            <p class="text-slate-400 text-[10px] mb-8 leading-relaxed">Cursos de capacitación en herramientas de ofimática.</p>
-                            <div class="w-full bg-slate-900 text-slate-500 font-bold py-3 rounded-xl text-xs uppercase shadow-inner">En Desarrollo</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SERVICIOS ESPECIALIZADOS (ESTILO EXACTO 760) -->
-                <section id="servicios-especializados" class="py-12">
-                    <div class="text-center mb-16">
-                        <h2 class="text-4xl font-bold text-white uppercase tracking-tighter">Servicios <span class="text-blue-400">Especializados</span></h2>
-                        <div class="h-1 w-24 bg-blue-500 mx-auto mt-4"></div>
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-accentEsmeralda shadow-lg">
-                            <div class="w-12 h-12 bg-accentEsmeralda/20 rounded-xl flex items-center justify-center mb-8">
-                                <svg class="w-6 h-6 text-accentEsmeralda" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-black text-white mb-6 uppercase">Recuperación de Datos</h3>
-                            <p class="text-slate-400 text-[11px] leading-relaxed mb-8">Especialista en el rescate crítico de información desde discos duros, memorias SD y sistemas operativos dañados. Seguridad y confidencialidad total.</p>
-                            <div class="mt-auto pt-6 border-t border-white/5 text-[9px] uppercase tracking-widest text-slate-600 font-bold">Protocolos Forenses</div>
-                        </div>
-
-                        <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-blue-500 shadow-lg">
-                            <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-8">
-                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-black text-white mb-6 uppercase">Soporte Windows & Mac</h3>
-                            <p class="text-slate-400 text-[11px] leading-relaxed mb-8">Mantenimiento preventivo, correctivo y optimización de alto nivel. Solución de conflictos de hardware y software en plataformas PC y Apple.</p>
-                            <div class="mt-auto pt-6 border-t border-white/5 text-[9px] uppercase tracking-widest text-slate-600 font-bold">Atención Presencial/Remota</div>
-                        </div>
-
-                        <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-slate-500 shadow-lg">
-                            <div class="w-12 h-12 bg-slate-500/20 rounded-xl flex items-center justify-center mb-8">
-                                <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-black text-white mb-6 uppercase">Seguridad & Asesorías</h3>
-                            <p class="text-slate-400 text-[11px] leading-relaxed mb-8">Especialista en Seguridad Privada y capacitación en herramientas de ofimática. Consultoría estratégica para empresas y particulares.</p>
-                            <div class="mt-auto pt-6 border-t border-white/5 text-[9px] uppercase tracking-widest text-slate-600 font-bold">Capacitación Certificada</div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-</div>
-    </main>
+<dialog id="ajv-app-gallery" class="ajv-app-gallery" aria-labelledby="ajv-gallery-title">
+  <div class="ajv-gallery-head"><div><span class="ajv-section-kicker">Capturas reales de Android</span><h2 id="ajv-gallery-title">Aplicación AJVALENZ</h2></div><button type="button" id="ajv-gallery-close" class="ajv-gallery-close" aria-label="Cerrar galería">×</button></div>
+  <div class="ajv-gallery-image"><img id="ajv-gallery-img" alt="Captura de la aplicación Android"></div>
+  <div class="ajv-gallery-controls"><button type="button" id="ajv-gallery-prev" aria-label="Ver captura anterior">← Anterior</button><span id="ajv-gallery-count" aria-live="polite">1 de 2</span><button type="button" id="ajv-gallery-next" aria-label="Ver captura siguiente">Siguiente →</button></div>
+  <a id="ajv-gallery-full" href="#" target="_blank" rel="noopener" class="ajv-gallery-full">Abrir imagen en tamaño completo ↗</a>
+</dialog>
+<script>
+(function(){
+ const gal=document.getElementById('ajv-app-gallery');
+ const title=document.getElementById('ajv-gallery-title'),img=document.getElementById('ajv-gallery-img'),count=document.getElementById('ajv-gallery-count'),full=document.getElementById('ajv-gallery-full');
+ const apps={
+  universal:{name:'Universal Battle',shots:['assets/android/screens/universe-intro.png','assets/android/screens/universe-game.png']},
+  space:{name:'Space Aliens',shots:['assets/android/screens/space-intro.png','assets/android/screens/space-game.png']},
+  talk:{name:'Talk Anybody Chat',shots:['assets/android/screens/talk-intro.png','assets/android/screens/talk-chat.png']}
+ };
+ let current=null,index=0;
+ function render(){if(!current)return;const shot=apps[current].shots[index];img.src=shot;img.alt='Captura '+(index+1)+' de '+apps[current].name;title.textContent=apps[current].name;count.textContent=(index+1)+' de '+apps[current].shots.length;full.href=shot;}
+ document.querySelectorAll('.ajv-android-view').forEach(b=>b.addEventListener('click',()=>{current=b.dataset.app;index=0;render();gal.showModal();}));
+ document.getElementById('ajv-gallery-close').addEventListener('click',()=>gal.close());
+ document.getElementById('ajv-gallery-prev').addEventListener('click',()=>{if(!current)return;index=(index-1+apps[current].shots.length)%apps[current].shots.length;render();});
+ document.getElementById('ajv-gallery-next').addEventListener('click',()=>{if(!current)return;index=(index+1)%apps[current].shots.length;render();});
+ gal.addEventListener('click',e=>{if(e.target===gal)gal.close();});
+ gal.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')document.getElementById('ajv-gallery-prev').click();if(e.key==='ArrowRight')document.getElementById('ajv-gallery-next').click();});
+})();
+</script>
 
     <!-- TESTIMONIOS FIJOS -->
-    <section class="mt-24 py-16 px-6 border-t border-white/5">
+    <section id="testimonios" class="mt-24 py-16 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-widest">Lo que dicen mis <span class="text-accentEsmeralda">Clientes</span></h2>
@@ -332,5 +312,22 @@
     </a>
     <link rel="stylesheet" href="chat-ajvalenz.css">
 <script src="chat-ajvalenz.js"></script>
+<script>
+(function () {
+    const boton = document.getElementById('ajv-menu-toggle');
+    const menu = document.getElementById('ajv-mobile-links');
+    if (!boton || !menu) return;
+    boton.addEventListener('click', function () {
+        menu.hidden = !menu.hidden;
+        boton.setAttribute('aria-expanded', String(!menu.hidden));
+    });
+    menu.querySelectorAll('a').forEach(function (enlace) {
+        enlace.addEventListener('click', function () {
+            menu.hidden = true;
+            boton.setAttribute('aria-expanded', 'false');
+        });
+    });
+})();
+</script>
 </body>
 </html>

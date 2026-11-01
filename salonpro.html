@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SalonPro &amp; Spa | Web y Desktop | AJVALENZ</title>
+<meta name="description" content="SalonPro & Spa AJVALENZ: gestión profesional para peluquerías, barberías, centros de estética y spa. Conoce las versiones Web y Desktop.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{accentEsmeralda:'#10b981'}}}}</script>
+<link rel="stylesheet" href="ajvalenz-theme.css">
+</head>
+<body class="font-sans antialiased ajv-home ajv-catalog ajv-salon-page">
+<nav class="ajv-nav p-6 fixed top-0 w-full z-50 glass-card border-b border-white/10 h-auto" aria-label="Navegación principal">
+  <div class="max-w-7xl mx-auto flex justify-between items-center w-full">
+    <a href="index.html" class="flex items-center gap-3"><img src="logo.png" alt="" class="h-10 w-auto"><h1 class="text-xl font-bold text-white uppercase tracking-tight">AJ<span class="text-accentEsmeralda">VALENZ</span></h1></a>
+    <div class="space-x-6 hidden md:block text-xs uppercase tracking-widest font-bold text-slate-200">
+      <a href="index.html">Inicio</a><a href="software.html" class="text-accentEsmeralda">Software</a><a href="libros.html">Escritor</a><a href="academia.html">Cursos</a><a href="contacto.html" class="bg-accentEsmeralda text-slate-900 px-5 py-2 rounded-full font-bold">Contacto</a>
+    </div>
+    <button type="button" class="ajv-mobile-toggle" id="ajv-menu-toggle" aria-expanded="false" aria-controls="ajv-mobile-links">☰ Menú</button>
+  </div>
+  <div class="ajv-mobile-links" id="ajv-mobile-links" hidden>
+    <a href="index.html">Inicio</a><a href="software.html">Software</a><a href="libros.html">Escritor</a><a href="academia.html">Cursos</a><a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+<main class="ajv-salon-main">
+ <header class="ajv-salon-hero">
+   <div><a class="ajv-breadcrumb" href="software.html">← Todos los sistemas</a>
+     <span class="ajv-section-kicker">Solución para el sector belleza</span>
+     <h2>SalonPro <span>&amp; Spa</span></h2>
+     <p>Una plataforma creada para que tu salón funcione con orden, control y una atención más ágil. Elige la versión que mejor se adapte a tu negocio.</p>
+     <div class="ajv-feature-tags"><span>Agenda</span><span>Ventas y caja</span><span>Inventario</span><span>Comisiones</span></div>
+   </div>
+   <div class="ajv-salon-hero-art" aria-label="Identidad de SalonPro & Spa"><div class="ajv-salon-art"><span class="ajv-salon-monogram">SP</span><div><small>SISTEMAS COMPUTACIONALES AJVALENZ</small><strong>SalonPro <em>&amp; Spa</em></strong><small>WEB · DESKTOP</small></div></div></div>
+ </header>
+ <section class="ajv-salon-variants" aria-labelledby="salon-versions">
+   <div class="ajv-section-head"><div><span class="ajv-section-kicker">Dos modalidades, una misma visión</span><h2 id="salon-versions">Elige cómo quieres trabajar</h2></div></div>
+   <div class="ajv-salon-variant-grid">
+     <article class="ajv-salon-variant"><span class="ajv-variant-badge">01 · Versión Web</span><h3>SalonPro &amp; Spa Cloud</h3>
+       <p>Para salones que quieren centralizar su operación y ofrecer una experiencia conectada a sus clientes.</p>
+       <ul><li>Agenda y reservas online</li><li>Gestión de profesionales y clientes</li><li>Servicios, ventas y caja</li><li>Productos, stock y comisiones</li><li>Reportes de gestión</li></ul>
+       <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ%2C%20quiero%20cotizar%20SalonPro%20%26%20Spa%20Web" target="_blank" rel="noopener" class="ajv-feature-link">Consultar versión Web <span aria-hidden="true">→</span></a>
+     </article>
+     <article class="ajv-salon-variant ajv-salon-variant-desktop"><span class="ajv-variant-badge">02 · Versión Desktop</span><h3>SalonPro &amp; Spa Desktop</h3>
+       <p>Para quienes prefieren trabajar desde una aplicación de Windows con operación local y base de datos PostgreSQL.</p>
+       <ul><li>Aplicación instalada en Windows</li><li>Agenda, clientes y profesionales</li><li>Caja, ventas e inventario</li><li>Comisiones y reportes</li><li>Gestión local sin depender de un sitio web</li></ul>
+       <a href="https://wa.me/56975510325?text=Hola%20AJVALENZ%2C%20quiero%20cotizar%20SalonPro%20%26%20Spa%20Desktop" target="_blank" rel="noopener" class="ajv-feature-link">Consultar versión Desktop <span aria-hidden="true">→</span></a>
+     </article>
+   </div>
+ </section>
+ <section class="ajv-salon-footer-cta"><div><span class="ajv-section-kicker">Te ayudamos a decidir</span><h2>¿No sabes cuál te conviene?</h2><p>Cuéntanos cómo funciona tu salón y revisamos juntos la mejor opción.</p></div><a href="contacto.html">Conversemos sobre tu negocio <span aria-hidden="true">→</span></a></section>
+</main>
+<footer class="py-9 text-center text-sm"><p>© 2026 AJVALENZ.cl · Tecnología, Letras y Conocimiento.</p></footer>
+<a href="https://wa.me/56975510325" target="_blank" rel="noopener" aria-label="Contactar AJVALENZ por WhatsApp" class="wp-btn fixed bottom-6 right-6 bg-emerald-500 text-white p-4 rounded-full z-[100] shadow-xl"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.564 0 5.826-4.739 10.564-10.563 10.564z"/></svg></a>
+<script>
+(function(){const b=document.getElementById('ajv-menu-toggle'),m=document.getElementById('ajv-mobile-links');if(!b||!m)return;b.addEventListener('click',()=>{m.hidden=!m.hidden;b.setAttribute('aria-expanded',String(!m.hidden));});m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.hidden=true;b.setAttribute('aria-expanded','false');}));})();
+</script>
+<link rel="stylesheet" href="chat-ajvalenz.css"><script src="chat-ajvalenz.js"></script>
+</body></html>
