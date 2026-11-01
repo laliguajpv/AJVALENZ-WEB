@@ -1,0 +1,135 @@
+/* AJVALENZ · Estética transversal 2026
+   Azul petróleo + blanco perla + detalles dorados.
+   Conserva la estructura, productos y formularios de cada página. */
+:root{--ajv-navy:#0e3345;--ajv-petrol:#12495f;--ajv-ink:#193e50;--ajv-gold:#c99c47;--ajv-teal:#087e70;--ajv-pearl:#eef3f5;}
+html{scroll-behavior:smooth;scroll-padding-top:95px;}
+body.ajv-unified{
+  background:linear-gradient(150deg,#e9f0f3 0%,#e5edf0 54%,#f1f4f5 100%)!important;
+  color:var(--ajv-ink);min-height:100vh;padding-top:85px;overflow-x:hidden;
+}
+body.ajv-unified .logo-watermark{opacity:.035!important;}
+body.ajv-unified nav.ajv-nav{
+  position:fixed;top:0;left:0;width:100%;height:auto;z-index:50;
+  padding:12px clamp(16px,3vw,28px);background:rgba(248,250,250,.975);
+  border:0;border-bottom:2px solid rgba(201,156,71,.65);
+  box-shadow:0 6px 25px rgba(14,51,69,.11);backdrop-filter:blur(14px);
+}
+body.ajv-unified .ajv-nav img{height:48px!important;max-width:60px;object-fit:contain;padding:3px;background:#fff;border:1px solid #d6e2e6;border-radius:10px;}
+body.ajv-unified .ajv-nav-brand{color:var(--ajv-navy);font-size:20px;font-weight:900;letter-spacing:-.025em;}
+body.ajv-unified .ajv-nav-brand span{color:var(--ajv-teal);}
+body.ajv-unified .ajv-nav-links a{color:#385c6b;transition:color .18s;font-size:11px;letter-spacing:.12em;}
+body.ajv-unified .ajv-nav-links a:hover,body.ajv-unified .ajv-nav-links .ajv-active{color:var(--ajv-teal);}
+body.ajv-unified .ajv-nav-links .ajv-contact-nav,
+body.ajv-unified .ajv-nav-links a[aria-current="page"][href="contacto.html"]{
+  background:var(--ajv-petrol);color:#fff!important;padding:11px 17px;border-radius:20px;
+}
+body.ajv-unified .ajv-nav-links .ajv-contact-nav:hover{background:#176779;}
+body.ajv-unified .ajv-mobile-toggle{display:none;border:1px solid #bcd3dc;border-radius:11px;padding:10px 13px;color:var(--ajv-ink);font-size:12px;font-weight:900;}
+body.ajv-unified .ajv-mobile-links[hidden]{display:none!important;}
+body.ajv-unified .ajv-mobile-links{margin-top:11px;padding:8px 15px;background:#f7fafb;border:1px solid #d3e2e7;border-radius:13px;box-shadow:0 10px 22px rgba(14,51,69,.09);}
+body.ajv-unified .ajv-mobile-links a{display:block;padding:12px 4px;color:var(--ajv-ink);font-weight:800;font-size:13px;border-bottom:1px solid #e1e9ed;}
+body.ajv-unified .ajv-mobile-links a:last-child{border:0;}
+
+/* Literatura / Academia: superficie clara con tarjetas profundas */
+body.ajv-writing>header,body.ajv-academy>header{
+  max-width:1120px!important;margin:25px auto 16px!important;padding:35px clamp(22px,4vw,48px)!important;
+  background:linear-gradient(125deg,#f7f9f9,#e6eff2);
+  border:1px solid #d2e2e6;border-left:5px solid var(--ajv-gold);border-radius:23px;
+  box-shadow:0 13px 33px rgba(14,51,69,.07);text-align:center;
+}
+body.ajv-writing>header h2.text-white,body.ajv-academy>header h2.text-white{color:var(--ajv-navy)!important;}
+body.ajv-writing>header .text-slate-300,body.ajv-academy>header .text-slate-300{color:#54727f!important;}
+body.ajv-writing>header .text-accentEsmeralda,body.ajv-academy>header .text-accentEsmeralda{color:var(--ajv-teal)!important;}
+body.ajv-writing>section,body.ajv-academy>section{background:rgba(244,248,249,.8);border:1px solid #d3e2e7;border-radius:23px;box-shadow:0 10px 30px rgba(14,51,69,.04);margin-top:18px;margin-bottom:22px!important;}
+body.ajv-writing>section h3.text-slate-200{color:var(--ajv-navy)!important;}
+body.ajv-writing .glass-card,body.ajv-academy .glass-card{
+  background:linear-gradient(140deg,#1a4257,#244d60)!important;
+  border:1px solid rgba(201,156,71,.28)!important;color:#f4f8f9;
+  box-shadow:0 12px 28px rgba(14,51,69,.11);backdrop-filter:none;
+}
+body.ajv-writing .glass-card:hover,body.ajv-academy .glass-card:hover{
+  border-color:rgba(201,156,71,.75)!important;box-shadow:0 14px 35px rgba(14,51,69,.18);
+}
+body.ajv-writing .glass-card .text-slate-300,body.ajv-academy .glass-card .text-slate-300{color:#dce8ec!important;}
+body.ajv-writing .glass-card .text-white,body.ajv-academy .glass-card .text-white{color:#fff!important;}
+body.ajv-writing .glass-card .text-accentEsmeralda,body.ajv-academy .glass-card .text-accentEsmeralda{color:#a5e7d6!important;}
+body.ajv-writing .book-img{border-radius:9px;}
+body.ajv-writing>section:not([id="contacto"]) .glass-card img{box-shadow:0 7px 20px rgba(0,0,0,.18);}
+body.ajv-writing #contacto,body.ajv-academy #contacto{background:linear-gradient(125deg,#153f53,#25576a)!important;color:#fff;}
+body.ajv-writing #contacto h2,body.ajv-writing #contacto h3,body.ajv-academy #contacto h2{color:#fff!important;}
+
+/* Fichas de software: fondo claro y paneles de producto azul petróleo */
+body.ajv-product>header{
+  max-width:1320px!important;margin:25px auto 20px!important;padding:42px clamp(22px,3vw,38px)!important;
+  background:linear-gradient(135deg,#133c51 0%,#1c5368 78%,#154358 100%)!important;
+  border:1px solid rgba(201,156,71,.37);border-top:3px solid var(--ajv-gold);
+  border-radius:27px;box-shadow:0 22px 45px rgba(14,51,69,.14);
+}
+body.ajv-product>header h2{color:#fff;}
+body.ajv-product>header .text-slate-300,body.ajv-product>header .text-slate-200{color:#dce9ec!important;}
+body.ajv-product>header .glass-card{background:rgba(255,255,255,.08)!important;}
+body.ajv-product>section{
+  max-width:1320px!important;margin:21px auto!important;
+  padding:38px clamp(19px,3vw,40px)!important;
+  background:linear-gradient(135deg,#154055,#22566a)!important;
+  border:1px solid rgba(201,156,71,.25);
+  border-radius:24px;box-shadow:0 14px 32px rgba(14,51,69,.08);
+  color:#eef6f8;
+}
+body.ajv-product>section:nth-of-type(even){background:linear-gradient(135deg,#224d60,#174256)!important;}
+body.ajv-product>section .text-white{color:#fff!important;}
+body.ajv-product>section .text-slate-300,body.ajv-product>section .text-slate-200{color:#d7e5e9!important;}
+body.ajv-product .glass-card{
+  background:rgba(255,255,255,.085)!important;border:1px solid rgba(255,255,255,.17)!important;
+  box-shadow:0 10px 27px rgba(5,27,40,.12);
+}
+body.ajv-product .glass-card:hover{border-color:rgba(201,156,71,.75)!important;}
+body.ajv-product .feature-pill{border-color:rgba(201,156,71,.35)!important;}
+body.ajv-product .hero-frame{border:1px solid rgba(201,156,71,.4)!important;background:rgba(255,255,255,.07)!important;}
+body.ajv-product .btn-main{background:#d3a554!important;color:#143b50!important;}
+body.ajv-product .btn-main:hover{background:#e8c68a!important;}
+body.ajv-product .btn-outline{border-color:#cda660!important;color:#f2dba9!important;}
+body.ajv-product .btn-outline:hover{background:rgba(201,156,71,.15)!important;}
+body.ajv-product video{max-width:100%;border-radius:12px;}
+body.ajv-product a{scroll-margin-top:110px;}
+
+/* Contacto: formulario central compacto y legible */
+body.ajv-contact>main{padding-top:30px!important;padding-bottom:30px!important;}
+body.ajv-contact>main>.glass-card{
+  background:linear-gradient(140deg,#143b4f,#1e5064)!important;
+  border:1px solid rgba(201,156,71,.45)!important;
+  border-top:4px solid var(--ajv-gold)!important;color:#f4f8fa;
+  box-shadow:0 21px 43px rgba(14,51,69,.15);
+}
+body.ajv-contact>main>.glass-card .text-white{color:#fff!important;}
+body.ajv-contact>main>.glass-card .text-slate-300{color:#d6e6ea!important;}
+body.ajv-contact .input-form,body.ajv-writing .input-form,body.ajv-academy .input-form{
+  background:#f8fbfb!important;color:#153d4e!important;border:1px solid #b7cbd3!important;
+  border-radius:11px;padding:12px 14px;
+}
+body.ajv-contact .input-form:focus,body.ajv-writing .input-form:focus{outline:2px solid rgba(201,156,71,.73);outline-offset:1px;}
+body.ajv-contact button[type="submit"]{background:var(--ajv-gold)!important;color:#143f52!important;font-weight:900;}
+body.ajv-contact button[type="submit"]:hover{background:#ebc98e!important;}
+
+/* Pie común en blanco perla */
+body.ajv-unified>footer{
+  background:#edf3f4!important;border-top:2px solid var(--ajv-gold)!important;
+  margin-top:24px;padding:30px 16px!important;color:#405f70!important;
+}
+body.ajv-unified>footer p,body.ajv-unified>footer span{color:#456372!important;}
+body.ajv-unified footer img{max-width:180px;}
+
+/* Menú móvil + proporciones compactas */
+@media(max-width:767px){
+ body.ajv-unified{padding-top:77px;}
+ body.ajv-unified .ajv-nav-links{display:none!important;}
+ body.ajv-unified .ajv-mobile-toggle{display:inline-flex;}
+ body.ajv-writing>header,body.ajv-academy>header{margin:15px 14px!important;padding:27px 20px!important;}
+ body.ajv-product>header{margin:15px 14px!important;padding:28px 19px!important;}
+ body.ajv-product>section{margin:15px 13px!important;padding:27px 18px!important;border-radius:19px;}
+ body.ajv-writing>section,body.ajv-academy>section{margin:15px 12px!important;padding:24px 15px!important;}
+ body.ajv-contact>main{padding:20px 14px!important;}
+ body.ajv-contact>main>.glass-card{padding:30px 20px!important;}
+ body.ajv-unified>footer{margin-top:15px;}
+}
+@media(prefers-reduced-motion:reduce){body.ajv-unified *{scroll-behavior:auto!important;}}
