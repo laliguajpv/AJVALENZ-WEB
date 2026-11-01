@@ -178,16 +178,16 @@
   </div>
   <div class="ajv-android-grid">
     <article class="ajv-android-card">
-      <div class="ajv-android-art ajv-app-universal" aria-hidden="true"><span class="ajv-android-art-inner">UB</span></div>
-      <div class="ajv-android-info"><span>Proyecto Android</span><h3>UNIVERSAL BATTLE</h3><small>Desarrollo AJVALENZ</small></div>
+      <div class="ajv-android-art ajv-app-universal"><img src="assets/android/universe-battle-icon.png" alt="Ícono de UNIVERSAL BATTLE" loading="lazy"></div>
+      <div class="ajv-android-info"><span>Proyecto Android</span><h3>UNIVERSAL BATTLE</h3><small>Desarrollo AJVALENZ</small><button type="button" class="ajv-android-view" data-app="universal" aria-label="Ver capturas de UNIVERSAL BATTLE">Ver capturas →</button></div>
     </article>
 <article class="ajv-android-card">
-      <div class="ajv-android-art ajv-app-space" aria-hidden="true"><span class="ajv-android-art-inner">SA</span></div>
-      <div class="ajv-android-info"><span>Proyecto Android</span><h3>SPACE ALIENS</h3><small>Desarrollo AJVALENZ</small></div>
+      <div class="ajv-android-art ajv-app-space"><img src="assets/android/space-aliens-icon.png" alt="Ícono de SPACE ALIENS" loading="lazy"></div>
+      <div class="ajv-android-info"><span>Proyecto Android</span><h3>SPACE ALIENS</h3><small>Desarrollo AJVALENZ</small><button type="button" class="ajv-android-view" data-app="space" aria-label="Ver capturas de SPACE ALIENS">Ver capturas →</button></div>
     </article>
 <article class="ajv-android-card">
-      <div class="ajv-android-art ajv-app-talk" aria-hidden="true"><span class="ajv-android-art-inner">TA</span></div>
-      <div class="ajv-android-info"><span>Proyecto Android</span><h3>TALK ANYBODY</h3><small>Desarrollo AJVALENZ</small></div>
+      <div class="ajv-android-art ajv-app-talk"><img src="assets/android/talk-anybody-icon.png" alt="Ícono de TALK ANYBODY" loading="lazy"></div>
+      <div class="ajv-android-info"><span>Proyecto Android</span><h3>TALK ANYBODY</h3><small>Desarrollo AJVALENZ</small><button type="button" class="ajv-android-view" data-app="talk" aria-label="Ver capturas de TALK ANYBODY">Ver capturas →</button></div>
     </article>
   </div>
 </section>
@@ -254,6 +254,32 @@
     </div>
   </section>
 </main>
+
+<dialog id="ajv-app-gallery" class="ajv-app-gallery" aria-labelledby="ajv-gallery-title">
+  <div class="ajv-gallery-head"><div><span class="ajv-section-kicker">Capturas reales de Android</span><h2 id="ajv-gallery-title">Aplicación AJVALENZ</h2></div><button type="button" id="ajv-gallery-close" class="ajv-gallery-close" aria-label="Cerrar galería">×</button></div>
+  <div class="ajv-gallery-image"><img id="ajv-gallery-img" alt="Captura de la aplicación Android"></div>
+  <div class="ajv-gallery-controls"><button type="button" id="ajv-gallery-prev" aria-label="Ver captura anterior">← Anterior</button><span id="ajv-gallery-count" aria-live="polite">1 de 2</span><button type="button" id="ajv-gallery-next" aria-label="Ver captura siguiente">Siguiente →</button></div>
+  <a id="ajv-gallery-full" href="#" target="_blank" rel="noopener" class="ajv-gallery-full">Abrir imagen en tamaño completo ↗</a>
+</dialog>
+<script>
+(function(){
+ const gal=document.getElementById('ajv-app-gallery');
+ const title=document.getElementById('ajv-gallery-title'),img=document.getElementById('ajv-gallery-img'),count=document.getElementById('ajv-gallery-count'),full=document.getElementById('ajv-gallery-full');
+ const apps={
+  universal:{name:'Universal Battle',shots:['assets/android/screens/universe-intro.png','assets/android/screens/universe-game.png']},
+  space:{name:'Space Aliens',shots:['assets/android/screens/space-intro.png','assets/android/screens/space-game.png']},
+  talk:{name:'Talk Anybody Chat',shots:['assets/android/screens/talk-intro.png','assets/android/screens/talk-chat.png']}
+ };
+ let current=null,index=0;
+ function render(){if(!current)return;const shot=apps[current].shots[index];img.src=shot;img.alt='Captura '+(index+1)+' de '+apps[current].name;title.textContent=apps[current].name;count.textContent=(index+1)+' de '+apps[current].shots.length;full.href=shot;}
+ document.querySelectorAll('.ajv-android-view').forEach(b=>b.addEventListener('click',()=>{current=b.dataset.app;index=0;render();gal.showModal();}));
+ document.getElementById('ajv-gallery-close').addEventListener('click',()=>gal.close());
+ document.getElementById('ajv-gallery-prev').addEventListener('click',()=>{if(!current)return;index=(index-1+apps[current].shots.length)%apps[current].shots.length;render();});
+ document.getElementById('ajv-gallery-next').addEventListener('click',()=>{if(!current)return;index=(index+1)%apps[current].shots.length;render();});
+ gal.addEventListener('click',e=>{if(e.target===gal)gal.close();});
+ gal.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')document.getElementById('ajv-gallery-prev').click();if(e.key==='ArrowRight')document.getElementById('ajv-gallery-next').click();});
+})();
+</script>
 
     <!-- TESTIMONIOS FIJOS -->
     <section id="testimonios" class="mt-24 py-16 px-6 border-t border-white/5">
