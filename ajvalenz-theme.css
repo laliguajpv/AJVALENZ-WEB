@@ -554,3 +554,61 @@ body.ajv-catalog .ajv-mobile-mention>a:hover {transform:translateY(-2px);}
  body.ajv-catalog .ajv-catalog-intro {padding:31px 20px;}
  body.ajv-catalog .ajv-catalog-intro h2 span {display:block;}
 }
+
+
+/* Software · exposición individual de las aplicaciones Android */
+body.ajv-catalog .ajv-android-showcase {
+  padding:clamp(24px,3vw,43px);
+  background:linear-gradient(130deg,#133f53,#1c5166 62%,#12394d);
+  border:1px solid rgba(201,156,71,.52);border-top:4px solid #c99c47;
+  box-shadow:0 20px 42px rgba(14,51,69,.18);border-radius:25px;overflow:hidden;
+}
+body.ajv-catalog .ajv-android-showcase-head {text-align:center;max-width:710px;margin:0 auto 27px;}
+body.ajv-catalog .ajv-android-showcase-head .ajv-section-kicker {color:#e4c58c;}
+body.ajv-catalog .ajv-android-showcase-head h2 {color:#fff;font-size:clamp(25px,3vw,36px);font-weight:900;line-height:1.14;margin:8px 0 10px;}
+body.ajv-catalog .ajv-android-showcase-head p {color:#d6e6eb;font-size:13px;line-height:1.7;}
+body.ajv-catalog .ajv-android-showcase-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;}
+body.ajv-catalog .ajv-android-showcase-card {
+ display:flex;flex-direction:column;min-width:0;overflow:hidden;
+ background:linear-gradient(155deg,#fafdfe,#e9f2f3);border:1px solid #a7c7ce;
+ border-top:4px solid #c99c47;border-radius:20px;
+ box-shadow:0 13px 28px rgba(0,0,0,.19);
+ transition:transform .24s,box-shadow .24s,border-color .24s;
+}
+body.ajv-catalog .ajv-android-showcase-card:hover {transform:translateY(-6px);border-color:#5fc1ae;box-shadow:0 21px 40px rgba(0,0,0,.25);}
+body.ajv-catalog .ajv-android-showcase-icon {
+ display:grid;place-items:center;padding:21px;
+ background:radial-gradient(circle at center,#2b6980,#0d3044 76%);
+ border-bottom:1px solid rgba(201,156,71,.48);
+}
+body.ajv-catalog .ajv-android-showcase-icon img {
+ display:block;width:112px;height:112px;object-fit:cover;border-radius:23px;
+ border:3px solid rgba(255,255,255,.75);box-shadow:0 13px 25px rgba(0,0,0,.32);
+}
+body.ajv-catalog .ajv-android-showcase-body {padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;}
+body.ajv-catalog .ajv-android-showcase-body>span {color:#087e70;text-transform:uppercase;letter-spacing:.13em;font-size:10px;font-weight:900;}
+body.ajv-catalog .ajv-android-showcase-body h3 {color:#123e51;font-size:21px;font-weight:900;margin:8px 0;}
+body.ajv-catalog .ajv-android-showcase-body p {color:#51707d;font-size:12px;line-height:1.65;flex:1;margin-bottom:19px;}
+body.ajv-catalog .ajv-android-showcase-body a {
+ display:flex;justify-content:center;align-items:center;gap:9px;
+ background:#13536a;color:#fff;border-radius:11px;padding:12px 15px;
+ text-transform:uppercase;font-weight:900;font-size:11px;transition:background .2s;
+}
+body.ajv-catalog .ajv-android-showcase-body a:hover {background:#087e70;}
+body.ajv-catalog .ajv-android-showcase-all {
+ display:block;width:max-content;max-width:100%;text-align:center;margin:24px auto 0;
+ padding:11px 17px;color:#f8e2b4;border:1px solid rgba(226,191,127,.65);border-radius:11px;
+ font-weight:800;font-size:12px;
+}
+body.ajv-catalog .ajv-android-showcase-all:hover {background:rgba(255,255,255,.11);}
+body.ajv-catalog .ajv-android-showcase a:focus-visible {outline:3px solid #e5be79;outline-offset:3px;}
+@media(max-width:900px) {
+ body.ajv-catalog .ajv-android-showcase-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+ body.ajv-catalog .ajv-android-showcase-card:last-child {grid-column:1/-1;max-width:420px;width:100%;justify-self:center;}
+}
+@media(max-width:610px) {
+ body.ajv-catalog .ajv-android-showcase {padding:25px 17px;}
+ body.ajv-catalog .ajv-android-showcase-grid {grid-template-columns:1fr;}
+ body.ajv-catalog .ajv-android-showcase-card:last-child {grid-column:auto;max-width:none;}
+ body.ajv-catalog .ajv-android-showcase-icon img {width:102px;height:102px;}
+}
